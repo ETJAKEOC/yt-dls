@@ -1,3 +1,5 @@
+## ETJAKEOC YouTube Downloader Script
+
 ## Set YouTube download directory and 'yt-dlp' flags.
 ## These flags by default will download the last month's worth of videos, up to 15 videos, at full quality HD
 ## with chapter data appened, and sponsor segments removed.
