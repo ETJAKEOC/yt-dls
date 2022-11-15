@@ -1,0 +1,69 @@
+#! /bin/bash
+## ETJAKEOC YouTube Downloader Script
+
+export PATH=/usr/local/bin:/usr/local/sbin:/bin:/sbin:/usr/bin:/usr/sbin:$PATH # Make sure that 'PATH' is proper.
+
+## We set all the variables for 'yt-dlp' in '/etc/yt-dlp', please copy this file.
+## We then create our new variable for the script to append a couple more options.
+
+yt="/MEDIA/YOUTUBE" # Where the YouTube main directory is.
+yts="/MEDIA/YT-DLS" # Where the YouTube script directory is.
+yturl="https://www.youtube.com" # A variable designed to make the script below a little neater.
+cleanup='rm -rf ./{*.temp.*,*.json,*.meta,*.webp,*.webm,*.part}' # Delete some junk files that we no longer need.
+play="--playlist-end 1" # Sets playlist limits.
+ids=(--download-archive "$yt/IDs.db" --no-overwrites --no-post-overwrites --write-info-json) # Handle YT video IDs.
+dlp_yt=(nice -n 5 yt-dlp $play "${ids[@]}") # 'dlp_yt' variable that imports all of our settings for ease of use below.
+
+## Echo out the flags to the log, to ensure they are being sourced.
+## We nuke the old log, and rewrite it from scratch from this point.
+echo "YouTube download script started at:" $(date) > $yt/LOG.txt
+echo -e "Echoing applied variables into LOG.txt:" >> $yt/LOG.txt
+echo -e "yt: $yt" >> $yt/LOG.txt
+echo -e "yts: $yts" >> $yt/LOG.txt
+echo -e "play: $play" >> $yt/LOG.txt
+echo -e "ID's setup: $ids" >> $yt/LOG.txt
+echo -e "dlp_yt command: "${dlp_yt[@]}"" >> $yt/LOG.txt
+
+## Change into the YouTube directory, then the channel directory, and begins downloading with our defined flags.
+cd $yt/Asianometry/ && "${dlp_yt[@]}" $yturl/@Asianometry/videos && $cleanup &
+cd $yt/AW/ && "${dlp_yt[@]}" $yturl/@agingwheels/videos && $cleanup &
+cd $yt/Big\ Clive/ && "${dlp_yt[@]}" $yturl/c/Bigclive/videos && $cleanup &
+cd $yt/BR/ && "${dlp_yt[@]}" $yturl/@BrodieRobertson/videos && $cleanup &
+cd $yt/CI/ && "${dlp_yt[@]}" $yturl/c/CertifiablyIngame/videos && $cleanup &
+cd $yt/DDT/ && "${dlp_yt[@]}" $yturl/@DawidDoesTechStuff/videos && $cleanup &
+cd $yt/EA/ && "${dlp_yt[@]}" $yturl/@electrarc240/videos && $cleanup &
+cd $yt/EE/ && "${dlp_yt[@]}" $yturl/@EngineeringExplained/videos && $cleanup &
+cd $yt/G54/ && "${dlp_yt[@]}" $yturl/@Garage54ENG/videos && $cleanup
+cd $yt/GS/ && "${dlp_yt[@]}" $yturl/@greatscottlab/videos && $cleanup &
+cd $yt/Knowledgia/ && "${dlp_yt[@]}" $yturl/@Knowledgia/videos && $cleanup &
+cd $yt/Kurzgesagt/ && "${dlp_yt[@]}" $yturl/@kurzgesagt/videos && $cleanup &
+cd $yt/LR/ && "${dlp_yt[@]}" $yturl/@rossmanngroup/videos && $cleanup &
+cd $yt/MB/ && "${dlp_yt[@]}" $yturl/@MrBallen/videos && $cleanup &
+cd $yt/MegaBuilds/ && "${dlp_yt[@]}" $yturl/@MegaBuildsYT/videos && $cleanup &
+cd $yt/MF/ && "${dlp_yt[@]}" $yturl/@UndecidedMF/videos && $cleanup &
+cd $yt/Nexpo/ && "${dlp_yt[@]}" $yturl/@Nexpo/videos && $cleanup &
+cd $yt/NPTW/ && "${dlp_yt[@]}" $yturl/@NatePicksTechWorld/videos && $cleanup &
+cd $yt/PBSST/ && "${dlp_yt[@]}" $yturl/@pbsspacetime/videos && $cleanup
+cd $yt/PE/ && "${dlp_yt[@]}" $yturl/c/@PracticalEngineeringChannel/videos && $cleanup &
+cd $yt/PF/ && "${dlp_yt[@]}" $yturl/c/@ProjectFarm/videos && $cleanup &
+cd $yt/Qxir/ && "${dlp_yt[@]}" $yturl/c/QxirYT/videos && $cleanup &
+cd $yt/RB/ && "${dlp_yt[@]}" $yturl/@RetroBytesUK/videos && $cleanup &
+cd $yt/RCE/ && "${dlp_yt[@]}" $yturl/@RealCivilEngineerGaming/videos && $cleanup &
+cd $yt/RMS/ && "${dlp_yt[@]}" $yturl/@ThinkingandTinkering/videos && $cleanup &
+cd $yt/SH/ && "${dlp_yt[@]}" $yturl/c/@SabineHossenfelder/videos && $cleanup &
+cd $yt/Scar/ && "${dlp_yt[@]}" $yturl/c/@GoodTimesWithScar/videos && $cleanup
+cd $yt/SW/ && "${dlp_yt[@]}" $yturl/c/@silentwisperer/videos && $cleanup
+cd $yt/SZS/ && "${dlp_yt[@]}" $yturl/c/@SubjectZeroScience/videos && $cleanup &
+cd $yt/TC/ && "${dlp_yt[@]}" $yturl/c/@TechnologyConnections/videos && $cleanup &
+cd $yt/TE/ && "${dlp_yt[@]}" $yturl/@TechnologyConnextras/videos && $cleanup &
+cd $yt/TSP/ && "${dlp_yt[@]}" $yturl/@theserialport/videos && $cleanup
+
+## Longer videos broken out to the end
+cd $yt/Tech\ Ingredients/ && "${dlp_yt[@]}" $yturl/c/TechIngredients/videos && $cleanup &
+cd $yt/TWF/ && "${dlp_yt[@]}" $yturl/@TheWhyFiles/videos && $cleanup &
+cd $yt/EF/ && "${dlp_yt[@]}" $yturl/@ExplosionsAndFire/videos && $cleanup &
+cd $yt/EI/ && "${dlp_yt[@]}" $yturl/@ExtractionsAndIre/videos && $cleanup &
+cd $yt/CRD/ && "${dlp_yt[@]}" $yturl/c/@CathodeRayDude/videos && $cleanup
+
+## Change back into the main YouTube directory, and echos a timestamp into a log file, telling us how long the script ran for.
+echo "YouTube download script completed at:" $(date) >> $yt/LOG.txt
