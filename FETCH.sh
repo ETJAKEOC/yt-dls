@@ -10,40 +10,40 @@ dlp_yt="yt-dlp -w --no-playlist --playlist-end 15 --embed-metadata --write-info-
 
 ## Change into the YouTube directory, then the channel directory, and begins downloading with our defined flags.
 
-## Example provided below for reference and cloning.
-## cd $yt/CHANNEL_DIR/ && $dlp_yt https://www.youtube.com/channel/CHANNEL_ID/videos
+## Example provided below for reference and cloning. (Sometimes, '/c/' must be replaced with '/user/'.)
+## cd $yt/CHANNEL_DIR/ && $dlp_yt https://www.youtube.com/c/CHANNEL_ID/videos
 
 cd $yt/Aging\ Wheels/ && $dlp_yt https://www.youtube.com/user/agingwheels/videos
 
-cd $yt/Big\ Clive/ && $dlp_yt https://www.youtube.com/user/bigclivedotcom/videos
+cd $yt/Big\ Clive/ && $dlp_yt https://www.youtube.com/c/bigclivedotcom/videos
 
-cd $yt/BR/ && $dlp_yt https://www.youtube.com/channel/BrodieRobertson/videos
+cd $yt/BR/ && $dlp_yt https://www.youtube.com/c/BrodieRobertson/videos
 
-cd $yt/CRD/ && $dlp_yt https://www.youtube.com/channel/UCXnNibvR_YIdyPs8PZIBoEw/videos
+cd $yt/CRD/ && $dlp_yt https://www.youtube.com/channel/CathodeRayDude/videos
 
-cd $yt/Certifiably\ Ingame/ && $dlp_yt https://www.youtube.com/channel/UCJutYkYphYcGo-xbqyQJeYA/videos
+cd $yt/Certifiably\ Ingame/ && $dlp_yt https://www.youtube.com/c/CertifiablyIngame/videos
 
 cd $yt/CTT/ && $dlp_yt https://www.youtube.com/user/homergfunk/videos
 
-cd $yt/GSP/ && $dlp_yt https://www.youtube.com/channel/UCzEy7pi3B7TIS9cn_sdKK9A/videos
+cd $yt/GSP/ && $dlp_yt https://www.youtube.com/c/GrayStillPlays/videos
 
-cd $yt/Great\ Scott/ && $dlp_yt https://www.youtube.com/user/greatscottlab/videos
+cd $yt/Great\ Scott/ && $dlp_yt https://www.youtube.com/c/greatscottlab/videos
 
-cd $yt/IGP/ && $dlp_yt https://www.youtube.com/channel/TheIndieGamePromoter/videos
+cd $yt/IGP/ && $dlp_yt https://www.youtube.com/c/TheIndieGamePromoter/videos
 
-cd $yt/MrBallen/ && $dlp_yt https://www.youtube.com/channel/UCtPrkXdtCM5DACLufB9jbsA/videos
+cd $yt/MrBallen/ && $dlp_yt https://www.youtube.com/c/MrBallen/videos
 
-cd $yt/Qxir/ && $dlp_yt https://www.youtube.com/channel/UCGHDQtN_vzFYJaq_Fx1eikg/videos
+cd $yt/Qxir/ && $dlp_yt https://www.youtube.com/c/QxirYT/videos
 
-cd $yt/RCE/ && $dlp_yt https://www.youtube.com/channel/UCeP4Yv3s4RvS0-6d9OInRMw/videos
+cd $yt/RCE/ && $dlp_yt https://www.youtube.com/c/RealCivilEngineerGaming/videos
 
-cd $yt/RMS/ && $dlp_yt https://www.youtube.com/channel/RobertMurraySmith/videos
+cd $yt/RMS/ && $dlp_yt https://www.youtube.com/c/RobertMurraySmith/videos
 
-cd $yt/Tech\ Ingredients/ && $dlp_yt https://www.youtube.com/channel/TechIngredients/videos
+cd $yt/Tech\ Ingredients/ && $dlp_yt https://www.youtube.com/c/TechIngredients/videos
 
-cd $yt/TLC/ && $dlp_yt https://www.youtube.com/channel/TheLinuxCast/videos
+cd $yt/TLC/ && $dlp_yt https://www.youtube.com/c/TheLinuxCast/videos
 
-cd $yt/TLE/ && $dlp_yt https://www.youtube.com/channel/TheLinuxExperiment/videos
+cd $yt/TLE/ && $dlp_yt https://www.youtube.com/c/TheLinuxExperiment/videos
 
 ## Change back into the main YouTube directory, and echo a timestamp into a log file, indicating when the script last updated the libraries.
 
