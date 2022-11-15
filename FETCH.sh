@@ -5,6 +5,8 @@ yt='/M/YOUTUBE'
 
 ## Change into the YouTube directory, then the channel directory (you must create your own directories for each channel, this script does NOT do that.)
 ## and then downloads the last months worth, up to 15 videos, from said channel into it's own directory, with chapter data added and sponsor segments removed.
+## Example provided below for reference and cloning.
+## cd $yt/CHANNEL_DIR/ && yt-dlp --no-playlist --playlist-end 15 --embed-metadata --write-info-json --embed-chapters -f "(bv*[vcodec~='^((he|a)vc|h26[45])']+ba) / (bv*+ba/b)" --sponsorblock-remove sponsor --dateafter='now-1month' https://www.youtube.com/channel/CHANNEL_ID/videos
 
 cd $yt/Aging\ Wheels/ && yt-dlp --no-playlist --playlist-end 15 --embed-metadata --write-info-json --embed-chapters -f "(bv*[vcodec~='^((he|a)vc|h26[45])']+ba) / (bv*+ba/b)" --sponsorblock-remove sponsor --dateafter='now-1month' https://www.youtube.com/user/agingwheels/videos
 
