@@ -39,7 +39,8 @@ cd $yt/RCE/ && $dlp_yt https://www.youtube.com/c/RealCivilEngineerGaming/videos
 
 cd $yt/RMS/ && $dlp_yt https://www.youtube.com/c/RobertMurraySmith/videos
 
-cd $yt/Tech\ Ingredients/ && $dlp_yt https://www.youtube.com/c/TechIngredients/videos
+cd $yt/Tech\ Ingredients/ && yt-dlp -w --no-playlist --playlist-end 8 --embed-metadata --write-info-json --embed-chapters -f $qual --sponsorblock-remove sponsor https://www.youtube.com/c/TechIngredients/videos
+## Modified for a channel that doesn't upload as often, to collect atleast 8 of their videos.
 
 cd $yt/TLC/ && $dlp_yt https://www.youtube.com/c/TheLinuxCast/videos
 
