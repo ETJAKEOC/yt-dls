@@ -29,7 +29,7 @@ cd $yt/GSP/ && $dlp_yt https://www.youtube.com/c/GrayStillPlays/videos
 
 cd $yt/Great\ Scott/ && $dlp_yt https://www.youtube.com/c/greatscottlab/videos
 
-cd $yt/IGP/ && $dlp_yt https://www.youtube.com/c/TheIndieGamePromoter/videos
+cd $yt/IGP/ && $dlp_yt https://www.youtube.com/c/IGP/videos
 
 cd $yt/MrBallen/ && $dlp_yt https://www.youtube.com/c/MrBallen/videos
 
