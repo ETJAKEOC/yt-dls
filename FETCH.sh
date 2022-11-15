@@ -1,4 +1,6 @@
-## Set YouTube download directory
+## Set YouTube download directory and 'yt-dlp' flags.
+## These flags by default will download the last month's worth of videos, up to 15 videos, at full quality HD
+## with chapter data appened, and sponsor segments removed.
 
 yt='/M/YOUTUBE'
 yt_flags="--no-playlist --playlist-end 15 --embed-metadata --write-info-json --embed-chapters -f "(bv*[vcodec~='^((he|a)vc|h26[45])']+ba) / (bv*+ba/b)" --sponsorblock-remove sponsor --dateafter='now-1month'"
