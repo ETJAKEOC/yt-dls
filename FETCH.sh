@@ -2,13 +2,13 @@
 ## These flags by default will download the last month's worth of videos, up to 15 videos, at full quality HD
 ## with chapter data appened, and sponsor segments removed.
 
-yt='/M/YOUTUBE'
-qual="(bv*[vcodec~='^((he|a)vc|h26[45])']+ba)/(bv*+ba/b)"
-keep="--dateafter=now-1month"
+yt='/M/YOUTUBE' # Where the YouTube main directory is.
+qual="(bv*[vcodec~='^((he|a)vc|h26[45])']+ba)/(bv*+ba/b)" # Tells yt-dlp that we want the highest quality video.
+keep="--dateafter=now-1month" # Tells yt-dlp to only download up to one month from today's date worth of videos.
 dlp_yt="yt-dlp --no-playlist --playlist-end 15 --embed-metadata --write-info-json --embed-chapters -f $qual --sponsorblock-remove sponsor $keep"
+# Variable to run in place of 'yt-dlp' in script, applying the 'qual' and 'keep' flags we defined up above.
 
-## Change into the YouTube directory, then the channel directory (you must create your own directories for each channel, this script does NOT do that.)
-## and then downloads the last months worth, up to 15 videos, from said channel into it's own directory, with chapter data added and sponsor segments removed.
+## Change into the YouTube directory, then the channel directory, and begins downloading with our defined flags.
 
 ## Example provided below for reference and cloning.
 ## cd $yt/CHANNEL_DIR/ && $dlp_yt https://www.youtube.com/channel/CHANNEL_ID/videos
