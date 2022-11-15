@@ -2,7 +2,6 @@
 
 yt='/M/YOUTUBE'
 
-
 ## Change into the YouTube directory, then the channel directory (you must create your own directories for each channel, this script does NOT do that.)
 ## and then downloads the last months worth, up to 15 videos, from said channel into it's own directory, with chapter data added and sponsor segments removed.
 ## Example provided below for reference and cloning.
