@@ -51,3 +51,7 @@ cd $yt/TLE/ && $dlp_yt https://www.youtube.com/c/TheLinuxExperiment/videos
 ## Change back into the main YouTube directory, and echo a timestamp into a log file, indicating when the script last updated the libraries.
 
 cd $yt && echo Subscriptions last updated $(date) > LOG.txt
+
+## Just a little bit of cleanup after the process, because we don't need to keep things we redownload each time.
+
+rm */*.temp.* */*.json
