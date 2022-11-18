@@ -21,7 +21,7 @@ cd $yt && echo YouTube download script started at: $(date) > LOG.txt # We nuke t
 
 cd $yt/Aging\ Wheels/ && $dlp_yt https://www.youtube.com/user/agingwheels/videos
 
-cd $yt/Big\ Clive/ && $dlp_yt https://www.youtube.com/c/bigclivedotcom/videos
+cd $yt/Big\ Clive/ && $dlp_yt https://www.youtube.com/c/Bigclive/videos
 
 cd $yt/BR/ && $dlp_yt https://www.youtube.com/c/BrodieRobertson/videos
 
