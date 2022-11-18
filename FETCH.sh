@@ -60,4 +60,4 @@ cd $yt && echo YouTube download script completed at: $(date) >> LOG.txt
 
 ## Just a little bit of cleanup after the process, because we don't need to keep things we redownload each time.
 
-rm */*.temp.* */*.json
+cd $yt && rm */*.temp.* */*.json
