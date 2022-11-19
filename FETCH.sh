@@ -1,3 +1,4 @@
+#! /bin/bash
 ## ETJAKEOC YouTube Downloader Script
 
 ## Set YouTube download directory and 'yt-dlp' flags.
