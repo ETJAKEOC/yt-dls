@@ -32,7 +32,7 @@ cd $yt/Certifiably\ Ingame/ && $dlp_yt https://www.youtube.com/c/CertifiablyInga
 
 cd $yt/CTT/ && $dlp_yt https://www.youtube.com/user/homergfunk/videos
 
-cd $yt/DT/ && $dlp_yt https://www.youtube.com/user/DistroTube/videos
+cd $yt/DT/ && $dlp_yt https://www.youtube.com/c/DistroTube/videos
 
 cd $yt/GSP/ && $dlp_yt https://www.youtube.com/c/GrayStillPlays/videos
 
