@@ -65,11 +65,11 @@ cd $yt && echo YouTube download script completed at: $(date) >> LOG.txt
 ## These next few strings are designed to help keep things tidy. The second is disabled by default.
 ## First, we must cleanup temporary files and metadata that will just be rewritten when this script runs again.
 
-cd $yt && rm */*.temp.* */*.json
+rm $yt/*/*.temp.* $yt/*/*.json
 
 ## Then, we have a string that will clean any files older than 1 month in the downloads folder, by default.
 ## You can modify this by changing the '-mtime +##' section, this takes values in number of days.
 ## Recommend disabling this if possible for the first month, as there is a slight possibility it deletes
 ## videos that have been downloaded which you wish to keep.
 
-#find $yt/* -mtime +30 -exec rm *.mp4
+#find $yt/* -mtime +30 -exec rm *.*
