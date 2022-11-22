@@ -50,6 +50,8 @@ cd $yt/RCE/ && $dlp_yt https://www.youtube.com/c/RealCivilEngineerGaming/videos
 
 cd $yt/RMS/ && $dlp_yt https://www.youtube.com/c/RobertMurraySmith/videos
 
+cd $yt/TC/ && $dlp_yt https://www.youtube.com/c/@TechnologyConnections/videos
+
 cd $yt/Tech\ Ingredients/ && yt-dlp -w --no-playlist --playlist-end 8 --embed-metadata \
 --write-info-json --embed-chapters -f $qual --sponsorblock-remove sponsor \
 https://www.youtube.com/c/TechIngredients/videos
