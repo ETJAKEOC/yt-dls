@@ -28,7 +28,7 @@ cd $yt/Big\ Clive/ && $dlp_yt https://www.youtube.com/c/Bigclive/videos
 
 cd $yt/BR/ && $dlp_yt https://www.youtube.com/c/BrodieRobertson/videos
 
-cd $yt/CRD/ && $dlp_yt https://www.youtube.com/channel/CathodeRayDude/videos
+cd $yt/CRD/ && $dlp_yt https://www.youtube.com/channel/@CathodeRayDude/videos
 
 cd $yt/Certifiably\ Ingame/ && $dlp_yt https://www.youtube.com/c/CertifiablyIngame/videos
 
