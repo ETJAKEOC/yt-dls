@@ -28,7 +28,10 @@ cd $yt/Big\ Clive/ && $dlp_yt https://www.youtube.com/c/Bigclive/videos
 
 cd $yt/BR/ && $dlp_yt https://www.youtube.com/c/BrodieRobertson/videos
 
-cd $yt/CRD/ && $dlp_yt https://www.youtube.com/channel/@CathodeRayDude/videos
+cd $yt/CRD/ && yt-dlp -w --no-playlist --playlist-end 8 --embed-metadata \
+--write-info-json --embed-chapters -f $qual --sponsorblock-remove sponsor \
+https://www.youtube.com/c/@CathodeRayDude/videos
+## Modified for a channel that doesn't upload as often, to collect atleast 8 of their videos.
 
 cd $yt/Certifiably\ Ingame/ && $dlp_yt https://www.youtube.com/c/CertifiablyIngame/videos
 
