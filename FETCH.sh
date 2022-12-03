@@ -16,7 +16,7 @@ cleanup='rm */*.temp.* */*.json */*.meta' # This variable makes cleanup occur af
 ## Change into the YouTube directory, and begin our log, starting with when the command first executed.
 
 ## We nuke the old log, and rewrite it from scratch from this point, then append at the end of the script.
-cd $yt && echo YouTube download script started at: $(date) > LOG.txt
+cd $yt && echo 'YouTube download script started at:' $(date) > LOG.txt
 
 ## Change into the YouTube directory, then the channel directory, and begins downloading with our defined flags.
 
@@ -68,7 +68,7 @@ cd $yt/TLE/ && $dlp_yt https://www.youtube.com/c/TheLinuxExperiment/videos
 ## Change back into the main YouTube directory, cleans up, and echos a timestamp into a log file
 ## telling us how long the script ran for.
 
-cd $yt && $cleanup && echo YouTube download script completed at: $(date) >> LOG.txt
+cd $yt && $cleanup && echo 'YouTube download script completed at:' $(date) >> LOG.txt
 
 ## We have a string that will clean any files older than 1 month in the downloads folder, by default.
 ## You can modify this by changing the '-mtime +##' section, this takes values in number of days.
