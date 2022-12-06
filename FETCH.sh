@@ -37,7 +37,7 @@ cd $yt/CTT/ && $dlp_yt https://www.youtube.com/user/homergfunk/videos
 
 cd $yt/DT/ && $dlp_yt https://www.youtube.com/c/DistroTube/videos
 
-cd $yt/EE/ && $dlp_yt https://www.youtube.com/c/@EngineeringExplained/videos
+cd $yt/EE/ && $dlp_yt https://www.youtube.com/@EngineeringExplained/videos
 
 cd $yt/GSP/ && $dlp_yt https://www.youtube.com/c/GrayStillPlays/videos
 
