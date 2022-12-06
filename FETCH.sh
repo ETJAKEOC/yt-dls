@@ -37,13 +37,21 @@ cd $yt/CTT/ && $dlp_yt https://www.youtube.com/user/homergfunk/videos
 
 cd $yt/DT/ && $dlp_yt https://www.youtube.com/c/DistroTube/videos
 
+cd $yt/EE/ && $dlp_yt https://www.youtube.com/c/@EngineeringExplained/videos
+
 cd $yt/GSP/ && $dlp_yt https://www.youtube.com/c/GrayStillPlays/videos
 
 cd $yt/Great\ Scott/ && $dlp_yt https://www.youtube.com/c/greatscottlab/videos
 
 cd $yt/IGP/ && $dlp_yt https://www.youtube.com/c/IGP/videos
 
+cd $yt/MF/ && $dlp_yt https://www.youtube.com/c/UndecidedMF/videos
+
 cd $yt/MrBallen/ && $dlp_yt https://www.youtube.com/c/MrBallen/videos
+
+cd $yt/MWTB/ && $dlp_yt https://www.youtube.com/c/@Mrwhosetheboss/videos
+
+cd $yt/PE/ && $dlp_yt https://www.youtube.com/c/@PracticalEngineeringChannel/videos
 
 cd $yt/Qxir/ && $dlp_yt https://www.youtube.com/c/QxirYT/videos
 
@@ -58,6 +66,7 @@ cd $yt/Tech\ Ingredients/ && $dlp_yt https://www.youtube.com/c/TechIngredients/v
 cd $yt/TLC/ && $dlp_yt https://www.youtube.com/c/TheLinuxCast/videos
 
 cd $yt/TLE/ && $dlp_yt https://www.youtube.com/c/TheLinuxExperiment/videos
+
 
 ## Change back into the main YouTube directory, cleans up, and echos a timestamp into a log file
 ## telling us how long the script ran for.
