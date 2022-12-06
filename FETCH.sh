@@ -7,9 +7,9 @@
 
 yt='/M/YOUTUBE' # Where the YouTube main directory is.
 qual="(bv*[vcodec~='^((he|a)vc|h26[45])']+ba)/(bv*+ba/b)" # Tells yt-dlp that we want the highest quality video.
-keep="--dateafter=now-3months" # Tells yt-dlp to only download up to 3 months from today's date worth of videos.
-dlp_yt="yt-dlp --no-playlist --playlist-end 10 --embed-metadata --write-info-json --embed-chapters -f $qual --sponsorblock-remove sponsor $keep"
-# Variable to run in place of 'yt-dlp' in script, applying the 'qual' and 'keep' flags we defined up above.
+#keep="--dateafter=now-3months" # Tells yt-dlp to only download up to 3 months from today's date worth of videos.
+dlp_yt="yt-dlp --no-playlist --playlist-end 10 --embed-metadata --write-info-json --embed-chapters -f $qual --sponsorblock-remove sponsor"
+# Variable to run in place of 'yt-dlp' in script, applying the 'qual' and 'keep' (disabled since we download only 10 videos) flags we defined up above.
 
 cleanup='rm */*.temp.* */*.json */*.meta' # This variable makes cleanup occur after downloading.
 
