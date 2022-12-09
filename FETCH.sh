@@ -23,48 +23,48 @@ echo 'YouTube download script started at:' $(date) > $yt/LOG.txt
 ## Example provided below for reference and cloning. (Sometimes, '/c/' must be replaced with '/user/'.)
 ## cd $yt/CHANNEL_DIR/ && $dlp_yt https://www.youtube.com/c/CHANNEL_ID/videos
 
-cd $yt/Aging\ Wheels/ && $dlp_yt https://www.youtube.com/user/agingwheels/videos
-
-cd $yt/Big\ Clive/ && $dlp_yt https://www.youtube.com/c/Bigclive/videos
-
-cd $yt/BR/ && $dlp_yt https://www.youtube.com/c/BrodieRobertson/videos
-
-cd $yt/CRD/ && $dlp_yt https://www.youtube.com/c/@CathodeRayDude/videos
-
-cd $yt/Certifiably\ Ingame/ && $dlp_yt https://www.youtube.com/c/CertifiablyIngame/videos
-
-cd $yt/CTT/ && $dlp_yt https://www.youtube.com/user/homergfunk/videos
-
-cd $yt/DT/ && $dlp_yt https://www.youtube.com/c/DistroTube/videos
-
-cd $yt/EE/ && $dlp_yt https://www.youtube.com/@EngineeringExplained/videos
-
-cd $yt/GSP/ && $dlp_yt https://www.youtube.com/c/GrayStillPlays/videos
-
-cd $yt/Great\ Scott/ && $dlp_yt https://www.youtube.com/c/greatscottlab/videos
-
-cd $yt/IGP/ && $dlp_yt https://www.youtube.com/c/IGP/videos
-
-cd $yt/MF/ && $dlp_yt https://www.youtube.com/c/UndecidedMF/videos
-
-cd $yt/MrBallen/ && $dlp_yt https://www.youtube.com/c/MrBallen/videos
-
-cd $yt/MWTB/ && $dlp_yt https://www.youtube.com/c/@Mrwhosetheboss/videos
-
-cd $yt/PE/ && $dlp_yt https://www.youtube.com/c/@PracticalEngineeringChannel/videos
-
-cd $yt/Qxir/ && $dlp_yt https://www.youtube.com/c/QxirYT/videos
-
-cd $yt/RCE/ && $dlp_yt https://www.youtube.com/c/RealCivilEngineerGaming/videos
-
-cd $yt/RMS/ && $dlp_yt https://www.youtube.com/c/RobertMurraySmith/videos
-
-cd $yt/TC/ && $dlp_yt https://www.youtube.com/c/@TechnologyConnections/videos
-
-cd $yt/Tech\ Ingredients/ && $dlp_yt https://www.youtube.com/c/TechIngredients/videos
-
-cd $yt/TLC/ && $dlp_yt https://www.youtube.com/c/TheLinuxCast/videos
-
+cd $yt/Aging\ Wheels/ && $dlp_yt https://www.youtube.com/user/agingwheels/videos &\
+\
+cd $yt/Big\ Clive/ && $dlp_yt https://www.youtube.com/c/Bigclive/videos &\
+\
+cd $yt/BR/ && $dlp_yt https://www.youtube.com/c/BrodieRobertson/videos &\
+\
+cd $yt/CRD/ && $dlp_yt https://www.youtube.com/c/@CathodeRayDude/videos &\
+\
+cd $yt/Certifiably\ Ingame/ && $dlp_yt https://www.youtube.com/c/CertifiablyIngame/videos &\
+\
+cd $yt/CTT/ && $dlp_yt https://www.youtube.com/user/homergfunk/videos &\
+\
+cd $yt/DT/ && $dlp_yt https://www.youtube.com/c/DistroTube/videos &\
+\
+cd $yt/EE/ && $dlp_yt https://www.youtube.com/@EngineeringExplained/videos &\
+\
+cd $yt/GSP/ && $dlp_yt https://www.youtube.com/c/GrayStillPlays/videos &\
+\
+cd $yt/Great\ Scott/ && $dlp_yt https://www.youtube.com/c/greatscottlab/videos &\
+\
+cd $yt/IGP/ && $dlp_yt https://www.youtube.com/c/IGP/videos &\
+\
+cd $yt/MF/ && $dlp_yt https://www.youtube.com/c/UndecidedMF/videos &\
+\
+cd $yt/MrBallen/ && $dlp_yt https://www.youtube.com/c/MrBallen/videos &\
+\
+cd $yt/MWTB/ && $dlp_yt https://www.youtube.com/c/@Mrwhosetheboss/videos &\
+\
+cd $yt/PE/ && $dlp_yt https://www.youtube.com/c/@PracticalEngineeringChannel/videos &\
+\
+cd $yt/Qxir/ && $dlp_yt https://www.youtube.com/c/QxirYT/videos &\
+\
+cd $yt/RCE/ && $dlp_yt https://www.youtube.com/c/RealCivilEngineerGaming/videos &\
+\
+cd $yt/RMS/ && $dlp_yt https://www.youtube.com/c/RobertMurraySmith/videos &\
+\
+cd $yt/TC/ && $dlp_yt https://www.youtube.com/c/@TechnologyConnections/videos &\
+\
+cd $yt/Tech\ Ingredients/ && $dlp_yt https://www.youtube.com/c/TechIngredients/videos &\
+\
+cd $yt/TLC/ && $dlp_yt https://www.youtube.com/c/TheLinuxCast/videos &\
+\
 cd $yt/TLE/ && $dlp_yt https://www.youtube.com/c/TheLinuxExperiment/videos
 
 
