@@ -67,6 +67,7 @@ cd $yt/TLC/ && $dlp_yt https://www.youtube.com/c/TheLinuxCast/videos &\
 \
 cd $yt/TLE/ && $dlp_yt https://www.youtube.com/c/TheLinuxExperiment/videos
 
+wait
 
 ## Change back into the main YouTube directory, cleans up, and echos a timestamp into a log file
 ## telling us how long the script ran for.
