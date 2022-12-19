@@ -10,7 +10,7 @@ qual="(bv*[vcodec~='^((he|a)vc|h26[45])']+ba)/(bv*+ba/b)" # Tells yt-dlp that we
 #keep="--dateafter=now-3months" # Tells yt-dlp to only download up to 3 months from today's date worth of videos.
 dlp_yt="yt-dlp --no-playlist --playlist-end 10 --embed-metadata --write-info-json --embed-chapters -f $qual --sponsorblock-remove sponsor"
 # Variable to run in place of 'yt-dlp' in script, applying the 'qual' and 'keep' (disabled since we download only 10 videos) flags we defined up above.
-cleanup='find ./ -type f | tail -n +11 && rm *.temp.* *.json *.meta' # This variable makes cleanup occur after downloading.
+cleanup='rm -f $(ls -1t ./ | tail -n +11) *.temp.* *.json *.meta' # This variable makes cleanup occur after downloading.
 
 ## Change into the YouTube directory, and begin our log, starting with when the command first executed.
 ## We nuke the old log, and rewrite it from scratch from this point, then append at the end of the script.
