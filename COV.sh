@@ -10,47 +10,47 @@ yt='/M/YOUTUBE' # Set where the YouTube main directory is.
 cov="ls -A --color=none ./ | tail -n +11 | xargs -d '\n' rm --" # This variable removes the oldest videos past the download limit.
 
 cd $yt/Aging\ Wheels/ && $cov
-
+wait
 cd $yt/Big\ Clive/ && $cov
-
+wait
 cd $yt/BR/ && $cov
-
+wait
 cd $yt/CRD/ && $cov
-
+wait
 cd $yt/Certifiably\ Ingame/ && $cov
-
+wait
 cd $yt/CTT/ && $cov
-
+wait
 cd $yt/DT/ && $cov
-
+wait
 cd $yt/EE/ && $cov
-
+wait
 cd $yt/GSP/ && $cov
-
+wait
 cd $yt/Great\ Scott/ && $cov
-
+wait
 cd $yt/IGP/ && $cov
-
+wait
 cd $yt/MF/ && $cov
-
+wait
 cd $yt/MrBallen/ && $cov
-
+wait
 cd $yt/MWTB/ && $cov
-
+wait
 cd $yt/PE/ && $cov
-
+wait
 cd $yt/Qxir/ && $cov
-
+wait
 cd $yt/RCE/ && $cov
-
+wait
 cd $yt/RMS/ && $cov
-
+wait
 cd $yt/TC/ && $cov
-
+wait
 cd $yt/Tech\ Ingredients/ && $cov
-
+wait
 cd $yt/TLC/ && $cov
-
+wait
 cd $yt/TLE/ && $cov
-
+wait
 cd $yt/TS/ && $cov
