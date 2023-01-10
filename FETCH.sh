@@ -2,7 +2,7 @@
 ## ETJAKEOC YouTube Downloader Script
 
 ## Set YouTube download directory and 'yt-dlp' flags.
-## These flags by default will download up to 10 videos, at full quality HD, with chapter data appened, and sponsor segments removed.
+## These flags by default will download up to 10 videos, per channel, at full quality HD, with chapter data appened, and sponsor segments removed.
 
 yt='/M/YOUTUBE' # Where the YouTube main directory is.
 qual="(bv*[vcodec~='^((he|a)vc|h26[45])']+ba)/(bv*+ba/b)" # Tells yt-dlp that we want the highest quality video.
@@ -11,7 +11,6 @@ dlp_yt="yt-dlp --no-playlist --playlist-end 10 --embed-metadata --write-info-jso
 # Variable to run in place of 'yt-dlp' in script, applying the 'qual' flags we defined up above.
 
 cleanup='rm -f *.temp.* *.json *.meta' # This variable makes cleanup occur after downloading.
-#cov="ls -A --color=none ./ | tail -n +11 | xargs -d '\n' rm --" # This variable removes the oldest videos past the download limit.
 
 ## Change into the YouTube directory, and begin our log, starting with when the command first executed.
 ## We nuke the old log, and rewrite it from scratch from this point, then append at the end of the script.

@@ -12,7 +12,6 @@ dlp_yt="yt-dlp --no-playlist --playlist-end 1 --embed-metadata --write-info-json
 # Variable to run in place of 'yt-dlp' in script, applying the 'qual' flags we defined up above.
 
 cleanup='rm -f *.temp.* *.json *.meta' # This variable makes cleanup occur after downloading.
-#cov="ls -A --color=none ./ | tail -n +11 | xargs -d '\n' rm --" # This variable removes the oldest videos past the download limit.
 
 ## Change into the YouTube directory, and begin our log, starting with when the command first executed.
 ## We nuke the old log, and rewrite it from scratch from this point, then append at the end of the script.
