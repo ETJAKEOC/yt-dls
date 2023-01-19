@@ -51,7 +51,7 @@ cd $yt/MF/ && $dlp_yt https://www.youtube.com/c/UndecidedMF/videos && $cleanup &
 
 wait
 
-cd $yt/MJ/ && $dlp_yt https://www.youtube.com/c/@ThatMumboJumbo/videos && $cleanup &\
+cd $yt/MJ/ && $dlp_yt https://www.youtube.com/@ThatMumboJumbo/videos && $cleanup &\
 
 cd $yt/MrBallen/ && $dlp_yt https://www.youtube.com/c/MrBallen/videos && $cleanup &\
 
