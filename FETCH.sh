@@ -1,10 +1,13 @@
 #! /bin/bash
 ## ETJAKEOC YouTube Downloader Script
 
+## Set PATH variable, so yt-dlp knows where to find phantomJS, if installed.
+PATH=/usr/bin:/usr/sbin:usr/local/bin:usr/local/sbin:$PATH
+
 ## Set YouTube download directory and 'yt-dlp' flags.
 ## These flags by default will download up to 10 videos, per channel, at full quality HD, with chapter data appened, and sponsor segments removed.
 
-yt='/M/YOUTUBE' # Where the YouTube main directory is.
+yt='/STORAGE/YOUTUBE' # Where the YouTube main directory is.
 qual="(bv*[vcodec~='^((he|a)vc|h26[45])']+ba)/(bv*+ba/b)" # Tells yt-dlp that we want the highest quality video.
 
 dlp_yt="yt-dlp --no-playlist --playlist-end 10 --embed-metadata --write-info-json --embed-chapters -f $qual --sponsorblock-remove sponsor"
