@@ -1,6 +1,6 @@
 #! /bin/bash
 ## ETJAKEOC Youtube Downloader *sh.rc file. Source this in your user .*rc file to have quick access to the program.
-yt='/M/YOUTUBE' # Sets Youtube main directory, where the channels and scripts folders live.
+yt='/STORAGE/YOUTUBE' # Sets Youtube main directory, where the channels and scripts folders live.
 
 alias YTdl=$yt'/SCRIPT/FETCH.sh'
 alias YTdl1=$yt'/SCRIPT/FETCH.one.sh'
