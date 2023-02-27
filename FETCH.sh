@@ -10,7 +10,7 @@ PATH=/usr/bin:/usr/sbin:usr/local/bin:usr/local/sbin:$PATH
 yt='/STORAGE/YOUTUBE' # Where the YouTube main directory is.
 qual="(bv*[vcodec~='^((he|a)vc|h26[45])']+ba)/(bv*+ba/b)" # Tells yt-dlp that we want the highest quality video.
 
-dlp_yt="yt-dlp --no-playlist --playlist-end 10 --embed-metadata --write-info-json --embed-thumbnail --enbed-subs --video-multistreams --audio-multistreams --embed-chapters -f $qual --sponsorblock-remove sponsor"
+dlp_yt="yt-dlp --no-playlist --playlist-end 10 --embed-metadata --write-info-json --embed-thumbnail --embed-subs --video-multistreams --audio-multistreams --embed-chapters -f $qual --sponsorblock-remove sponsor"
 # Variable to run in place of 'yt-dlp' in script, applying the 'qual' flags we defined up above.
 
 cleanup='rm -f *.temp.* *.json *.meta' # This variable makes cleanup occur after downloading.
