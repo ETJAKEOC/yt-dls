@@ -48,7 +48,11 @@ cd $yt/GSP/ && $dlp_yt https://www.youtube.com/c/GrayStillPlays/videos && $clean
 
 cd $yt/Great\ Scott/ && $dlp_yt https://www.youtube.com/c/greatscottlab/videos && $cleanup &\
 
-cd $yt/IGP/ && $dlp_yt https://www.youtube.com/c/IGP/videos && $cleanup &\
+## cd $yt/IGP/ && $dlp_yt https://www.youtube.com/c/IGP/videos && $cleanup &\
+## Channel removed because the owner of the channel doesn't know how to properly upload videos.
+## Over 12 copies of the same video a day due to title renamings.
+## This makes this channel spam, and removes it from the qualifications of being on this list.
+
 
 cd $yt/MF/ && $dlp_yt https://www.youtube.com/c/UndecidedMF/videos && $cleanup &\
 
