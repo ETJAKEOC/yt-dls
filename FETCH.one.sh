@@ -37,6 +37,8 @@ cd $yt/Certifiably\ Ingame/ && $dlp_yt https://www.youtube.com/c/CertifiablyInga
 
 cd $yt/CTT/ && $dlp_yt https://www.youtube.com/user/homergfunk/videos && $cleanup &\
 
+cd $yt/CM/ && $dlp_yt https://www.youtube.com/user/@CleetusM/videos && $cleanup &\
+
 cd $yt/DT/ && $dlp_yt https://www.youtube.com/c/DistroTube/videos && $cleanup &\
 
 cd $yt/EE/ && $dlp_yt https://www.youtube.com/@EngineeringExplained/videos && $cleanup &\
