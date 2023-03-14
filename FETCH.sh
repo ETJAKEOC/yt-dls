@@ -55,6 +55,9 @@ cd $yt/Great\ Scott/ && $dlp_yt https://www.youtube.com/c/greatscottlab/videos &
 ## Over 12 copies of the same video a day due to title renamings.
 ## This makes this channel spam, and removes it from the qualifications of being on this list.
 
+cd $yt/KH/ && $dlp_yt https://www.youtube.com/@kylehill/videos && $cleanup &\
+
+cd $yt/LR/ && $dlp_yt https://www.youtube.com/@rossmanngroup/videos && $cleanup &\
 
 cd $yt/MF/ && $dlp_yt https://www.youtube.com/c/UndecidedMF/videos && $cleanup &\
 
