@@ -46,6 +46,8 @@ cd $yt/EE/ && $dlp_yt https://www.youtube.com/@EngineeringExplained/videos && $c
 
 wait
 
+cd $yt/EM/ && $dlp_yt https://www.youtube.com/@EvilmonkeyzDesignz/videos && $cleanup &\
+
 cd $yt/GSP/ && $dlp_yt https://www.youtube.com/c/GrayStillPlays/videos && $cleanup &\
 
 cd $yt/Great\ Scott/ && $dlp_yt https://www.youtube.com/c/greatscottlab/videos && $cleanup &\
