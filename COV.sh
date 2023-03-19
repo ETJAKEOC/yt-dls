@@ -6,7 +6,7 @@
 ## that are past out limit, which we set in the 'tail -n +11' section, '+11' meaning that any videos 11 days or older are up first
 ## for deletion. You can change this variable to whatever you please to keep as many videos as you would like.
 
-yt='/STORAGE/YOUTUBE' # Set where the YouTube main directory is.
+yt='/STORAGE/MEDIA/YOUTUBE' # Set where the YouTube main directory is.
 cov="ls -A --color=none ./ | tail -n +11 | xargs -d '\n' rm --" # This variable removes the oldest videos past the download limit.
 
 cd $yt/Aging\ Wheels/ && $cov
