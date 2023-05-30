@@ -1,6 +1,6 @@
 #! /bin/bash
 ## ETJAKEOC Youtube Downloader *sh.rc file. Source this in your user .*rc file to have quick access to the program.
-yts='~/git/YTDLS/' # Sets Youtube script directory, scripts live.
+yts='~/git/YT-DLS/' # Sets Youtube script directory, scripts live.
 
 alias YTdl=$yts'FETCH.sh'
 alias YTdl1=$yts'FETCH.one.sh'

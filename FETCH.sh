@@ -6,11 +6,10 @@ PATH=/usr/bin:/usr/sbin:usr/local/bin:usr/local/sbin:$PATH
 
 ## Set YouTube download directory and 'yt-dlp' flags.
 ## These flags by default will download up to 10 videos, per channel, at full quality HD, with chapter data appened, and sponsor segments removed.
-
-yt='/STORAGE/MEDIA/YOUTUBE' # Where the YouTube main directory is.
-qual="(bv*[vcodec~='^((he|a)vc|h26[45])']+ba)/(bv*+ba/b)" # Tells yt-dlp that we want the highest quality video.
-
-dlp_yt="yt-dlp --no-playlist --playlist-end 10 --embed-metadata --write-info-json --embed-thumbnail --embed-subs --video-multistreams --audio-multistreams --embed-chapters -f $qual --sponsorblock-remove sponsor"
+yt='/STORAGE/YOUTUBE' # Where the YouTube main directory is.
+emb='--embed-metadata --embed-thumbnail --embed-subs --embed-chapters'
+qual="-f mp4"
+dlp_yt="yt-dlp --no-playlist --playlist-end 10 --downloader aria2c --sponsorblock-remove sponsor $qual $emb"
 # Variable to run in place of 'yt-dlp' in script, applying the 'qual' flags we defined up above.
 
 cleanup='rm -f *.temp.* *.json *.meta .webp' # This variable makes cleanup occur after downloading.
@@ -38,34 +37,33 @@ cd $yt/Certifiably\ Ingame/ && $dlp_yt https://www.youtube.com/c/CertifiablyInga
 
 cd $yt/CTT/ && $dlp_yt https://www.youtube.com/user/homergfunk/videos && $cleanup &\
 
-cd $yt/CM/ && $dlp_yt https://www.youtube.com/@CleetusM/videos && $cleanup &\
+## cd $yt/CM/ && $dlp_yt https://www.youtube.com/@CleetusM/videos && $cleanup &\
+
+wait
 
 cd $yt/DT/ && $dlp_yt https://www.youtube.com/c/DistroTube/videos && $cleanup &\
 
 cd $yt/EE/ && $dlp_yt https://www.youtube.com/@EngineeringExplained/videos && $cleanup &\
 
-wait
-
 cd $yt/EM/ && $dlp_yt https://www.youtube.com/@EvilmonkeyzDesignz/videos && $cleanup &\
+
+wait
 
 cd $yt/GSP/ && $dlp_yt https://www.youtube.com/c/GrayStillPlays/videos && $cleanup &\
 
 cd $yt/Great\ Scott/ && $dlp_yt https://www.youtube.com/c/greatscottlab/videos && $cleanup &\
 
-## cd $yt/IGP/ && $dlp_yt https://www.youtube.com/c/IGP/videos && $cleanup &\
-## Channel removed because the owner of the channel doesn't know how to properly upload videos.
-## Over 12 copies of the same video a day due to title renamings.
-## This makes this channel spam, and removes it from the qualifications of being on this list.
-
 cd $yt/KH/ && $dlp_yt https://www.youtube.com/@kylehill/videos && $cleanup &\
+
+wait
 
 cd $yt/LR/ && $dlp_yt https://www.youtube.com/@rossmanngroup/videos && $cleanup &\
 
 cd $yt/MF/ && $dlp_yt https://www.youtube.com/c/UndecidedMF/videos && $cleanup &\
 
-wait
-
 cd $yt/MJ/ && $dlp_yt https://www.youtube.com/@ThatMumboJumbo/videos && $cleanup &\
+
+wait
 
 cd $yt/MrBallen/ && $dlp_yt https://www.youtube.com/c/MrBallen/videos && $cleanup &\
 
@@ -81,21 +79,23 @@ cd $yt/Qxir/ && $dlp_yt https://www.youtube.com/c/QxirYT/videos && $cleanup &\
 
 cd $yt/RB/ && $dlp_yt https://www.youtube.com/@RetroBytesUK/videos && $cleanup &\
 
-cd $yt/RCE/ && $dlp_yt https://www.youtube.com/c/RealCivilEngineerGaming/videos && $cleanup &\
-
 wait
+
+cd $yt/RCE/ && $dlp_yt https://www.youtube.com/c/RealCivilEngineerGaming/videos && $cleanup &\
 
 cd $yt/RMS/ && $dlp_yt https://www.youtube.com/c/RobertMurraySmith/videos && $cleanup &\
 
 cd $yt/TC/ && $dlp_yt https://www.youtube.com/c/@TechnologyConnections/videos && $cleanup &\
 
+wait
+
 cd $yt/TAL/ && $dlp_yt https://www.youtube.com/c/@TheActionLab/videos && $cleanup &\
 
 cd $yt/Tech\ Ingredients/ && $dlp_yt https://www.youtube.com/c/TechIngredients/videos && $cleanup &\
 
-wait
-
 cd $yt/TLC/ && $dlp_yt https://www.youtube.com/c/TheLinuxCast/videos && $cleanup &\
+
+wait
 
 cd $yt/TLE/ && $dlp_yt https://www.youtube.com/c/TheLinuxExperiment/videos && $cleanup &\
 
