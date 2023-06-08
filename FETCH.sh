@@ -27,21 +27,25 @@ cd $yt/Aging\ Wheels/ && $dlp_yt https://www.youtube.com/user/agingwheels/videos
 
 cd $yt/Big\ Clive/ && $dlp_yt https://www.youtube.com/c/Bigclive/videos && $cleanup &\
 
+wait
+
 cd $yt/BR/ && $dlp_yt https://www.youtube.com/c/BrodieRobertson/videos && $cleanup &\
 
 cd $yt/CRD/ && $dlp_yt https://www.youtube.com/c/@CathodeRayDude/videos && $cleanup &\
 
 wait
 
-cd $yt/Certifiably\ Ingame/ && $dlp_yt https://www.youtube.com/c/CertifiablyIngame/videos && $cleanup &\
+cd $yt/CI/ && $dlp_yt https://www.youtube.com/c/CertifiablyIngame/videos && $cleanup &\
 
 cd $yt/CTT/ && $dlp_yt https://www.youtube.com/user/homergfunk/videos && $cleanup &\
 
-## cd $yt/CM/ && $dlp_yt https://www.youtube.com/@CleetusM/videos && $cleanup &\
-
 wait
 
+cd $yt/CM/ && $dlp_yt https://www.youtube.com/@CleetusM/videos && $cleanup &\
+
 cd $yt/DT/ && $dlp_yt https://www.youtube.com/c/DistroTube/videos && $cleanup &\
+
+wait
 
 cd $yt/EE/ && $dlp_yt https://www.youtube.com/@EngineeringExplained/videos && $cleanup &\
 
@@ -53,11 +57,13 @@ cd $yt/GSP/ && $dlp_yt https://www.youtube.com/c/GrayStillPlays/videos && $clean
 
 cd $yt/Great\ Scott/ && $dlp_yt https://www.youtube.com/c/greatscottlab/videos && $cleanup &\
 
-cd $yt/KH/ && $dlp_yt https://www.youtube.com/@kylehill/videos && $cleanup &\
-
 wait
 
+cd $yt/KH/ && $dlp_yt https://www.youtube.com/@kylehill/videos && $cleanup &\
+
 cd $yt/LR/ && $dlp_yt https://www.youtube.com/@rossmanngroup/videos && $cleanup &\
+
+wait
 
 cd $yt/MF/ && $dlp_yt https://www.youtube.com/c/UndecidedMF/videos && $cleanup &\
 
@@ -69,11 +75,13 @@ cd $yt/MrBallen/ && $dlp_yt https://www.youtube.com/c/MrBallen/videos && $cleanu
 
 cd $yt/MWTB/ && $dlp_yt https://www.youtube.com/c/@Mrwhosetheboss/videos && $cleanup &\
 
-cd $yt/PBSST/ && $dlp_yt https://www.youtube.com/@pbsspacetime/videos && $cleanup &\
-
 wait
 
+cd $yt/PBSST/ && $dlp_yt https://www.youtube.com/@pbsspacetime/videos && $cleanup &\
+
 cd $yt/PE/ && $dlp_yt https://www.youtube.com/c/@PracticalEngineeringChannel/videos && $cleanup &\
+
+wait
 
 cd $yt/Qxir/ && $dlp_yt https://www.youtube.com/c/QxirYT/videos && $cleanup &\
 
@@ -85,11 +93,13 @@ cd $yt/RCE/ && $dlp_yt https://www.youtube.com/c/RealCivilEngineerGaming/videos 
 
 cd $yt/RMS/ && $dlp_yt https://www.youtube.com/c/RobertMurraySmith/videos && $cleanup &\
 
-cd $yt/TC/ && $dlp_yt https://www.youtube.com/c/@TechnologyConnections/videos && $cleanup &\
-
 wait
 
+cd $yt/TC/ && $dlp_yt https://www.youtube.com/c/@TechnologyConnections/videos && $cleanup &\
+
 cd $yt/TAL/ && $dlp_yt https://www.youtube.com/c/@TheActionLab/videos && $cleanup &\
+
+wait
 
 cd $yt/Tech\ Ingredients/ && $dlp_yt https://www.youtube.com/c/TechIngredients/videos && $cleanup &\
 
