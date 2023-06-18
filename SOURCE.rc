@@ -8,9 +8,8 @@ emb="--embed-metadata --embed-thumbnail --embed-subs --embed-chapters"
 qual="-f mp4"
 down="--downloader aria2c"
 spon="--sponsorblock-remove sponsor"
-play="--no-playlist --playlist-end 1"
 
-alias dlp_yt="yt-dlp $emb $qual $down $spon $play"
+alias dlp_yt="yt-dlp $emb $qual $down $spon"
 alias YTU=$yts'FETCH.sh'
 alias YTU1=$yts'FETCH.one.sh'
 alias YTU2=$yts'FETCH.one.sh'

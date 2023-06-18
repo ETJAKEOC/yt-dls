@@ -11,7 +11,7 @@ emb="--embed-metadata --embed-thumbnail --embed-subs --embed-chapters"
 qual="-f mp4"
 down="--downloader aria2c"
 spon="--sponsorblock-remove sponsor"
-play="--no-playlist --playlist-end 1"
+play="--no-playlist --playlist-end 2"
 dlp_yt="yt-dlp $emb $qual $down $spon $play"
 # Variable to run in place of 'yt-dlp' in script, applying the 'qual' flags we defined up above.
 
