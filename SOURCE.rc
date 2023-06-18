@@ -12,6 +12,6 @@ spon="--sponsorblock-remove sponsor"
 alias dlp_yt="yt-dlp $emb $qual $down $spon"
 alias YTU=$yts'FETCH.sh'
 alias YTU1=$yts'FETCH.one.sh'
-alias YTU2=$yts'FETCH.one.sh'
+alias YTU2=$yts'FETCH.two.sh'
 alias covYT=$yts'COV.sh'
 alias fix_yt_perms=$yts'PERMS.sh'
