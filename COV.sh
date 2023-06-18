@@ -1,7 +1,7 @@
 #! /bin/bash
 ## ETJAKEOC YouTube Downloader Script - Clean Old Videos section
 
-root_directory="/STORAGE/YOUTUBE"
+root_directory="/STORAGE/YOUTUBE/"
 num_files_to_keep=10
 
 # Iterate through each channel folder
@@ -12,7 +12,7 @@ for channel_folder in "$root_directory"/*; do
         video_files=()
         while IFS= read -r -d '' file; do
             video_files+=("$file")
-        done < <(find "$channel_folder" -maxdepth 1 -name "*.mkv" -print0 | sort -z)
+        done < <(find "$channel_folder" -maxdepth 1 -name "*.mp4" -print0 | sort -z)
 
         # Calculate the number of files to delete
         num_files_to_delete=$(( ${#video_files[@]} - num_files_to_keep ))

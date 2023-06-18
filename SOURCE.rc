@@ -1,7 +1,18 @@
 #! /bin/bash
 ## ETJAKEOC Youtube Downloader *sh.rc file. Source this in your user .*rc file to have quick access to the program.
-yts='~/git/YT-DLS/' # Sets Youtube script directory, scripts live.
 
-alias YTdl=$yts'FETCH.sh'
-alias YTdl1=$yts'FETCH.one.sh'
+yts='/STORAGE/YT-DLS/' # Sets Youtube script directory, scripts live.
+yt='/STORAGE/YOUTUBE' # Where the YouTube main directory is.
+
+emb="--embed-metadata --embed-thumbnail --embed-subs --embed-chapters"
+qual="-f mp4"
+down="--downloader aria2c"
+spon="--sponsorblock-remove sponsor"
+play="--no-playlist --playlist-end 1"
+
+alias dlp_yt="yt-dlp $emb $qual $down $spon $play"
+alias YTU=$yts'FETCH.sh'
+alias YTU1=$yts'FETCH.one.sh'
+alias YTU2=$yts'FETCH.one.sh'
 alias covYT=$yts'COV.sh'
+alias fix_yt_perms=$yts'PERMS.sh'

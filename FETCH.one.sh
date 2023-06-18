@@ -2,17 +2,21 @@
 ## ETJAKEOC YouTube Downloader Script
 
 ## Set PATH variable, so yt-dlp knows where to find phantomJS, if installed.
-PATH=/usr/bin:/usr/sbin:usr/local/bin:usr/local/sbin:$PATH
+PATH=/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:$PATH
 
 ## Set YouTube download directory and 'yt-dlp' flags.
 ## These flags by default will download up to 1 video, per channel, at full quality HD, with chapter data appened, and sponsor segments removed.
 yt='/STORAGE/YOUTUBE' # Where the YouTube main directory is.
-emb='--embed-metadata --embed-thumbnail --embed-subs --embed-chapters'
+emb="--embed-metadata --embed-thumbnail --embed-subs --embed-chapters"
 qual="-f mp4"
-dlp_yt="yt-dlp --no-playlist --playlist-end 1 --downloader aria2c --sponsorblock-remove sponsor $qual $emb"
+down="--downloader aria2c"
+spon="--sponsorblock-remove sponsor"
+play="--no-playlist --playlist-end 1"
+dlp_yt="yt-dlp $emb $qual $down $spon $play"
 # Variable to run in place of 'yt-dlp' in script, applying the 'qual' flags we defined up above.
 
-cleanup='rm -f *.temp.* *.json *.meta .webp' # This variable makes cleanup occur after downloading.
+cleanup="rm -f *.temp.* *.json *.meta .webp"
+# This variable makes cleanup occur after downloading.
 
 ## Change into the YouTube directory, and begin our log, starting with when the command first executed.
 ## We nuke the old log, and rewrite it from scratch from this point, then append at the end of the script.
@@ -44,6 +48,12 @@ wait
 cd $yt/CM/ && $dlp_yt https://www.youtube.com/@CleetusM/videos && $cleanup &\
 
 cd $yt/DT/ && $dlp_yt https://www.youtube.com/c/DistroTube/videos && $cleanup &\
+
+wait
+
+cd $yt/EI/ && $dlp_yt https://www.youtube.com/@ExtractionsAndIre/videos && $cleanup &\
+
+cd $yt/EF/ && $dlp_yt https://www.youtube.com/@ExplosionsAndFire/videos && $cleanup &\
 
 wait
 
@@ -94,6 +104,8 @@ cd $yt/RCE/ && $dlp_yt https://www.youtube.com/c/RealCivilEngineerGaming/videos 
 cd $yt/RMS/ && $dlp_yt https://www.youtube.com/c/RobertMurraySmith/videos && $cleanup &\
 
 wait
+
+cd $yt/SW/ && $dlp_yt https://www.youtube.com/c/@silentwisperer/videos && $cleanup &\
 
 cd $yt/TC/ && $dlp_yt https://www.youtube.com/c/@TechnologyConnections/videos && $cleanup &\
 

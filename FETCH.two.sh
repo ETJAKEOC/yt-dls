@@ -5,13 +5,13 @@
 PATH=/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:$PATH
 
 ## Set YouTube download directory and 'yt-dlp' flags.
-## These flags by default will download up to 10 videos, per channel, at full quality HD, with chapter data appened, and sponsor segments removed.
+## These flags by default will download up to 2 videos, per channel, at full quality HD, with chapter data appened, and sponsor segments removed.
 yt='/STORAGE/YOUTUBE' # Where the YouTube main directory is.
 emb="--embed-metadata --embed-thumbnail --embed-subs --embed-chapters"
 qual="-f mp4"
 down="--downloader aria2c"
 spon="--sponsorblock-remove sponsor"
-play="--no-playlist --playlist-end 10"
+play="--no-playlist --playlist-end 1"
 dlp_yt="yt-dlp $emb $qual $down $spon $play"
 # Variable to run in place of 'yt-dlp' in script, applying the 'qual' flags we defined up above.
 
