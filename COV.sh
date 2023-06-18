@@ -1,7 +1,7 @@
 #! /bin/bash
 ## ETJAKEOC YouTube Downloader Script - Clean Old Videos section
 
-root_directory="/STORAGE/YOUTUBE/"
+root_directory="/STORAGE/MEDIA/YOUTUBE/"
 num_files_to_keep=10
 
 # Iterate through each channel folder
