@@ -109,8 +109,6 @@ cd $yt/SW/ && $dlp_yt https://www.youtube.com/c/@silentwisperer/videos && $clean
 
 cd $yt/TC/ && $dlp_yt https://www.youtube.com/c/@TechnologyConnections/videos && $cleanup &\
 
-cd $yt/TAL/ && $dlp_yt https://www.youtube.com/c/@TheActionLab/videos && $cleanup &\
-
 wait
 
 cd $yt/Tech\ Ingredients/ && $dlp_yt https://www.youtube.com/c/TechIngredients/videos && $cleanup &\
