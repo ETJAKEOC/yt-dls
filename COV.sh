@@ -1,31 +1,26 @@
-#! /bin/bash
-## ETJAKEOC YouTube Downloader Script - Clean Old Videos section
+#!/bin/bash
+# ETJAKEOC YouTube cleanup script.
+# Generated with the assistance of an AI language model (ChatGPT by OpenAI).
 
-root_directory="/STORAGE/MEDIA/YOUTUBE/"
-num_files_to_keep=10
+# Define the path to the YouTube directory
+yt_dir="/STORAGE/MEDIA/YOUTUBE"
 
-# Iterate through each channel folder
-for channel_folder in "$root_directory"/*; do
-    # Check if it's a directory
-    if [ -d "$channel_folder" ]; then
-        # Get the list of video files in the channel folder
-        video_files=()
-        while IFS= read -r -d '' file; do
-            video_files+=("$file")
-        done < <(find "$channel_folder" -maxdepth 1 -name "*.mp4" -print0 | sort -z)
+# Loop through each channel directory
+for channel in "$yt_dir"/*; do
+    if [[ -d "$channel" ]]; then
+        # Get the list of video files in the channel directory
+        videos=("$channel"/*.mp4)
 
-        # Calculate the number of files to delete
-        num_files_to_delete=$(( ${#video_files[@]} - num_files_to_keep ))
+        # Sort the video files by modification time in descending order
+        IFS=$'\n' videos_sorted=($(ls -t "${videos[@]}"))
 
-        # Delete the oldest files if necessary
-        if [ $num_files_to_delete -gt 0 ]; then
-            files_to_delete=("${video_files[@]:0:num_files_to_delete}")
-            for file_path in "${files_to_delete[@]}"; do
-                rm "$file_path"
-                echo "Deleted file: $file_path"
-            done
-        fi
+        # Determine the number of videos to keep
+        keep_count=10
+
+        # Remove excess videos beyond the keep count
+        for (( i=keep_count; i<${#videos_sorted[@]}; i++ )); do
+            rm "${videos_sorted[$i]}"
+            echo "Deleted: ${videos_sorted[$i]}"
+        done
     fi
 done
-
-echo "Cleanup completed."
