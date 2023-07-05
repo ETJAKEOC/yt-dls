@@ -8,7 +8,7 @@ PATH=/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:$PATH
 ## These flags by default will download up to 10 videos, per channel, at full quality HD, with chapter data appened, and sponsor segments removed.
 yt='/STORAGE/MEDIA/YOUTUBE' # Where the YouTube main directory is.
 emb="--embed-metadata --embed-thumbnail --embed-subs --embed-chapters"
-qual="-f mp4"
+qual="-f mp4 -S +res:1080,+codec:h264:opus"
 down="--downloader aria2c"
 spon="--sponsorblock-remove sponsor"
 play="--no-playlist --playlist-end 10"
