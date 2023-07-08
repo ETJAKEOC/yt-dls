@@ -5,7 +5,7 @@ yts='/STORAGE/GIT/YT-DLS/' # Sets Youtube script directory, scripts live.
 yt='/STORAGE/MEDIA/YOUTUBE' # Where the YouTube main directory is.
 
 emb="--embed-metadata --embed-thumbnail --embed-subs --embed-chapters"
-qual="-f mp4 -S +res:1080,+codec:h264:opus"
+qual="-S +res:1080,+codec:h264:opus"
 down="--downloader aria2c"
 spon="--sponsorblock-remove sponsor"
 dlp_yt="yt-dlp $emb $qual $down $spon"
