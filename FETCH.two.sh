@@ -69,11 +69,11 @@ wait
 
 cd $yt/GSP/ && $dlp_yt https://www.youtube.com/c/GrayStillPlays/videos && $cleanup &\
 
-cd $yt/Great\ Scott/ && $dlp_yt https://www.youtube.com/c/greatscottlab/videos && $cleanup &\
+# cd $yt/Great\ Scott/ && $dlp_yt https://www.youtube.com/c/greatscottlab/videos && $cleanup &\
+
+# ^^ # Channel above removed as it is reuploading the same video over 4 times, this makes it spam and it has been reported to youtube.
 
 wait
-
-cd $yt/IGP/ && $dlp_yt https://www.youtube.com/@IGP/videos && $cleanup &\
 
 cd $yt/KH/ && $dlp_yt https://www.youtube.com/@kylehill/videos && $cleanup &\
 
