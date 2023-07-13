@@ -2,7 +2,6 @@
 ## Reuploaded/duplicate videos cleanup script for ETJAKEOC youtube downloader.
 ## Generated using ChatGPT 3.5-Turbo.
 
-
 # Set the root directory where YouTube videos are stored
 root_dir="/STORAGE/MEDIA/YOUTUBE"
 
@@ -18,7 +17,7 @@ extract_url() {
 # Loop through all subdirectories in the root directory
 for dir in "$root_dir"/*; do
   if [[ -d "$dir" ]]; then
-    # Array to store video URLs and their corresponding file names
+    # Associative array to store video URLs and the corresponding file names
     declare -A video_urls
 
     # Loop through all files in the current directory
@@ -31,11 +30,13 @@ for dir in "$root_dir"/*; do
         if [[ -n ${video_urls[$url]} ]]; then
           # Compare the modification times of the two files
           if [[ "$file" -ot "${video_urls[$url]}" ]]; then
-            # Remove the older file
-            rm -f "${video_urls[$url]}"
-          else
             # Remove the current file
             rm -f "$file"
+          else
+            # Remove the older file
+            rm -f "${video_urls[$url]}"
+            # Update the array with the current file
+            video_urls[$url]="$file"
           fi
         else
           # Add the URL and file name to the array
