@@ -17,9 +17,8 @@ extract_video_id() {
 # Loop through all subdirectories in the root directory
 for dir in "$root_dir"/*; do
   if [[ -d "$dir" ]]; then
-    # Array to store video IDs and the corresponding file names
-    video_ids=()
-    video_files=()
+    # Associative array to store video IDs and their corresponding modification timestamps
+    declare -A video_timestamps
 
     # Loop through all files in the current directory
     for file in "$dir"/*; do
@@ -27,25 +26,29 @@ for dir in "$root_dir"/*; do
         # Extract the video ID from the file name
         video_id=$(extract_video_id "$(basename "$file")")
 
-        # Check if the video ID already exists in the array
-        if [[ " ${video_ids[@]} " =~ " $video_id " ]]; then
-          # Find the index of the duplicate video ID
-          index=$(printf "%s\n" "${video_ids[@]}" | grep -n "$video_id" | cut -d':' -f1)
+        # Get the modification timestamp of the current file
+        timestamp=$(stat -c %Y "$file")
 
-          # Compare the modification times of the two files
-          if [[ "$file" -ot "${video_files[$index]}" ]]; then
+        # Check if the video ID already exists in the array
+        if [[ -n ${video_timestamps[$video_id]} ]]; then
+          # Get the modification timestamp of the existing file
+          existing_timestamp=${video_timestamps[$video_id]}
+
+          # Compare the modification timestamps of the two files
+          if [[ "$timestamp" -lt "$existing_timestamp" ]]; then
             # Remove the current file
             rm -f "$file"
           else
             # Remove the older file
-            rm -f "${video_files[$index]}"
-            # Update the array with the current file
-            video_files[$index]="$file"
+            rm -f "${video_files[$video_id]}"
+            # Update the array with the current file and timestamp
+            video_files[$video_id]="$file"
+            video_timestamps[$video_id]="$timestamp"
           fi
         else
-          # Add the video ID and file name to the arrays
-          video_ids+=("$video_id")
-          video_files+=("$file")
+          # Add the video ID, file name, and timestamp to the arrays
+          video_files[$video_id]="$file"
+          video_timestamps[$video_id]="$timestamp"
         fi
       fi
     done
