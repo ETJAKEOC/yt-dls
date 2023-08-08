@@ -9,7 +9,7 @@ yt_dir="/STORAGE/MEDIA/YOUTUBE"
 for channel in "$yt_dir"/*; do
     if [[ -d "$channel" ]]; then
         # Get the list of video files in the channel directory
-        videos=("$channel"/*.mp4)
+        videos=("$channel"/*.mkv)
 
         # Sort the video files by modification time in descending order
         IFS=$'\n' videos_sorted=($(ls -t "${videos[@]}"))
