@@ -1,6 +1,8 @@
 #! /bin/bash
 ## ETJAKEOC YouTube Downloader Script
 
+## SEPARATE SCRIPT TO BE RUN FOR THE PROBLEM CHANNELS THAT WOULD OOM THE SYSTEM
+
 ## Set PATH variable, so yt-dlp knows where to find phantomJS, if installed.
 PATH=/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:$PATH
 
