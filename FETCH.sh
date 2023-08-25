@@ -5,13 +5,13 @@
 PATH=/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:$PATH
 
 ## Set YouTube download directory and 'yt-dlp' flags.
-## These flags by default will download up to 10 videos, per channel, at full quality HD, with chapter data appened, and sponsor segments removed.
+## These flags by default will download up to 1 video, per channel, at full quality HD, with chapter data appened, and sponsor segments removed.
 yt='/STORAGE/MEDIA/YOUTUBE' # Where the YouTube main directory is.
 emb="--embed-metadata --embed-thumbnail --embed-subs --embed-chapters"
 qual="-S +res:1080,+codec:h264:opus"
 down="--downloader aria2c"
 spon="--sponsorblock-remove sponsor"
-play="--no-playlist --playlist-end 10"
+play="--no-playlist --playlist-end 1"
 dlp_yt="yt-dlp $emb $qual $down $spon $play"
 # Variable to run in place of 'yt-dlp' in script, applying the 'qual' flags we defined up above.
 
@@ -26,10 +26,6 @@ echo 'YouTube download script started at:' $(date) > $yt/LOG.txt
 
 ## Example provided below for reference and cloning. (Sometimes, '/c/' must be replaced with '/user/'.)
 ## cd $yt/CHANNEL_DIR/ && $dlp_yt https://www.youtube.com/c/CHANNEL_ID/videos && $cleanup
-
-cd $yt/10leej/ && $dlp_yt https://www.youtube.com/@10leej/videos && $cleanup &\
-
-wait
 
 cd $yt/Aging\ Wheels/ && $dlp_yt https://www.youtube.com/user/agingwheels/videos && $cleanup &\
 
@@ -67,13 +63,11 @@ cd $yt/EM/ && $dlp_yt https://www.youtube.com/@EvilmonkeyzDesignz/videos && $cle
 
 wait
 
-cd $yt/GSP/ && $dlp_yt https://www.youtube.com/c/GrayStillPlays/videos && $cleanup &\
+## cd $yt/GSP/ && $dlp_yt https://www.youtube.com/c/GrayStillPlays/videos && $cleanup &\
+## MULTIPLE reuploads per day, spam channel, reported to Youtube for spam.
 
-# cd $yt/Great\ Scott/ && $dlp_yt https://www.youtube.com/c/greatscottlab/videos && $cleanup &\
-
-
-# ^^^ # The above channel has reuploaded the same video over 4 times, making it spam. It has been reported to Youtube for spam.
-
+## cd $yt/Great\ Scott/ && $dlp_yt https://www.youtube.com/c/greatscottlab/videos && $cleanup &\
+##Currently OOM's my system
 wait
 
 cd $yt/KH/ && $dlp_yt https://www.youtube.com/@kylehill/videos && $cleanup &\
@@ -82,14 +76,14 @@ wait
 
 cd $yt/LR/ && $dlp_yt https://www.youtube.com/@rossmanngroup/videos && $cleanup &\
 
-cd $yt/MF/ && $dlp_yt https://www.youtube.com/c/UndecidedMF/videos && $cleanup &\
-
+## cd $yt/MF/ && $dlp_yt https://www.youtube.com/c/UndecidedMF/videos && $cleanup &\
+##Currently OOM's my system
 wait
 
 cd $yt/MJ/ && $dlp_yt https://www.youtube.com/@ThatMumboJumbo/videos && $cleanup &\
 
-cd $yt/MrBallen/ && $dlp_yt https://www.youtube.com/c/MrBallen/videos && $cleanup &\
-
+## cd $yt/MrBallen/ && $dlp_yt https://www.youtube.com/c/MrBallen/videos && $cleanup &\
+## MULTIPLE reuploads per day, spam channel, reported to Youtube for spam.
 wait
 
 cd $yt/Nexpo/ && $dlp_yt https://www.youtube.com/@Nexpo/videos && $cleanup &\
@@ -111,6 +105,8 @@ cd $yt/RCE/ && $dlp_yt https://www.youtube.com/c/RealCivilEngineerGaming/videos 
 wait
 
 cd $yt/RMS/ && $dlp_yt https://www.youtube.com/c/RobertMurraySmith/videos && $cleanup &\
+
+cd $yt/STC/ && $dlp_yt https://www.youtube.com/c/@TrekCulture/videos && $cleanup &\
 
 cd $yt/SW/ && $dlp_yt https://www.youtube.com/c/@silentwisperer/videos && $cleanup &\
 
