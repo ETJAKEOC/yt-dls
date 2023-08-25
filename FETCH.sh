@@ -1,22 +1,12 @@
 #! /bin/bash
 ## ETJAKEOC YouTube Downloader Script
-
-## Set PATH variable, so yt-dlp knows where to find phantomJS, if installed.
-PATH=/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:$PATH
-
-## Set YouTube download directory and 'yt-dlp' flags.
-## These flags by default will download up to 1 video, per channel, at full quality HD, with chapter data appened, and sponsor segments removed.
+PATH=/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:$PATH # Set PATH variable, so yt-dlp knows where to find phantomJS, if installed.
 yt='/STORAGE/MEDIA/YOUTUBE' # Where the YouTube main directory is.
-emb="--embed-metadata --embed-thumbnail --embed-subs --embed-chapters"
-qual="-S +res:1080,+codec:h264:opus"
-down="--downloader aria2c"
-spon="--sponsorblock-remove sponsor"
+yts='/STORAGE/GIT/YT-DLS' # Where the YouTube script directory is.
+source $yts/SOURCE.rc # Source the "dlp_yt" program and attach our playlist number, set below.
 play="--no-playlist --playlist-end 1"
 dlp_yt="yt-dlp $emb $qual $down $spon $play"
-# Variable to run in place of 'yt-dlp' in script, applying the 'qual' flags we defined up above.
-
-cleanup="rm -f *.temp.* *.json *.meta .webp"
-# This variable makes cleanup occur after downloading.
+cleanup="rm -f *.temp.* *.json *.meta .webp" # This variable makes cleanup occur after downloading.
 
 ## Change into the YouTube directory, and begin our log, starting with when the command first executed.
 ## We nuke the old log, and rewrite it from scratch from this point, then append at the end of the script.
@@ -24,108 +14,77 @@ echo 'YouTube download script started at:' $(date) > $yt/LOG.txt
 
 ## Change into the YouTube directory, then the channel directory, and begins downloading with our defined flags.
 
-## Example provided below for reference and cloning. (Sometimes, '/c/' must be replaced with '/user/'.)
-## cd $yt/CHANNEL_DIR/ && $dlp_yt https://www.youtube.com/c/CHANNEL_ID/videos && $cleanup
-
 cd $yt/Aging\ Wheels/ && $dlp_yt https://www.youtube.com/user/agingwheels/videos && $cleanup &\
-
 cd $yt/Big\ Clive/ && $dlp_yt https://www.youtube.com/c/Bigclive/videos && $cleanup &\
 
 wait
 
 cd $yt/BR/ && $dlp_yt https://www.youtube.com/c/BrodieRobertson/videos && $cleanup &\
-
 cd $yt/CRD/ && $dlp_yt https://www.youtube.com/c/@CathodeRayDude/videos && $cleanup &\
 
 wait
 
 cd $yt/CI/ && $dlp_yt https://www.youtube.com/c/CertifiablyIngame/videos && $cleanup &\
-
 cd $yt/CTT/ && $dlp_yt https://www.youtube.com/user/homergfunk/videos && $cleanup &\
 
 wait
 
 cd $yt/CM/ && $dlp_yt https://www.youtube.com/@CleetusM/videos && $cleanup &\
-
 cd $yt/DT/ && $dlp_yt https://www.youtube.com/c/DistroTube/videos && $cleanup &\
 
 wait
 
 cd $yt/EI/ && $dlp_yt https://www.youtube.com/@ExtractionsAndIre/videos && $cleanup &\
-
 cd $yt/EF/ && $dlp_yt https://www.youtube.com/@ExplosionsAndFire/videos && $cleanup &\
 
 wait
 
 cd $yt/EE/ && $dlp_yt https://www.youtube.com/@EngineeringExplained/videos && $cleanup &\
-
 cd $yt/EM/ && $dlp_yt https://www.youtube.com/@EvilmonkeyzDesignz/videos && $cleanup &\
 
 wait
 
-## cd $yt/GSP/ && $dlp_yt https://www.youtube.com/c/GrayStillPlays/videos && $cleanup &\
-## MULTIPLE reuploads per day, spam channel, reported to Youtube for spam.
-
-## cd $yt/Great\ Scott/ && $dlp_yt https://www.youtube.com/c/greatscottlab/videos && $cleanup &\
-##Currently OOM's my system
-wait
-
 cd $yt/KH/ && $dlp_yt https://www.youtube.com/@kylehill/videos && $cleanup &\
-
-wait
-
 cd $yt/LR/ && $dlp_yt https://www.youtube.com/@rossmanngroup/videos && $cleanup &\
 
-## cd $yt/MF/ && $dlp_yt https://www.youtube.com/c/UndecidedMF/videos && $cleanup &\
-##Currently OOM's my system
 wait
 
 cd $yt/MJ/ && $dlp_yt https://www.youtube.com/@ThatMumboJumbo/videos && $cleanup &\
-
-## cd $yt/MrBallen/ && $dlp_yt https://www.youtube.com/c/MrBallen/videos && $cleanup &\
-## MULTIPLE reuploads per day, spam channel, reported to Youtube for spam.
-wait
-
 cd $yt/Nexpo/ && $dlp_yt https://www.youtube.com/@Nexpo/videos && $cleanup &\
 
-cd $yt/PBSST/ && $dlp_yt https://www.youtube.com/@pbsspacetime/videos && $cleanup &\
-
 wait
 
+cd $yt/PBSST/ && $dlp_yt https://www.youtube.com/@pbsspacetime/videos && $cleanup &\
 cd $yt/PE/ && $dlp_yt https://www.youtube.com/c/@PracticalEngineeringChannel/videos && $cleanup &\
 
-cd $yt/Qxir/ && $dlp_yt https://www.youtube.com/c/QxirYT/videos && $cleanup &\
-
 wait
 
+cd $yt/Qxir/ && $dlp_yt https://www.youtube.com/c/QxirYT/videos && $cleanup &\
 cd $yt/RB/ && $dlp_yt https://www.youtube.com/@RetroBytesUK/videos && $cleanup &\
 
+wait
+
 cd $yt/RCE/ && $dlp_yt https://www.youtube.com/c/RealCivilEngineerGaming/videos && $cleanup &\
+cd $yt/RMS/ && $dlp_yt https://www.youtube.com/c/RobertMurraySmith/videos && $cleanup &\
 
 wait
 
-cd $yt/RMS/ && $dlp_yt https://www.youtube.com/c/RobertMurraySmith/videos && $cleanup &\
-
 cd $yt/STC/ && $dlp_yt https://www.youtube.com/c/@TrekCulture/videos && $cleanup &\
-
 cd $yt/SW/ && $dlp_yt https://www.youtube.com/c/@silentwisperer/videos && $cleanup &\
 
 wait
 
 cd $yt/SZS/ && $dlp_yt https://www.youtube.com/c/@SubjectZeroScience/videos && $cleanup &\
-
 cd $yt/TC/ && $dlp_yt https://www.youtube.com/c/@TechnologyConnections/videos && $cleanup &\
 
 wait
 
 cd $yt/Tech\ Ingredients/ && $dlp_yt https://www.youtube.com/c/TechIngredients/videos && $cleanup &\
-
 cd $yt/TLC/ && $dlp_yt https://www.youtube.com/c/TheLinuxCast/videos && $cleanup &\
 
 wait
 
 cd $yt/TLE/ && $dlp_yt https://www.youtube.com/c/TheLinuxExperiment/videos && $cleanup &\
-
 cd $yt/TS/ && $dlp_yt https://www.youtube.com/c/@TomScottGo/videos && $cleanup
 
 wait
