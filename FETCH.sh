@@ -29,7 +29,6 @@ cd $yt/CTT/ && $dlp_yt https://www.youtube.com/user/homergfunk/videos && $cleanu
 
 wait
 
-cd $yt/CM/ && $dlp_yt https://www.youtube.com/@CleetusM/videos && $cleanup &\
 cd $yt/DT/ && $dlp_yt https://www.youtube.com/c/DistroTube/videos && $cleanup &\
 
 wait
