@@ -88,6 +88,10 @@ cd $yt/TS/ && $dlp_yt https://www.youtube.com/c/@TomScottGo/videos && $cleanup
 
 wait
 
+cd $yt/VCL/ && $dlp_yt https://www.youtube.com/@VANCITYVANLIFE/videos && $cleaup
+
+wait
+
 ## Change back into the main YouTube directory and echos a timestamp into a log file, telling us how long the script ran for.
 
 echo 'YouTube download script completed at:' $(date) >> $yt/LOG.txt
