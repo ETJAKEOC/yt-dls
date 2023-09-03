@@ -14,6 +14,10 @@ echo 'YouTube download script started at:' $(date) > $yt/LOG.txt
 
 ## Change into the YouTube directory, then the channel directory, and begins downloading with our defined flags.
 
+cd $yt/Asianometry/ && $dlp_yt https://www.youtube.com/@Asianometry/videos && $cleanup &\
+
+wait
+
 cd $yt/Aging\ Wheels/ && $dlp_yt https://www.youtube.com/user/agingwheels/videos && $cleanup &\
 cd $yt/Big\ Clive/ && $dlp_yt https://www.youtube.com/c/Bigclive/videos && $cleanup &\
 
