@@ -15,7 +15,7 @@ for channel in "$yt_dir"/*; do
         IFS=$'\n' videos_sorted=($(ls -t "${videos[@]}"))
 
         # Determine the number of videos to keep
-        keep_count=10
+        keep_count=5
 
         # Remove excess videos beyond the keep count
         for (( i=keep_count; i<${#videos_sorted[@]}; i++ )); do
