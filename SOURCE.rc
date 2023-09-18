@@ -1,7 +1,7 @@
 #! /bin/bash
 ## ETJAKEOC Youtube Downloader *sh.rc file. Source this in your user .*rc file to have quick access to the program.
 
-yt='/STORAGE/MEDIA/YOUTUBE' # Where the YouTube main directory is.
+yt='/MEDIA/YOUTUBE' # Where the YouTube main directory is.
 yts='/STORAGE/GIT/YT-DLS' # Where the YouTube script directory is.
 
 emb="--embed-metadata --embed-thumbnail --embed-subs --embed-chapters"
