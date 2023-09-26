@@ -84,16 +84,17 @@ cd $yt/TC/ && $dlp_yt https://www.youtube.com/c/@TechnologyConnections/videos &&
 
 wait
 
+cd $yt/TE/ && $dlp_yt https://www.youtube.com/c/@TechnologyConnextras/videos && $cleanup &\
 cd $yt/Tech\ Ingredients/ && $dlp_yt https://www.youtube.com/c/TechIngredients/videos && $cleanup &\
+
+wait
+
 cd $yt/TLC/ && $dlp_yt https://www.youtube.com/c/TheLinuxCast/videos && $cleanup &\
-
-wait
-
 cd $yt/TLE/ && $dlp_yt https://www.youtube.com/c/TheLinuxExperiment/videos && $cleanup &\
-cd $yt/TS/ && $dlp_yt https://www.youtube.com/c/@TomScottGo/videos && $cleanup
 
 wait
 
+cd $yt/TS/ && $dlp_yt https://www.youtube.com/c/@TomScottGo/videos && $cleanup
 cd $yt/VCL/ && $dlp_yt https://www.youtube.com/@VANCITYVANLIFE/videos && $cleaup
 
 wait
