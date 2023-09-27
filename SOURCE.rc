@@ -4,7 +4,7 @@
 yt='/MEDIA/YOUTUBE' # Where the YouTube main directory is.
 yts='/STORAGE/GIT/YT-DLS' # Where the YouTube script directory is.
 
-emb="--embed-metadata --embed-thumbnail --embed-subs --embed-chapters"
+emb="--embed-metadata --embed-thumbnail --embed-subs --embed-chapters --write-auto-sub --sub-lang en --convert-subs=srt"
 qual="-S +res:1080,+codec:h264:opus"
 down="--downloader aria2c"
 spon="--sponsorblock-remove sponsor"
