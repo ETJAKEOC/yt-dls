@@ -84,7 +84,7 @@ cd $yt/TC/ && $dlp_yt https://www.youtube.com/c/@TechnologyConnections/videos &&
 
 wait
 
-cd $yt/TE/ && $dlp_yt https://www.youtube.com/c/@TechnologyConnextras/videos && $cleanup &\
+cd $yt/TE/ && $dlp_yt https://www.youtube.com/@TechnologyConnextras/videos && $cleanup &\
 cd $yt/Tech\ Ingredients/ && $dlp_yt https://www.youtube.com/c/TechIngredients/videos && $cleanup &\
 
 wait
