@@ -2,12 +2,18 @@
 # ETJAKEOC YouTube cleanup script.
 # Generated with the assistance of an AI language model (ChatGPT by OpenAI).
 
-#Youtube directory.
+# Youtube directory.
 yt_dir='/MEDIA/YOUTUBE'
 
 # Loop through each channel directory
 for channel in "$yt_dir"/*; do
     if [[ -d "$channel" ]]; then
+        # Check if the directory name is "MINECRAFT" or "UNCAT"
+        if [[ "$(basename "$channel")" == "MINECRAFT" || "$(basename "$channel")" == "UNCAT" ]]; then
+            echo "Skipping directory: $channel"
+            continue
+        fi
+
         # Get the list of video files in the channel directory
         videos=("$channel"/*.mkv)
 
