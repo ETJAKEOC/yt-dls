@@ -1,10 +1,14 @@
 #! /bin/bash
 ## ETJAKEOC YouTube Downloader Script
 PATH=/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:$PATH # Set PATH variable, so yt-dlp knows where to find phantomJS, if installed.
-yt='/STORAGE/MEDIA/YOUTUBE' # Where the YouTube main directory is.
+yt='/MEDIA/YOUTUBE' # Where the YouTube main directory is.
 yts='/STORAGE/GIT/YT-DLS' # Where the YouTube script directory is.
-source $yts/SOURCE.rc # Source the "dlp_yt" program and attach our playlist number, set below.
-play="--no-playlist --playlist-end 1"
+#source $yts/SOURCE.rc # Source the "dlp_yt" program and attach our settings. (obsoleted, set below.)
+emb="--embed-metadata --embed-thumbnail --embed-subs --embed-chapters --sub-lang en --convert-subs=srt"
+qual="-S +res:1080,+codec:h264:opus"
+down="--downloader aria2c"
+spon="--sponsorblock-remove sponsor"
+play="--no-playlist --playlist-end 2"
 dlp_yt="yt-dlp $emb $qual $down $spon $play"
 cleanup="rm -f *.temp.* *.json *.meta .webp" # This variable makes cleanup occur after downloading.
 
@@ -100,3 +104,13 @@ wait
 ## Change back into the main YouTube directory and echos a timestamp into a log file, telling us how long the script ran for.
 
 echo 'YouTube download script completed at:' $(date) >> $yt/LOG.txt
+#! /bin/bash
+## ETJAKEOC Youtube Downloader *sh.rc file. Source this in your user .*rc file to have quick access to the program.
+
+
+dlp_yt="yt-dlp $emb $qual $down $spon"
+
+alias dlp_yt="yt-dlp $emb $qual $down $spon"
+alias YTU=$yts/'FETCH.sh'
+alias covYT=$yts/'COV.sh'
+alias fix_perms=$yts/'PERMS.sh'
