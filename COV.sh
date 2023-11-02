@@ -15,7 +15,7 @@ for channel in "$yt_dir"/*; do
         fi
 
         # Get the list of video files in the channel directory
-        videos=("$channel"/*.mkv)
+        videos=("$channel"/*.*)
 
         # Sort the video files by modification time in descending order
         IFS=$'\n' videos_sorted=($(ls -t "${videos[@]}"))
