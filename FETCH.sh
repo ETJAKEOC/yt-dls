@@ -4,13 +4,13 @@ PATH=/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:$PATH # Set PATH variable
 yt='/MEDIA/YOUTUBE' # Where the YouTube main directory is.
 yts='/STORAGE/GIT/YT-DLS' # Where the YouTube script directory is.
 #source $yts/SOURCE.rc # Source the "dlp_yt" program and attach our settings. (obsoleted, set below.)
-emb="--embed-metadata --embed-thumbnail --embed-subs --embed-chapters --sub-lang en --convert-subs=srt"
-qual="-S +res:1080,+codec:h264:opus"
-down="--downloader aria2c"
-spon="--sponsorblock-remove sponsor"
-play="--no-playlist --playlist-end 2"
-dlp_yt="yt-dlp $emb $qual $down $spon $play"
-cleanup="rm -f *.temp.* *.json *.meta .webp" # This variable makes cleanup occur after downloading.
+#emb="--embed-metadata --embed-thumbnail --embed-subs --embed-chapters --sub-lang en --convert-subs=srt"
+#qual="-S +res:1080,+codec:h264:opus"
+#down="--downloader aria2c"
+#spon="--sponsorblock-remove sponsor"
+#play="--no-playlist --playlist-end 1"
+dlp_yt="yt-dlp -S +res:1080,+codec:h264:opus --embed-metadata --embed-thumbnail --embed-subs --embed-chapters --sub-lang en --convert-subs=srt --downloader aria2c --sponsorblock-remove sponsor --no-playlist --playlist-end 1"
+cleanup="rm -f *.temp.* *.json *.meta *.webp" # This variable makes cleanup occur after downloading.
 
 ## Change into the YouTube directory, and begin our log, starting with when the command first executed.
 ## We nuke the old log, and rewrite it from scratch from this point, then append at the end of the script.
