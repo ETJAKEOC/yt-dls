@@ -3,7 +3,7 @@
 ## Generated using ChatGPT 3.5-Turbo.
 
 # Set the root directory where YouTube videos are stored
-root_dir="/STORAGE/MEDIA/YOUTUBE"
+root_dir="/MEDIA/YOUTUBE"
 
 # Function to extract the video ID from a file name
 extract_video_id() {

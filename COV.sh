@@ -8,8 +8,8 @@ yt_dir='/MEDIA/YOUTUBE'
 # Loop through each channel directory
 for channel in "$yt_dir"/*; do
     if [[ -d "$channel" ]]; then
-        # Check if the directory name is "MINECRAFT" or "UNCAT"
-        if [[ "$(basename "$channel")" == "MINECRAFT" || "$(basename "$channel")" == "UNCAT" ]]; then
+        # Check if the directory name is "MINECRAFT", "SPACE", or "UNCAT"
+        if [[ "$(basename "$channel")" == "MINECRAFT" || "$(basename "$channel")" == "UNCAT" || "$(basename "$channel")" == "SPACE" ]]; then
             echo "Skipping directory: $channel"
             continue
         fi
