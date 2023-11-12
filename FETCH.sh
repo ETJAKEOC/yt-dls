@@ -99,13 +99,3 @@ wait
 ## Change back into the main YouTube directory and echos a timestamp into a log file, telling us how long the script ran for.
 
 echo 'YouTube download script completed at:' $(date) >> $yt/LOG.txt
-#! /bin/bash
-## ETJAKEOC Youtube Downloader *sh.rc file. Source this in your user .*rc file to have quick access to the program.
-
-
-dlp_yt="yt-dlp $emb $qual $down $spon"
-
-alias dlp_yt="yt-dlp $emb $qual $down $spon"
-alias YTU=$yts/'FETCH.sh'
-alias covYT=$yts/'COV.sh'
-alias fix_perms=$yts/'PERMS.sh'
