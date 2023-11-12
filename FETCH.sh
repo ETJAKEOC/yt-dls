@@ -4,7 +4,7 @@ PATH=/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:$PATH # Set PATH variable
 yt='/MEDIA/YOUTUBE' # Where the YouTube main directory is.
 yts='/STORAGE/GIT/YT-DLS' # Where the YouTube script directory is.
 source $yts/SOURCE.rc # Source the "dlp_yt" program and attach our settings.
-play="--no-playlist --playlist-end 3"
+play="--no-playlist --playlist-end 1"
 dlp_yt="yt-dlp $emb $qual $down $spon $play"
 
 ## Change into the YouTube directory, and begin our log, starting with when the command first executed.
