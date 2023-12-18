@@ -88,12 +88,12 @@ wait
 
 cd $yt/TLC/ && $dlp_yt https://www.youtube.com/c/TheLinuxCast/videos && $cleanup &
 cd $yt/TLE/ && $dlp_yt https://www.youtube.com/c/TheLinuxExperiment/videos && $cleanup &
-cd $yt/TLT/ && $dlp_yt https://www.youtube.com/c/@thelinuxtube/videos && $cleanup &
+cd $yt/TLT/ && $dlp_yt https://www.youtube.com/@thelinuxtube/videos && $cleanup &
 
 wait
 
-cd $yt/TS/ && $dlp_yt https://www.youtube.com/c/@TomScottGo/videos && $cleanup &
-cd $yt/VCL/ && $dlp_yt https://www.youtube.com/@VANCITYVANLIFE/videos && $cleaup
+# cd $yt/TS/ && $dlp_yt https://www.youtube.com/c/@TomScottGo/videos && $cleanup &
+# cd $yt/VCL/ && $dlp_yt https://www.youtube.com/@VANCITYVANLIFE/videos && $cleaup
 
 wait
 
