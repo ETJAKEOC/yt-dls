@@ -71,6 +71,7 @@ cd $yt/RMS/ && $dlp_yt https://www.youtube.com/c/RobertMurraySmith/videos && $cl
 
 wait
 
+cd $yt/SPRUNGLES/ && $dlp_yt https://www.youtube.com/c/@sprungles4tech/videos && $cleanup &
 # cd $yt/STC/ && $dlp_yt https://www.youtube.com/c/@TrekCulture/videos && $cleanup &
 # STC removed for pushing the false truth that Lower Decks and Prodigy are canon Star Trek.
 cd $yt/SW/ && $dlp_yt https://www.youtube.com/c/@silentwisperer/videos && $cleanup &
