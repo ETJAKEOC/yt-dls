@@ -28,10 +28,6 @@ cd $yt/CRD/ && $dlp_yt https://www.youtube.com/c/@CathodeRayDude/videos && $clea
 wait
 
 cd $yt/CI/ && $dlp_yt https://www.youtube.com/c/CertifiablyIngame/videos && $cleanup &
-cd $yt/CTT/ && $dlp_yt https://www.youtube.com/user/homergfunk/videos && $cleanup &
-
-wait
-
 cd $yt/DT/ && $dlp_yt https://www.youtube.com/c/DistroTube/videos && $cleanup &
 
 wait
@@ -72,8 +68,6 @@ cd $yt/RMS/ && $dlp_yt https://www.youtube.com/c/RobertMurraySmith/videos && $cl
 wait
 
 cd $yt/SPRUNGLES/ && $dlp_yt https://www.youtube.com/c/@sprungles4tech/videos && $cleanup &
-# cd $yt/STC/ && $dlp_yt https://www.youtube.com/c/@TrekCulture/videos && $cleanup &
-# STC removed for pushing the false truth that Lower Decks and Prodigy are canon Star Trek.
 cd $yt/SW/ && $dlp_yt https://www.youtube.com/c/@silentwisperer/videos && $cleanup &
 
 wait
@@ -91,11 +85,6 @@ wait
 cd $yt/TLC/ && $dlp_yt https://www.youtube.com/c/TheLinuxCast/videos && $cleanup &
 cd $yt/TLE/ && $dlp_yt https://www.youtube.com/c/TheLinuxExperiment/videos && $cleanup &
 cd $yt/TLT/ && $dlp_yt https://www.youtube.com/@thelinuxtube/videos && $cleanup &
-
-wait
-
-# cd $yt/TS/ && $dlp_yt https://www.youtube.com/c/@TomScottGo/videos && $cleanup &
-# cd $yt/VCL/ && $dlp_yt https://www.youtube.com/@VANCITYVANLIFE/videos && $cleaup
 
 wait
 
