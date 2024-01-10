@@ -67,7 +67,7 @@ cd $yt/RMS/ && $dlp_yt https://www.youtube.com/c/RobertMurraySmith/videos && $cl
 
 wait
 
-cd $yt/SPRUNGLES/ && $dlp_yt https://www.youtube.com/c/@sprungles4tech/videos && $cleanup &
+cd $yt/SPRUNGLES/ && $dlp_yt https://www.youtube.com/@sprungles4tech/videos && $cleanup &
 cd $yt/SW/ && $dlp_yt https://www.youtube.com/c/@silentwisperer/videos && $cleanup &
 
 wait
