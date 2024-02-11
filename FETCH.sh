@@ -1,15 +1,27 @@
 #! /bin/bash
 ## ETJAKEOC YouTube Downloader Script
-PATH=/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:$PATH # Set PATH variable, so yt-dlp knows where to find phantomJS, if installed.
+
 yt='/MEDIA/YOUTUBE' # Where the YouTube main directory is.
 yts='/STORAGE/GIT/YT-DLS' # Where the YouTube script directory is.
-source $yts/SOURCE.rc # Source the "dlp_yt" program and attach our settings.
-play="--no-playlist --playlist-end 1"
-dlp_yt="yt-dlp $emb $down $spon $play $qual --postprocessor-args $format"
+source $yts/SOURCE.rc # Source the "dlp_yt" program we defined in 'SOURCE.rc'.
+
+## Echo out the flags to the user, to ensure they are being sourced.
+echo -e "\e[1;34mEchoing SOURCE.rc variables into LOG.txt:\e[0m" > $yt/LOG.txt
+echo -e "\e[0;32mcleanup:\e[0m $cleanup" >> $yt/LOG.txt
+echo -e "\e[0;32mdown:\e[0m $down" >> $yt/LOG.txt
+echo -e "\e[0;32memb:\e[0m $emb" >> $yt/LOG.txt
+echo -e "\e[0;32mformat:\e[0m $format" >> $yt/LOG.txt
+echo -e "\e[0;32mplay:\e[0m $play" >> $yt/LOG.txt
+echo -e "\e[0;32mqual:\e[0m $qual" >> $yt/LOG.txt
+echo -e "\e[0;32mspon:\e[0m $spon" >> $yt/LOG.txt
+echo -e "\e[0;32myt:\e[0m $yt" >> $yt/LOG.txt
+echo -e "\e[0;32myts:\e[0m $yts" >> $yt/LOG.txt
+echo -e "\e[0;32mdlp_yt command:\e[0m $dlp_yt" >> $yt/LOG.txt
+echo -e "\e[1;34mSOURCE.rc settings imported.\e[0m" >> $yt/LOG.txt
 
 ## Change into the YouTube directory, and begin our log, starting with when the command first executed.
 ## We nuke the old log, and rewrite it from scratch from this point, then append at the end of the script.
-echo 'YouTube download script started at:' $(date) > $yt/LOG.txt
+echo 'YouTube download script started at:' $(date) >> $yt/LOG.txt
 
 ## Change into the YouTube directory, then the channel directory, and begins downloading with our defined flags.
 

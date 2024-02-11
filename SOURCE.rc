@@ -1,18 +1,28 @@
 #! /bin/bash
-## ETJAKEOC Youtube Downloader *sh.rc file. Source this in your user .*rc file to have quick access to the program.
+## ETJAKEOC Youtube Downloader SOURCE.rc file. Source this in your user .*rc file to have quick access to the program.
+
+## We set all the variable here for 'yt-dlp' and rename the program to 'dlp_yt'.
+## This allows us to quickly and easily modify some of the most common settings that people would like to modify
+## such as embedded media (thumbnails, subtitles, metadata), quality, output format, sponsor block, how many videos to download per channel, and our downloader.
+
+## Set PATH variable, so yt-dlp knows where to find phantomJS, if installed.
+PATH=/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:$PATH
 
 yt='/MEDIA/YOUTUBE' # Where the YouTube main directory is.
 yts='/STORAGE/GIT/YT-DLS' # Where the YouTube script directory is.
 
 cleanup="rm -f {*.temp.*,*.json,*.meta,*.webp}" # This variable makes cleanup occur after downloading.
-emb="--embed-metadata --embed-thumbnail --embed-subs --embed-chapters --sub-lang en --convert-subs=srt"
-qual="-S +res:1080,+codec:h264:opus"
-format="-c:v libx264 -c:a copy -f matroska"
 down="--downloader aria2c"
-spon="--sponsorblock-remove sponsor"
-dlp_yt="yt-dlp $emb $down $spon $play $qual --postprocessor-args $format"
 
-alias dlp_yt="yt-dlp $emb $down $spon $play $qual --postprocessor-args $format"
-alias YTU=$yts/'FETCH.sh'
-alias covYT=$yts/'COV.sh'
-alias fix_perms=$yts/'PERMS.sh'
+emb="--embed-metadata --embed-thumbnail --embed-subs --embed-chapters --sub-lang en --convert-subs=srt"
+format="-c:v libx264 -c:a copy -f matroska"
+play="--no-playlist --playlist-end 1"
+qual="-S +res:1080,+codec:h264:opus"
+spon="--sponsorblock-remove sponsor"
+
+dlp_yt="yt-dlp $down $emb $qual $spon $play --postprocessor-args $format"
+
+alias dlp_yt="$dlp_yt"
+alias YTU="$yts/FETCH.sh"
+alias covYT="$yts/COV.sh"
+alias fix_perms="$yts/PERMS.sh"
