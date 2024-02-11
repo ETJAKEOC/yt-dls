@@ -2,7 +2,7 @@
 + yt=/MEDIA/YOUTUBE
 + yts=/STORAGE/GIT/YT-DLS
 + source /STORAGE/GIT/YT-DLS/SOURCE.rc
-++ PATH=/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin:/opt/hp/hp-flash/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin:/opt/hp/hp-flash/bin:/opt/depot_tools:/usr/share/steam/compatibilitytools.d/proton-ge-custom/files/bin:/opt/android-sdk/platform-tools:/home/jake/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/opt/android-sdk/platform-tools:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/opt/android-sdk/platform-tools
+++ PATH=/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin:/opt/hp/hp-flash/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin:/opt/hp/hp-flash/bin:/opt/depot_tools:/usr/share/steam/compatibilitytools.d/proton-ge-custom/files/bin:/opt/android-sdk/platform-tools:/home/jake/.local/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin:/opt/hp/hp-flash/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin:/opt/hp/hp-flash/bin:/opt/depot_tools:/usr/share/steam/compatibilitytools.d/proton-ge-custom/files/bin:/opt/android-sdk/platform-tools:/home/jake/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/opt/android-sdk/platform-tools:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/opt/android-sdk/platform-tools:/opt/android-sdk/platform-tools:/opt/android-sdk/platform-tools
 ++ yt=/MEDIA/YOUTUBE
 ++ yts=/STORAGE/GIT/YT-DLS
 ++ cleanup='rm -f {*.temp.*,*.json,*.meta,*.webp}'
@@ -12,8 +12,6 @@
 ++ play='--no-playlist --playlist-end 1'
 ++ qual='-S +res:1080,+codec:h264:opus'
 ++ spon='--sponsorblock-remove sponsor'
-++ dlp_yt='yt-dlp --downloader aria2c --embed-metadata --embed-thumbnail --embed-subs --embed-chapters --sub-lang en --convert-subs=srt -S +res:1080,+codec:h264:opus --sponsorblock-remove sponsor --no-playlist --playlist-end 1 --ppa '\''FFmpeg_o:-c:v libx264 -c:a copy -f matroska'\'''
-++ alias 'dlp_yt=yt-dlp --downloader aria2c --embed-metadata --embed-thumbnail --embed-subs --embed-chapters --sub-lang en --convert-subs=srt -S +res:1080,+codec:h264:opus --sponsorblock-remove sponsor --no-playlist --playlist-end 1 --ppa '\''FFmpeg_o:-c:v libx264 -c:a copy -f matroska'\'''
 ++ alias YTU=/STORAGE/GIT/YT-DLS/FETCH.sh
 ++ alias covYT=/STORAGE/GIT/YT-DLS/COV.sh
 ++ alias fix_perms=/STORAGE/GIT/YT-DLS/PERMS.sh
@@ -27,14 +25,114 @@
 + echo -e '\e[0;32mspon:\e[0m --sponsorblock-remove sponsor'
 + echo -e '\e[0;32myt:\e[0m /MEDIA/YOUTUBE'
 + echo -e '\e[0;32myts:\e[0m /STORAGE/GIT/YT-DLS'
-+ echo -e '\e[0;32mdlp_yt command:\e[0m yt-dlp --downloader aria2c --embed-metadata --embed-thumbnail --embed-subs --embed-chapters --sub-lang en --convert-subs=srt -S +res:1080,+codec:h264:opus --sponsorblock-remove sponsor --no-playlist --playlist-end 1 --ppa '\''FFmpeg_o:-c:v libx264 -c:a copy -f matroska'\'''
++ echo -e '\e[0;32mdlp_yt command:\e[0m '
 + echo -e '\e[1;34mSOURCE.rc settings imported.\e[0m'
 ++ date
-+ echo 'YouTube download script started at:' Sun Feb 11 14:04:09 2024
++ echo 'YouTube download script started at:' Sun Feb 11 14:13:51 2024
 + wait
 + cd /MEDIA/YOUTUBE/Asianometry/
-+ yt-dlp --downloader aria2c --embed-metadata --embed-thumbnail --embed-subs --embed-chapters --sub-lang en --convert-subs=srt -S +res:1080,+codec:h264:opus --sponsorblock-remove sponsor --no-playlist --playlist-end 1 --ppa ''\''FFmpeg_o:-c:v' libx264 -c:a copy -f 'matroska'\''' https://www.youtube.com/@Asianometry/videos
-
-Usage: yt-dlp [OPTIONS] URL [URL...]
-
-yt-dlp: error: wrong --ppa formatting; No closing quotation
++ https://www.youtube.com/@Asianometry/videos
+./FETCH.sh: line 28: https://www.youtube.com/@Asianometry/videos: No such file or directory
++ cd '/MEDIA/YOUTUBE/Aging Wheels/'
++ wait
++ https://www.youtube.com/user/agingwheels/videos
++ cd '/MEDIA/YOUTUBE/Big Clive/'
++ https://www.youtube.com/c/Bigclive/videos
+./FETCH.sh: line 32: https://www.youtube.com/user/agingwheels/videos: No such file or directory
+./FETCH.sh: line 33: https://www.youtube.com/c/Bigclive/videos: No such file or directory
++ cd /MEDIA/YOUTUBE/BR/
++ https://www.youtube.com/c/BrodieRobertson/videos
++ wait
++ cd /MEDIA/YOUTUBE/CRD/
++ https://www.youtube.com/c/@CathodeRayDude/videos
+./FETCH.sh: line 37: https://www.youtube.com/c/BrodieRobertson/videos: No such file or directory
+./FETCH.sh: line 38: https://www.youtube.com/c/@CathodeRayDude/videos: No such file or directory
++ cd /MEDIA/YOUTUBE/CI/
++ https://www.youtube.com/c/CertifiablyIngame/videos
++ wait
++ cd /MEDIA/YOUTUBE/DT/
++ https://www.youtube.com/c/DistroTube/videos
+./FETCH.sh: line 42: https://www.youtube.com/c/CertifiablyIngame/videos: No such file or directory
+./FETCH.sh: line 43: https://www.youtube.com/c/DistroTube/videos: No such file or directory
++ cd /MEDIA/YOUTUBE/EI/
++ https://www.youtube.com/@ExtractionsAndIre/videos
++ wait
++ cd /MEDIA/YOUTUBE/EF/
++ https://www.youtube.com/@ExplosionsAndFire/videos
+./FETCH.sh: line 47: https://www.youtube.com/@ExtractionsAndIre/videos: No such file or directory
+./FETCH.sh: line 48: https://www.youtube.com/@ExplosionsAndFire/videos: No such file or directory
++ cd /MEDIA/YOUTUBE/EE/
++ https://www.youtube.com/@EngineeringExplained/videos
++ wait
++ cd /MEDIA/YOUTUBE/EM/
++ https://www.youtube.com/@EvilmonkeyzDesignz/videos
+./FETCH.sh: line 52: https://www.youtube.com/@EngineeringExplained/videos: No such file or directory
+./FETCH.sh: line 53: https://www.youtube.com/@EvilmonkeyzDesignz/videos: No such file or directory
++ cd /MEDIA/YOUTUBE/LR/
++ https://www.youtube.com/@rossmanngroup/videos
++ wait
++ cd /MEDIA/YOUTUBE/MJ/
++ https://www.youtube.com/@ThatMumboJumbo/videos
+./FETCH.sh: line 57: https://www.youtube.com/@rossmanngroup/videos: No such file or directory
+./FETCH.sh: line 58: https://www.youtube.com/@ThatMumboJumbo/videos: No such file or directory
++ cd /MEDIA/YOUTUBE/MP/
++ https://www.youtube.com/@ModestPelican/videos
++ wait
++ cd /MEDIA/YOUTUBE/Nexpo/
++ https://www.youtube.com/@Nexpo/videos
+./FETCH.sh: line 62: https://www.youtube.com/@ModestPelican/videos: No such file or directory
+./FETCH.sh: line 63: https://www.youtube.com/@Nexpo/videos: No such file or directory
++ cd /MEDIA/YOUTUBE/PBSST/
++ https://www.youtube.com/@pbsspacetime/videos
++ wait
++ cd /MEDIA/YOUTUBE/PE/
++ https://www.youtube.com/c/@PracticalEngineeringChannel/videos
+./FETCH.sh: line 67: https://www.youtube.com/@pbsspacetime/videos: No such file or directory
+./FETCH.sh: line 68: https://www.youtube.com/c/@PracticalEngineeringChannel/videos: No such file or directory
++ cd /MEDIA/YOUTUBE/Qxir/
++ wait
++ https://www.youtube.com/c/QxirYT/videos
++ cd /MEDIA/YOUTUBE/RB/
++ https://www.youtube.com/@RetroBytesUK/videos
+./FETCH.sh: line 72: https://www.youtube.com/c/QxirYT/videos: No such file or directory
+./FETCH.sh: line 73: https://www.youtube.com/@RetroBytesUK/videos: No such file or directory
++ cd /MEDIA/YOUTUBE/RCE/
++ https://www.youtube.com/c/RealCivilEngineerGaming/videos
++ wait
++ cd /MEDIA/YOUTUBE/RMS/
++ https://www.youtube.com/c/RobertMurraySmith/videos
+./FETCH.sh: line 77: https://www.youtube.com/c/RealCivilEngineerGaming/videos: No such file or directory
+./FETCH.sh: line 78: https://www.youtube.com/c/RobertMurraySmith/videos: No such file or directory
++ cd /MEDIA/YOUTUBE/SPRUNGLES/
++ https://www.youtube.com/@sprungles4tech/videos
++ wait
++ cd /MEDIA/YOUTUBE/SW/
++ https://www.youtube.com/c/@silentwisperer/videos
+./FETCH.sh: line 82: https://www.youtube.com/@sprungles4tech/videos: No such file or directory
+./FETCH.sh: line 83: https://www.youtube.com/c/@silentwisperer/videos: No such file or directory
++ cd /MEDIA/YOUTUBE/SZS/
++ https://www.youtube.com/c/@SubjectZeroScience/videos
++ wait
++ cd /MEDIA/YOUTUBE/TC/
++ https://www.youtube.com/c/@TechnologyConnections/videos
+./FETCH.sh: line 87: https://www.youtube.com/c/@SubjectZeroScience/videos: No such file or directory
+./FETCH.sh: line 88: https://www.youtube.com/c/@TechnologyConnections/videos: No such file or directory
++ cd /MEDIA/YOUTUBE/TE/
++ https://www.youtube.com/@TechnologyConnextras/videos
++ wait
++ cd '/MEDIA/YOUTUBE/Tech Ingredients/'
++ https://www.youtube.com/c/TechIngredients/videos
+./FETCH.sh: line 92: https://www.youtube.com/@TechnologyConnextras/videos: No such file or directory
+./FETCH.sh: line 93: https://www.youtube.com/c/TechIngredients/videos: No such file or directory
++ cd /MEDIA/YOUTUBE/TLC/
++ https://www.youtube.com/c/TheLinuxCast/videos
++ cd /MEDIA/YOUTUBE/TLE/
++ https://www.youtube.com/c/TheLinuxExperiment/videos
++ wait
++ cd /MEDIA/YOUTUBE/TLT/
++ https://www.youtube.com/@thelinuxtube/videos
+./FETCH.sh: line 97: https://www.youtube.com/c/TheLinuxCast/videos: No such file or directory
+./FETCH.sh: line 98: https://www.youtube.com/c/TheLinuxExperiment/videos: No such file or directory
+./FETCH.sh: line 99: https://www.youtube.com/@thelinuxtube/videos: No such file or directory
+++ date
++ echo 'YouTube download script completed at:' Sun Feb 11 14:13:51 2024

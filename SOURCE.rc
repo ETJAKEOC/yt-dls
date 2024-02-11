@@ -1,7 +1,7 @@
 #! /bin/bash
 ## ETJAKEOC Youtube Downloader SOURCE.rc file. Source this in your user .*rc file to have quick access to the program.
 
-## We set all the variable here for 'yt-dlp' and rename the program to 'dlp_yt'.
+## We set all the variables here for 'yt-dlp' and rename the program to 'dlp_yt'.
 ## This allows us to quickly and easily modify some of the most common settings that people would like to modify
 ## such as embedded media (thumbnails, subtitles, metadata), quality, output format, sponsor block, how many videos to download per channel, and our downloader.
 
@@ -12,13 +12,13 @@ yt='/MEDIA/YOUTUBE' # Where the YouTube main directory is.
 yts='/STORAGE/GIT/YT-DLS' # Where the YouTube script directory is.
 
 cleanup="rm -f {*.temp.*,*.json,*.meta,*.webp}" # This variable makes cleanup occur after downloading.
-down="--downloader aria2c"
+down="--downloader aria2c" # Sets the downloader to aria2c.
 
-emb="--embed-metadata --embed-thumbnail --embed-subs --embed-chapters --sub-lang en --convert-subs=srt"
-format="'FFmpeg_o:-c:v libx264 -c:a copy -f matroska'"
-play="--no-playlist --playlist-end 1"
-qual="-S +res:1080,+codec:h264:opus"
-spon="--sponsorblock-remove sponsor"
+emb="--embed-metadata --embed-thumbnail --embed-subs --embed-chapters --sub-lang en --convert-subs=srt" # Sets embedding options for metadata, thumbnails, subtitles, and chapters.
+format="'FFmpeg_o:-c:v libx264 -c:a copy -f matroska'" # Sets the output format using FFmpeg with H.264 video codec and Matroska container format.
+play="--no-playlist --playlist-end 1" # Disables playlist downloads and sets the maximum number of videos to download per playlist.
+qual="-S +res:1080,+codec:h264:opus" # Sets the quality to 1080p with H.264 video codec and Opus audio codec.
+spon="--sponsorblock-remove sponsor" # Enables sponsor block removal.
 
 ## Generate 'dlp_yt' command.
 function dlp_yt() {
