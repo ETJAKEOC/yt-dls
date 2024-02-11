@@ -12,7 +12,7 @@ yt='/STORAGE/MEDIA/YOUTUBE' # Where the YouTube main directory is.
 yts='/STORAGE/GIT/YT-DLS' # Where the YouTube script directory is.
 source $yts/SOURCE.rc
 play="--no-playlist --playlist-end 5"
-dlp_yt="yt-dlp $emb $qual $down $spon $play"
+dlp_yt="yt-dlp $qual $down $spon $play"
 # Variable to run in place of 'yt-dlp' in script, applying the 'qual' flags we defined up above.
 
 cd $yt/Great\ Scott/ && $dlp_yt https://www.youtube.com/c/greatscottlab/videos && $cleanup &\
