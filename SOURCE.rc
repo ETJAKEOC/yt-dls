@@ -12,14 +12,14 @@ cleanup="rm -f {*.temp.*,*.json,*.meta,*.webp}" # This variable makes cleanup oc
 down="--downloader aria2c" # Sets the downloader to aria2c.
 
 emb="--embed-metadata --embed-thumbnail --embed-subs --embed-chapters --sub-lang en --convert-subs=srt" # Sets embedding options for metadata, thumbnails, subtitles, and chapters.
-format="--ppa 'FFmpeg_o:-c:v libx264 -preset:v ultrafast -tune:v film -crf 30 -maxrate 2M -bufsize 4M -c:a aac -strict experimental -f matroska *.mkv'" # Sets the output format using FFmpeg with H.264 video codec and Matroska container format.
+format="'FFmpeg_o:-c:v libx264 -preset:v ultrafast -tune:v film -crf 30 -maxrate 2M -bufsize 4M -c:a aac -strict experimental -f matroska *.mkv'" # Sets the output format using FFmpeg with H.264 video codec and Matroska container format.
 play="--no-playlist --playlist-end 1" # Disables playlist downloads and sets the maximum number of videos to download per playlist.
 qual="-S +res:1080,+codec:h264:aac" # Sets the quality to 1080p with H.264 video codec and Opus audio codec.
 spon="--sponsorblock-remove sponsor" # Enables sponsor block removal.
 
 ## Generate 'dlp_yt' command.
 function dlp_yt() {
-    yt-dlp $down $emb $qual $spon $play $format "$@"
+    yt-dlp $down $emb $qual $spon $play --ppa "$format" "$@"
 }
 
 alias YTU="$yts/FETCH.sh"
