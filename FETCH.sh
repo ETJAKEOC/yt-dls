@@ -5,7 +5,7 @@ yt='/MEDIA/YOUTUBE' # Where the YouTube main directory is.
 yts='/STORAGE/GIT/YT-DLS' # Where the YouTube script directory is.
 source $yts/SOURCE.rc # Source the "dlp_yt" program and attach our settings.
 play="--no-playlist --playlist-end 1"
-dlp_yt="yt-dlp $emb $qual $down $spon $play"
+dlp_yt="yt-dlp $emb $down $spon $play $qual --postprocessor-args $format"
 
 ## Change into the YouTube directory, and begin our log, starting with when the command first executed.
 ## We nuke the old log, and rewrite it from scratch from this point, then append at the end of the script.
