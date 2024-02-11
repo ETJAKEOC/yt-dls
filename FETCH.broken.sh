@@ -5,8 +5,7 @@
 yt='/MEDIA/YOUTUBE' # Where the YouTube main directory is.
 yts='/STORAGE/GIT/YT-DLS' # Where the YouTube script directory is.
 source $yts/SOURCE.rc # Source dlp_yt variables.
-play="--no-playlist --playlist-end 5" # Override playlist flag
 
-cd $yt/Great\ Scott/ && $dlp_yt https://www.youtube.com/c/greatscottlab/videos && $cleanup &\
+cd $yt/Great\ Scott/ && dlp_yt https://www.youtube.com/c/greatscottlab/videos && $cleanup &\
 
-cd $yt/MF/ && $dlp_yt https://www.youtube.com/c/UndecidedMF/videos && $cleanup
+cd $yt/MF/ && dlp_yt https://www.youtube.com/c/UndecidedMF/videos && $cleanup
