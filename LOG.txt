@@ -1,0 +1,13 @@
+[1;34mEchoing SOURCE.rc variables into LOG.txt:[0m
+[0;32mcleanup:[0m rm -f {*.temp.*,*.json,*.meta,*.webp}
+[0;32mdown:[0m --downloader aria2c
+[0;32memb:[0m --embed-metadata --embed-thumbnail --embed-subs --embed-chapters --sub-lang en --convert-subs=srt
+[0;32mformat:[0m -c:v libx264 -c:a copy -f matroska
+[0;32mplay:[0m --no-playlist --playlist-end 1
+[0;32mqual:[0m -S +res:1080,+codec:h264:opus
+[0;32mspon:[0m --sponsorblock-remove sponsor
+[0;32myt:[0m /MEDIA/YOUTUBE
+[0;32myts:[0m /STORAGE/GIT/YT-DLS
+[0;32mdlp_yt command:[0m yt-dlp --downloader aria2c --embed-metadata --embed-thumbnail --embed-subs --embed-chapters --sub-lang en --convert-subs=srt -S +res:1080,+codec:h264:opus --sponsorblock-remove sponsor --no-playlist --playlist-end 1 --postprocessor-args -c:v libx264 -c:a copy -f matroska
+[1;34mSOURCE.rc settings imported.[0m
+YouTube download script started at: Sun Feb 11 13:07:40 2024
