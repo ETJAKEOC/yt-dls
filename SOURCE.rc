@@ -15,7 +15,7 @@ cleanup="rm -f {*.temp.*,*.json,*.meta,*.webp}" # This variable makes cleanup oc
 down="--downloader aria2c"
 
 emb="--embed-metadata --embed-thumbnail --embed-subs --embed-chapters --sub-lang en --convert-subs=srt"
-format="FFmpeg_o:-c:v libx264 -c:a copy -f matroska"
+format="'FFmpeg_o:-c:v libx264 -c:a copy -f matroska'"
 play="--no-playlist --playlist-end 1"
 qual="-S +res:1080,+codec:h264:opus"
 spon="--sponsorblock-remove sponsor"

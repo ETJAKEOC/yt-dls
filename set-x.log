@@ -8,12 +8,12 @@
 ++ cleanup='rm -f {*.temp.*,*.json,*.meta,*.webp}'
 ++ down='--downloader aria2c'
 ++ emb='--embed-metadata --embed-thumbnail --embed-subs --embed-chapters --sub-lang en --convert-subs=srt'
-++ format='FFmpeg_o:-c:v libx264 -c:a copy -f matroska'
+++ format=''\''FFmpeg_o:-c:v libx264 -c:a copy -f matroska'\'''
 ++ play='--no-playlist --playlist-end 1'
 ++ qual='-S +res:1080,+codec:h264:opus'
 ++ spon='--sponsorblock-remove sponsor'
-++ dlp_yt='yt-dlp --downloader aria2c --embed-metadata --embed-thumbnail --embed-subs --embed-chapters --sub-lang en --convert-subs=srt -S +res:1080,+codec:h264:opus --sponsorblock-remove sponsor --no-playlist --playlist-end 1 --ppa FFmpeg_o:-c:v libx264 -c:a copy -f matroska'
-++ alias 'dlp_yt=yt-dlp --downloader aria2c --embed-metadata --embed-thumbnail --embed-subs --embed-chapters --sub-lang en --convert-subs=srt -S +res:1080,+codec:h264:opus --sponsorblock-remove sponsor --no-playlist --playlist-end 1 --ppa FFmpeg_o:-c:v libx264 -c:a copy -f matroska'
+++ dlp_yt='yt-dlp --downloader aria2c --embed-metadata --embed-thumbnail --embed-subs --embed-chapters --sub-lang en --convert-subs=srt -S +res:1080,+codec:h264:opus --sponsorblock-remove sponsor --no-playlist --playlist-end 1 --ppa '\''FFmpeg_o:-c:v libx264 -c:a copy -f matroska'\'''
+++ alias 'dlp_yt=yt-dlp --downloader aria2c --embed-metadata --embed-thumbnail --embed-subs --embed-chapters --sub-lang en --convert-subs=srt -S +res:1080,+codec:h264:opus --sponsorblock-remove sponsor --no-playlist --playlist-end 1 --ppa '\''FFmpeg_o:-c:v libx264 -c:a copy -f matroska'\'''
 ++ alias YTU=/STORAGE/GIT/YT-DLS/FETCH.sh
 ++ alias covYT=/STORAGE/GIT/YT-DLS/COV.sh
 ++ alias fix_perms=/STORAGE/GIT/YT-DLS/PERMS.sh
@@ -21,20 +21,20 @@
 + echo -e '\e[0;32mcleanup:\e[0m rm -f {*.temp.*,*.json,*.meta,*.webp}'
 + echo -e '\e[0;32mdown:\e[0m --downloader aria2c'
 + echo -e '\e[0;32memb:\e[0m --embed-metadata --embed-thumbnail --embed-subs --embed-chapters --sub-lang en --convert-subs=srt'
-+ echo -e '\e[0;32mformat:\e[0m FFmpeg_o:-c:v libx264 -c:a copy -f matroska'
++ echo -e '\e[0;32mformat:\e[0m '\''FFmpeg_o:-c:v libx264 -c:a copy -f matroska'\'''
 + echo -e '\e[0;32mplay:\e[0m --no-playlist --playlist-end 1'
 + echo -e '\e[0;32mqual:\e[0m -S +res:1080,+codec:h264:opus'
 + echo -e '\e[0;32mspon:\e[0m --sponsorblock-remove sponsor'
 + echo -e '\e[0;32myt:\e[0m /MEDIA/YOUTUBE'
 + echo -e '\e[0;32myts:\e[0m /STORAGE/GIT/YT-DLS'
-+ echo -e '\e[0;32mdlp_yt command:\e[0m yt-dlp --downloader aria2c --embed-metadata --embed-thumbnail --embed-subs --embed-chapters --sub-lang en --convert-subs=srt -S +res:1080,+codec:h264:opus --sponsorblock-remove sponsor --no-playlist --playlist-end 1 --ppa FFmpeg_o:-c:v libx264 -c:a copy -f matroska'
++ echo -e '\e[0;32mdlp_yt command:\e[0m yt-dlp --downloader aria2c --embed-metadata --embed-thumbnail --embed-subs --embed-chapters --sub-lang en --convert-subs=srt -S +res:1080,+codec:h264:opus --sponsorblock-remove sponsor --no-playlist --playlist-end 1 --ppa '\''FFmpeg_o:-c:v libx264 -c:a copy -f matroska'\'''
 + echo -e '\e[1;34mSOURCE.rc settings imported.\e[0m'
 ++ date
-+ echo 'YouTube download script started at:' Sun Feb 11 13:52:47 2024
++ echo 'YouTube download script started at:' Sun Feb 11 14:04:09 2024
 + wait
 + cd /MEDIA/YOUTUBE/Asianometry/
-+ yt-dlp --downloader aria2c --embed-metadata --embed-thumbnail --embed-subs --embed-chapters --sub-lang en --convert-subs=srt -S +res:1080,+codec:h264:opus --sponsorblock-remove sponsor --no-playlist --playlist-end 1 --ppa FFmpeg_o:-c:v libx264 -c:a copy -f matroska https://www.youtube.com/@Asianometry/videos
++ yt-dlp --downloader aria2c --embed-metadata --embed-thumbnail --embed-subs --embed-chapters --sub-lang en --convert-subs=srt -S +res:1080,+codec:h264:opus --sponsorblock-remove sponsor --no-playlist --playlist-end 1 --ppa ''\''FFmpeg_o:-c:v' libx264 -c:a copy -f 'matroska'\''' https://www.youtube.com/@Asianometry/videos
 
 Usage: yt-dlp [OPTIONS] URL [URL...]
 
-yt-dlp: error: no such option: -:
+yt-dlp: error: wrong --ppa formatting; No closing quotation
