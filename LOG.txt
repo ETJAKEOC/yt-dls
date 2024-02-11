@@ -10,4 +10,4 @@
 [0;32myts:[0m /STORAGE/GIT/YT-DLS
 [0;32mdlp_yt command:[0m yt-dlp --downloader aria2c --embed-metadata --embed-thumbnail --embed-subs --embed-chapters --sub-lang en --convert-subs=srt -S +res:1080,+codec:h264:opus --sponsorblock-remove sponsor --no-playlist --playlist-end 1 --postprocessor-args -c:v libx264 -c:a copy -f matroska
 [1;34mSOURCE.rc settings imported.[0m
-YouTube download script started at: Sun Feb 11 13:07:40 2024
+YouTube download script started at: Sun Feb 11 13:31:46 2024

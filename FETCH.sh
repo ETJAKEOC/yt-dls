@@ -1,6 +1,6 @@
 #! /bin/bash
 ## ETJAKEOC YouTube Downloader Script
-
+set -x
 yt='/MEDIA/YOUTUBE' # Where the YouTube main directory is.
 yts='/STORAGE/GIT/YT-DLS' # Where the YouTube script directory is.
 source $yts/SOURCE.rc # Source the "dlp_yt" program we defined in 'SOURCE.rc'.
