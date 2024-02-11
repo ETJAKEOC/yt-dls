@@ -6,13 +6,13 @@ yts='/STORAGE/GIT/YT-DLS' # Where the YouTube script directory is.
 
 cleanup="rm -f {*.temp.*,*.json,*.meta,*.webp}" # This variable makes cleanup occur after downloading.
 emb="--embed-metadata --embed-thumbnail --embed-subs --embed-chapters --sub-lang en --convert-subs=srt"
-qual="-S +res:1080,+codec:h264:opus --postprocessor-args '-c:v libx264 -c:a copy -f matroska'"
-#qual="-S +res:1080,+codec:h264:opus"
+qual="-S +res:1080,+codec:h264:opus"
+format="-c:v libx264 -c:a copy -f matroska"
 down="--downloader aria2c"
 spon="--sponsorblock-remove sponsor"
-dlp_yt="yt-dlp $emb $qual $down $spon"
+dlp_yt="yt-dlp $emb $down $spon $play $qual --postprocessor-args $format"
 
-alias dlp_yt="yt-dlp $emb $qual $down $spon"
+alias dlp_yt="yt-dlp $emb $down $spon $play $qual --postprocessor-args $format"
 alias YTU=$yts/'FETCH.sh'
 alias covYT=$yts/'COV.sh'
 alias fix_perms=$yts/'PERMS.sh'
