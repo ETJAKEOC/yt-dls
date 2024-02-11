@@ -20,9 +20,11 @@ play="--no-playlist --playlist-end 1"
 qual="-S +res:1080,+codec:h264:opus"
 spon="--sponsorblock-remove sponsor"
 
-dlp_yt="yt-dlp $down $emb $qual $spon $play --ppa $format"
+## Generate 'dlp_yt' command.
+function dlp_yt() {
+    yt-dlp $down $emb $qual $spon $play --ppa "$format" "$@"
+}
 
-alias dlp_yt="$dlp_yt"
 alias YTU="$yts/FETCH.sh"
 alias covYT="$yts/COV.sh"
 alias fix_perms="$yts/PERMS.sh"
