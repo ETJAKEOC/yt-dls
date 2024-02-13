@@ -1,6 +1,8 @@
 #! /bin/bash
 ## ETJAKEOC Youtube Downloader SOURCE.rc file. Source this in your user .*rc file to have quick access to the program.
 
+export PATH=/usr/local/bin:/usr/local/sbin:/bin:/sbin:/usr/bin:/usr/sbin:$PATH
+
 ## We set all the variables here for 'yt-dlp' and rename the program to 'dlp_yt'.
 ## This allows us to quickly and easily modify some of the most common settings that people would like to modify
 ## such as embedded media (thumbnails, subtitles, metadata), quality, output format, sponsor block, how many videos to download per channel, and our downloader.
