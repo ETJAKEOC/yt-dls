@@ -45,9 +45,11 @@ wait
 
 cd $yt/EE/ && dlp_yt https://www.youtube.com/@EngineeringExplained/videos && $cleanup &
 cd $yt/EM/ && dlp_yt https://www.youtube.com/@EvilmonkeyzDesignz/videos && $cleanup &
+cd $yt/Great\ Scott/ && dlp_yt https://www.youtube.com/c/greatscottlab/videos && $cleanup &
 cd $yt/LR/ && dlp_yt https://www.youtube.com/@rossmanngroup/videos && $cleanup &
 wait
 
+cd $yt/MF/ && dlp_yt https://www.youtube.com/c/UndecidedMF/videos && $cleanup &
 cd $yt/MJ/ && dlp_yt https://www.youtube.com/@ThatMumboJumbo/videos && $cleanup &
 cd $yt/MP/ && dlp_yt https://www.youtube.com/@ModestPelican/videos && $cleanup &
 cd $yt/Nexpo/ && dlp_yt https://www.youtube.com/@Nexpo/videos && $cleanup &
