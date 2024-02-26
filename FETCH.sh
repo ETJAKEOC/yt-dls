@@ -83,6 +83,7 @@ wait
 cd $yt/TLC/ && dlp_yt https://www.youtube.com/c/TheLinuxCast/videos && $cleanup &
 cd $yt/TLE/ && dlp_yt https://www.youtube.com/c/TheLinuxExperiment/videos && $cleanup &
 cd $yt/TLT/ && dlp_yt https://www.youtube.com/@thelinuxtube/videos && $cleanup &
+cd $yt/TTP/ && dlp_yt https://www.youtube.com/@TechTechPotato/videos && $cleanup &
 
 wait
 
