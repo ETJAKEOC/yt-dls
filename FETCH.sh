@@ -1,9 +1,31 @@
 #! /bin/bash
 ## ETJAKEOC YouTube Downloader Script
-#set -x
+
+export PATH=/usr/local/bin:/usr/local/sbin:/bin:/sbin:/usr/bin:/usr/sbin:$PATH
+
+## We set all the variables here for 'yt-dlp' and rename the program to 'dlp_yt'.
+## This allows us to quickly and easily modify some of the most common settings that people would like to modify
+## such as embedded media (thumbnails, subtitles, metadata), quality, output format, sponsor block, how many videos to download per channel, and our downloader.
+
 yt='/MEDIA/YOUTUBE' # Where the YouTube main directory is.
 yts='/STORAGE/GIT/YT-DLS' # Where the YouTube script directory is.
-source $yts/SOURCE.rc # Source the "dlp_yt" program we defined in 'SOURCE.rc'.
+
+cleanup="rm -f {*.temp.*,*.json,*.meta,*.webp}" # This variable makes cleanup occur after downloading.
+down="--downloader aria2c" # Sets the downloader to aria2c.
+emb="--embed-metadata --embed-thumbnail --embed-subs --embed-chapters --sub-lang en --convert-subs=srt" # Sets embedding options for metadata, thumbnails, subtitles, and chapters.
+# --ppa format="'FFmpeg_o:-c:v libx264 -preset:v ultrafast -tune:v film -crf 30 -maxrate 2M -bufsize 4M -c:a aac -strict experimental -f matroska *.mkv'" # Sets the output format using FFmpeg with H.264 video codec and Matroska container format.
+play="--no-playlist --playlist-end 1" # Disables playlist downloads and sets the maximum number of videos to download per playlist.
+qual="-S +res:1080,+codec:h264:aac" # Sets the quality to 1080p with H.264 video codec and Opus audio codec.
+spon="--sponsorblock-remove sponsor" # Enables sponsor block removal.
+
+## Generate 'dlp_yt' command.
+function dlp_yt() {
+    yt-dlp $down $emb $qual $spon $play "$@"
+}
+
+alias YTU="$yts/FETCH.sh"
+alias YTCOV="$yts/COV.sh"
+alias FIX_PERMS="$yts/PERMS.sh"
 
 ## Echo out the flags to the user, to ensure they are being sourced.
 echo -e "\e[1;34mEchoing SOURCE.rc variables into LOG.txt:\e[0m" > $yt/LOG.txt
