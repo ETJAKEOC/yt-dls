@@ -18,16 +18,14 @@ play="--no-playlist --playlist-end 1" # Disables playlist downloads and sets the
 qual="-S +res:1080,+codec:h264:aac" # Sets the quality to 1080p with H.264 video codec and Opus audio codec.
 spon="--sponsorblock-remove sponsor" # Enables sponsor block removal.
 
-## Generate 'dlp_yt' command.
-function dlp_yt() {
-    yt-dlp $down $emb $qual $spon $play "$@"
-}
+alias dlp_yt='yt-dlp $down $emb $qual $spon $play'
 
 alias YTU="$yts/FETCH.sh"
 alias YTCOV="$yts/COV.sh"
 alias FIX_PERMS="$yts/PERMS.sh"
 
-## Echo out the flags to the user, to ensure they are being sourced.
+## Echo out the flags to the log, to ensure they are being sourced.
+## We nuke the old log, and rewrite it from scratch from this point.
 echo -e "\e[1;34mEchoing SOURCE.rc variables into LOG.txt:\e[0m" > $yt/LOG.txt
 echo -e "\e[0;32mcleanup:\e[0m $cleanup" >> $yt/LOG.txt
 echo -e "\e[0;32mdown:\e[0m $down" >> $yt/LOG.txt
@@ -42,7 +40,6 @@ echo -e "\e[0;32mdlp_yt command:\e[0m $dlp_yt" >> $yt/LOG.txt
 echo -e "\e[1;34mSOURCE.rc settings imported.\e[0m" >> $yt/LOG.txt
 
 ## Change into the YouTube directory, and begin our log, starting with when the command first executed.
-## We nuke the old log, and rewrite it from scratch from this point, then append at the end of the script.
 echo 'YouTube download script started at:' $(date) >> $yt/LOG.txt
 
 ## Change into the YouTube directory, then the channel directory, and begins downloading with our defined flags.
@@ -69,6 +66,7 @@ cd $yt/EE/ && dlp_yt https://www.youtube.com/@EngineeringExplained/videos && $cl
 cd $yt/EM/ && dlp_yt https://www.youtube.com/@EvilmonkeyzDesignz/videos && $cleanup &
 #cd $yt/Great\ Scott/ && dlp_yt https://www.youtube.com/c/greatscottlab/videos && $cleanup &
 cd $yt/LR/ && dlp_yt https://www.youtube.com/@rossmanngroup/videos && $cleanup &
+
 wait
 
 #cd $yt/MF/ && dlp_yt https://www.youtube.com/c/UndecidedMF/videos && $cleanup &
