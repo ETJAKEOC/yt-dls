@@ -70,12 +70,10 @@ cd $yt/EE/ && $dlp_yt https://www.youtube.com/@EngineeringExplained/videos && $c
 wait
 
 cd $yt/EM/ && $dlp_yt https://www.youtube.com/@EvilmonkeyzDesignz/videos && $cleanup &
-#cd $yt/Great\ Scott/ && $dlp_yt https://www.youtube.com/c/greatscottlab/videos && $cleanup &
 cd $yt/LR/ && $dlp_yt https://www.youtube.com/@rossmanngroup/videos && $cleanup &
 
 wait
 
-#cd $yt/MF/ && $dlp_yt https://www.youtube.com/c/UndecidedMF/videos && $cleanup &
 cd $yt/MJ/ && $dlp_yt https://www.youtube.com/@ThatMumboJumbo/videos && $cleanup &
 cd $yt/MP/ && $dlp_yt https://www.youtube.com/@ModestPelican/videos && $cleanup &
 
@@ -97,27 +95,22 @@ cd $yt/RCE/ && $dlp_yt https://www.youtube.com/c/RealCivilEngineerGaming/videos 
 wait
 
 cd $yt/RMS/ && $dlp_yt https://www.youtube.com/c/RobertMurraySmith/videos && $cleanup &
-cd $yt/SPRUNGLES/ && $dlp_yt https://www.youtube.com/@sprungles4tech/videos && $cleanup &
-
-wait
-
 cd $yt/SW/ && $dlp_yt https://www.youtube.com/c/@silentwisperer/videos && $cleanup &
+
+wait
+
 cd $yt/SZS/ && $dlp_yt https://www.youtube.com/c/@SubjectZeroScience/videos && $cleanup &
-
-wait
-
 cd $yt/TC/ && $dlp_yt https://www.youtube.com/c/@TechnologyConnections/videos && $cleanup &
+
+wait
+
 cd $yt/TE/ && $dlp_yt https://www.youtube.com/@TechnologyConnextras/videos && $cleanup &
-
-wait
-
 cd $yt/Tech\ Ingredients/ && $dlp_yt https://www.youtube.com/c/TechIngredients/videos && $cleanup &
-cd $yt/TLC/ && $dlp_yt https://www.youtube.com/c/TheLinuxCast/videos && $cleanup &
 
 wait
 
+cd $yt/TLC/ && $dlp_yt https://www.youtube.com/c/TheLinuxCast/videos && $cleanup &
 cd $yt/TLE/ && $dlp_yt https://www.youtube.com/c/TheLinuxExperiment/videos && $cleanup &
-cd $yt/TLT/ && $dlp_yt https://www.youtube.com/@thelinuxtube/videos && $cleanup &
 
 wait
 
