@@ -3,7 +3,7 @@
 # Generated with the assistance of an AI language model (ChatGPT by OpenAI).
 
 # Youtube directory.
-yt_dir='/MEDIA/YOUTUBE'
+yt_dir="/STORAGE/YOUTUBE"
 
 # Loop through each channel directory
 for channel in "$yt_dir"/*; do
@@ -14,17 +14,15 @@ for channel in "$yt_dir"/*; do
             continue
         fi
 
-        # Get the list of video files in the channel directory
-        videos=("$channel"/*.mkv)
-
-        # Sort the video files by modification time in descending order
-        IFS=$'\n' videos_sorted=($(ls -t "${videos[@]}"))
+        # Get the list of video files in the channel directory and sort them by modification time
+        mapfile -t videos_sorted < <(find "$channel" -maxdepth 1 -type f -name "*.mkv" -exec stat -c "%Y %n" {} + | sort -nr | cut -d ' ' -f2-)
 
         # Determine the number of videos to keep
         keep_count=5
 
         # Remove excess videos beyond the keep count
         for (( i=keep_count; i<${#videos_sorted[@]}; i++ )); do
+            # Use double quotes around file paths to handle spaces correctly
             rm "${videos_sorted[$i]}"
             echo "Deleted: ${videos_sorted[$i]}"
         done
