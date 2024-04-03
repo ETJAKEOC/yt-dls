@@ -18,7 +18,7 @@ play="--no-playlist --playlist-end 1" # Disables playlist downloads and sets the
 qual="-S +res:1080,+codec:h264:aac" # Sets the quality to 1080p with H.264 video codec and Opus audio codec.
 spon="--sponsorblock-remove sponsor" # Enables sponsor block removal.
 
-dlp_yt="yt-dlp $down $emb $qual $spon $play"
+dlp_yt="nice -n 10 yt-dlp $down $emb $qual $spon $play"
 
 alias YTU="$yts/FETCH.sh"
 alias YTCOV="$yts/COV.sh"
