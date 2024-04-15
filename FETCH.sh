@@ -7,7 +7,7 @@ export PATH=/usr/local/bin:/usr/local/sbin:/bin:/sbin:/usr/bin:/usr/sbin:$PATH
 ## This allows us to quickly and easily modify some of the most common settings that people would like to modify
 ## such as embedded media (thumbnails, subtitles, metadata), quality, output format, sponsor block, how many videos to download per channel, and our downloader.
 
-yt='/MEDIA/YOUTUBE' # Where the YouTube main directory is.
+yt='/STORAGE/YOUTUBE' # Where the YouTube main directory is.
 yts='/STORAGE/GIT/YT-DLS' # Where the YouTube script directory is.
 
 cleanup="rm -f {*.temp.*,*.json,*.meta,*.webp}" # This variable makes cleanup occur after downloading.
@@ -15,7 +15,7 @@ down="--downloader aria2c" # Sets the downloader to aria2c.
 emb="--embed-metadata --embed-thumbnail --embed-subs --embed-chapters --sub-lang en --convert-subs=srt" # Sets embedding options for metadata, thumbnails, subtitles, and chapters.
 # --ppa format="'FFmpeg_o:-c:v libx264 -preset:v ultrafast -tune:v film -crf 30 -maxrate 2M -bufsize 4M -c:a aac -strict experimental -f matroska *.mkv'" # Sets the output format using FFmpeg with H.264 video codec and Matroska container format.
 play="--no-playlist --playlist-end 1" # Disables playlist downloads and sets the maximum number of videos to download per playlist.
-qual="-S +res:1080,+codec:h264:aac" # Sets the quality to 1080p with H.264 video codec and Opus audio codec.
+qual="-S +res:1080,+codec:h264_qsv:aac" # Sets the quality to 1080p with H.264 video codec and Opus audio codec.
 spon="--sponsorblock-remove sponsor" # Enables sponsor block removal.
 
 dlp_yt="nice -n 10 yt-dlp $down $emb $qual $spon $play"
@@ -59,61 +59,57 @@ cd $yt/CI/ && $dlp_yt https://www.youtube.com/c/CertifiablyIngame/videos && $cle
 
 wait
 
-cd $yt/DT/ && $dlp_yt https://www.youtube.com/c/DistroTube/videos && $cleanup &
 cd $yt/EI/ && $dlp_yt https://www.youtube.com/@ExtractionsAndIre/videos && $cleanup &
-
-wait
-
 cd $yt/EF/ && $dlp_yt https://www.youtube.com/@ExplosionsAndFire/videos && $cleanup &
+
+wait
+
 cd $yt/EE/ && $dlp_yt https://www.youtube.com/@EngineeringExplained/videos && $cleanup &
-
-wait
-
 cd $yt/EM/ && $dlp_yt https://www.youtube.com/@EvilmonkeyzDesignz/videos && $cleanup &
+
+wait
+
 cd $yt/LR/ && $dlp_yt https://www.youtube.com/@rossmanngroup/videos && $cleanup &
-
-wait
-
 cd $yt/MJ/ && $dlp_yt https://www.youtube.com/@ThatMumboJumbo/videos && $cleanup &
+
+wait
+
 cd $yt/MP/ && $dlp_yt https://www.youtube.com/@ModestPelican/videos && $cleanup &
-
-wait
-
 cd $yt/Nexpo/ && $dlp_yt https://www.youtube.com/@Nexpo/videos && $cleanup &
+
+wait
+
 cd $yt/PBSST/ && $dlp_yt https://www.youtube.com/@pbsspacetime/videos && $cleanup &
-
-wait
-
 cd $yt/PE/ && $dlp_yt https://www.youtube.com/c/@PracticalEngineeringChannel/videos && $cleanup &
+
+wait
+
 cd $yt/Qxir/ && $dlp_yt https://www.youtube.com/c/QxirYT/videos && $cleanup &
-
-wait
-
 cd $yt/RB/ && $dlp_yt https://www.youtube.com/@RetroBytesUK/videos && $cleanup &
+
+wait
+
 cd $yt/RCE/ && $dlp_yt https://www.youtube.com/c/RealCivilEngineerGaming/videos && $cleanup &
-
-wait
-
 cd $yt/RMS/ && $dlp_yt https://www.youtube.com/c/RobertMurraySmith/videos && $cleanup &
+
+wait
+
 cd $yt/SW/ && $dlp_yt https://www.youtube.com/c/@silentwisperer/videos && $cleanup &
-
-wait
-
 cd $yt/SZS/ && $dlp_yt https://www.youtube.com/c/@SubjectZeroScience/videos && $cleanup &
+
+wait
+
 cd $yt/TC/ && $dlp_yt https://www.youtube.com/c/@TechnologyConnections/videos && $cleanup &
-
-wait
-
 cd $yt/TE/ && $dlp_yt https://www.youtube.com/@TechnologyConnextras/videos && $cleanup &
+
+wait
+
 cd $yt/Tech\ Ingredients/ && $dlp_yt https://www.youtube.com/c/TechIngredients/videos && $cleanup &
-
-wait
-
 cd $yt/TLC/ && $dlp_yt https://www.youtube.com/c/TheLinuxCast/videos && $cleanup &
-cd $yt/TLE/ && $dlp_yt https://www.youtube.com/c/TheLinuxExperiment/videos && $cleanup &
 
 wait
 
+cd $yt/TLE/ && $dlp_yt https://www.youtube.com/c/TheLinuxExperiment/videos && $cleanup &
 cd $yt/TTP/ && $dlp_yt https://www.youtube.com/@TechTechPotato/videos && $cleanup &
 
 wait
