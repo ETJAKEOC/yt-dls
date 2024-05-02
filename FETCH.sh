@@ -19,7 +19,8 @@ dlp_yt="nice -n 10 yt-dlp $down $emb $qual $spon $play"
 
 ## Echo out the flags to the log, to ensure they are being sourced.
 ## We nuke the old log, and rewrite it from scratch from this point.
-echo -e "\e[1;34mEchoing SOURCE.rc variables into LOG.txt:\e[0m" > $yt/LOG.txt
+echo 'YouTube download script started at:' $(date) > $yt/LOG.txt
+echo -e "\e[1;34mEchoing SOURCE.rc variables into LOG.txt:\e[0m" >> $yt/LOG.txt
 echo -e "\e[0;32mcleanup:\e[0m $cleanup" >> $yt/LOG.txt
 echo -e "\e[0;32mdown:\e[0m $down" >> $yt/LOG.txt
 echo -e "\e[0;32memb:\e[0m $emb" >> $yt/LOG.txt
@@ -30,7 +31,6 @@ echo -e "\e[0;32myt:\e[0m $yt" >> $yt/LOG.txt
 echo -e "\e[0;32myts:\e[0m $yts" >> $yt/LOG.txt
 echo -e "\e[0;32mdlp_yt command:\e[0m $dlp_yt" >> $yt/LOG.txt
 echo -e "\e[1;34mSOURCE.rc settings imported.\e[0m" >> $yt/LOG.txt
-echo 'YouTube download script started at:' $(date) >> $yt/LOG.txt
 
 ## Change into the YouTube directory, then the channel directory, and begins downloading with our defined flags.
 cd $yt/Asianometry/ && $dlp_yt https://www.youtube.com/@Asianometry/videos && $cleanup & wait
