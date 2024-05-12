@@ -45,7 +45,8 @@ cd $yt/EE/ && $dlp_yt https://www.youtube.com/@EngineeringExplained/videos && $c
 cd $yt/EM/ && $dlp_yt https://www.youtube.com/@EvilmonkeyzDesignz/videos && $cleanup & wait
 cd $yt/Keralis/ && $dlp_yt https://www.youtube.com/@Keralis/videos && $cleanup & wait
 cd $yt/LR/ && $dlp_yt https://www.youtube.com/@rossmanngroup/videos && $cleanup & wait
-cd $yt/MJ/ && $dlp_yt https://www.youtube.com/@ThatMumboJumbo/videos && $cleanup & wait
+# Fuck this cock sucking piece of shit MumboJumbo, I do not want videos with 800% mic gain for "giggles", I am reporting you as spam to youtube, suck my cock.
+#cd $yt/MJ/ && $dlp_yt https://www.youtube.com/@ThatMumboJumbo/videos && $cleanup & wait
 cd $yt/Nexpo/ && $dlp_yt https://www.youtube.com/@Nexpo/videos && $cleanup & wait
 cd $yt/PBSST/ && $dlp_yt https://www.youtube.com/@pbsspacetime/videos && $cleanup & wait
 cd $yt/PE/ && $dlp_yt https://www.youtube.com/c/@PracticalEngineeringChannel/videos && $cleanup & wait
