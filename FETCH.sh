@@ -13,10 +13,10 @@ alias YTU="$yts/FETCH.sh"
 alias YTCOV="$yts/COV.sh"
 alias FIX_PERMS="$yts/PERMS.sh"
 cleanup="rm -f {*.temp.*,*.json,*.meta,*.webp}" # This variable makes cleanup occur after downloading.
-down='--downloader aria2c --downloader-args "aria2c:-x 16 -j 16"' # Sets the downloader to aria2c.
+down="--downloader aria2c" # Sets the downloader to aria2c.
 emb="--embed-metadata --embed-thumbnail --embed-subs --embed-chapters --sub-lang en --convert-subs=srt" # Sets embedding options for metadata, thumbnails, subtitles, and chapters.
 play="--no-playlist --playlist-end 1" # Disables playlist downloads and sets the maximum number of videos to download per playlist.
-qual="-S +res:1080,+codec:h264_qsv:aac" # Sets the quality to 1080p with H.264 video codec and Opus audio codec.
+qual="-S +res:1080,+codec:vp9:aac" # Sets the quality to 1080p with H.264 video codec and Opus audio codec.
 spon="--sponsorblock-remove sponsor" # Enables sponsor block removal.
 dlp_yt="nice -n 10 yt-dlp $down $emb $qual $spon $play"
 
