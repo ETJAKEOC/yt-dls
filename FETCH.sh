@@ -1,16 +1,19 @@
 #! /bin/bash
 ## ETJAKEOC YouTube Downloader Script
-export PATH=/usr/local/bin:/usr/local/sbin:/bin:/sbin:/usr/bin:/usr/sbin:$PATH # Make sure that PATH is proper.
+
+export PATH=/usr/local/bin:/usr/local/sbin:/bin:/sbin:/usr/bin:/usr/sbin:$PATH # Make sure that 'PATH' is proper.
+
 ## We set all the variables here for 'yt-dlp' and rename the program to 'dlp_yt'.
 ## This allows us to quickly and easily modify some of the most common settings that people would like to modify
 ## such as embedded media (thumbnails, subtitles, metadata), quality, output format, sponsor block, how many videos to download per channel, and our downloader.
+
 yt='/STORAGE/YOUTUBE' # Where the YouTube main directory is.
 yts='/STORAGE/GIT/YT-DLS' # Where the YouTube script directory is.
 alias YTU="$yts/FETCH.sh"
 alias YTCOV="$yts/COV.sh"
 alias FIX_PERMS="$yts/PERMS.sh"
 cleanup="rm -f {*.temp.*,*.json,*.meta,*.webp}" # This variable makes cleanup occur after downloading.
-down="--downloader aria2c" # Sets the downloader to aria2c.
+down='--downloader aria2c --downloader-args "aria2c:-x 16 -j 16"' # Sets the downloader to aria2c.
 emb="--embed-metadata --embed-thumbnail --embed-subs --embed-chapters --sub-lang en --convert-subs=srt" # Sets embedding options for metadata, thumbnails, subtitles, and chapters.
 play="--no-playlist --playlist-end 1" # Disables playlist downloads and sets the maximum number of videos to download per playlist.
 qual="-S +res:1080,+codec:h264_qsv:aac" # Sets the quality to 1080p with H.264 video codec and Opus audio codec.
@@ -45,8 +48,6 @@ cd $yt/EE/ && $dlp_yt https://www.youtube.com/@EngineeringExplained/videos && $c
 cd $yt/EM/ && $dlp_yt https://www.youtube.com/@EvilmonkeyzDesignz/videos && $cleanup & wait
 cd $yt/Keralis/ && $dlp_yt https://www.youtube.com/@Keralis/videos && $cleanup & wait
 cd $yt/LR/ && $dlp_yt https://www.youtube.com/@rossmanngroup/videos && $cleanup & wait
-# Fuck this cock sucking piece of shit MumboJumbo, I do not want videos with 800% mic gain for "giggles", I am reporting you as spam to youtube, suck my cock.
-#cd $yt/MJ/ && $dlp_yt https://www.youtube.com/@ThatMumboJumbo/videos && $cleanup & wait
 cd $yt/Nexpo/ && $dlp_yt https://www.youtube.com/@Nexpo/videos && $cleanup & wait
 cd $yt/PBSST/ && $dlp_yt https://www.youtube.com/@pbsspacetime/videos && $cleanup & wait
 cd $yt/PE/ && $dlp_yt https://www.youtube.com/c/@PracticalEngineeringChannel/videos && $cleanup & wait
