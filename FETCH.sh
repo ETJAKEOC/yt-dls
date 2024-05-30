@@ -18,8 +18,9 @@ demb="-4 -r 250M --downloader aria2c --embed-metadata --embed-thumbnail --embed-
 playqual="--ignore-errors --no-overwrites --continue --no-playlist --playlist-end 5 -S +res:1080,+codec:vp9:aac"
 spon="--sponsorblock-remove sponsor"
 
+ids="$yt/IDs.db"
 aria2c="aria2c -j16 -x16"
-dlp_yt="nice -n 5 yt-dlp $demb $playqual $spon"
+dlp_yt="nice -n 5 yt-dlp $demb $playqual $spon --download-archive $ids"
 
 ## Echo out the flags to the log, to ensure they are being sourced.
 ## We nuke the old log, and rewrite it from scratch from this point.
