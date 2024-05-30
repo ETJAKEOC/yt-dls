@@ -9,27 +9,28 @@ export PATH=/usr/local/bin:/usr/local/sbin:/bin:/sbin:/usr/bin:/usr/sbin:$PATH #
 
 yt='/STORAGE/YOUTUBE' # Where the YouTube main directory is.
 yts='/STORAGE/GIT/YT-DLS' # Where the YouTube script directory is.
+
 alias YTU="$yts/FETCH.sh"
 alias YTCOV="$yts/COV.sh"
 alias FIX_PERMS="$yts/PERMS.sh"
-down="--downloader aria2c" # Sets the downloader to aria2c.
-emb="--embed-metadata --embed-thumbnail --embed-subs --embed-chapters --sub-lang en --convert-subs=srt" # Sets embedding options for metadata, thumbnails, subtitles, and chapters.
-play="--no-playlist --playlist-end 1" # Disables playlist downloads and sets the maximum number of videos to download per playlist.
-qual="-S +res:1080,+codec:vp9:aac" # Sets the quality to 1080p with H.264 video codec and Opus audio codec.
-spon="--sponsorblock-remove sponsor" # Enables sponsor block removal.
-dlp_yt="nice -n 5 yt-dlp $down $emb $qual $spon $play"
+
+demb="-4 -r 250M --downloader aria2c --embed-metadata --embed-thumbnail --embed-subs --embed-chapters --sub-lang en --convert-subs=srt"
+playqual="--ignore-errors --no-overwrites --continue --no-playlist --playlist-end 5 -S +res:1080,+codec:vp9:aac"
+spon="--sponsorblock-remove sponsor"
+
+aria2c="aria2c -j16 -x16"
+dlp_yt="nice -n 5 yt-dlp $demb $playqual $spon"
 
 ## Echo out the flags to the log, to ensure they are being sourced.
 ## We nuke the old log, and rewrite it from scratch from this point.
 echo 'YouTube download script started at:' $(date) > $yt/LOG.txt
 echo -e "\e[1;34mEchoing SOURCE.rc variables into LOG.txt:\e[0m" >> $yt/LOG.txt
-echo -e "\e[0;32mdown:\e[0m $down" >> $yt/LOG.txt
-echo -e "\e[0;32memb:\e[0m $emb" >> $yt/LOG.txt
-echo -e "\e[0;32mplay:\e[0m $play" >> $yt/LOG.txt
-echo -e "\e[0;32mqual:\e[0m $qual" >> $yt/LOG.txt
+echo -e "\e[0;32mdemb:\e[0m $demb" >> $yt/LOG.txt
+echo -e "\e[0;32mplayqual:\e[0m $playqual" >> $yt/LOG.txt
 echo -e "\e[0;32mspon:\e[0m $spon" >> $yt/LOG.txt
 echo -e "\e[0;32myt:\e[0m $yt" >> $yt/LOG.txt
 echo -e "\e[0;32myts:\e[0m $yts" >> $yt/LOG.txt
+echo -e "\e[0;32maria2c command:\e[0m $aria2c" >> $yt/LOG.txt
 echo -e "\e[0;32mdlp_yt command:\e[0m $dlp_yt" >> $yt/LOG.txt
 echo -e "\e[1;34mSOURCE.rc settings imported.\e[0m" >> $yt/LOG.txt
 
