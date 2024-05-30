@@ -14,7 +14,7 @@ alias YTU="$yts/FETCH.sh"
 alias YTCOV="$yts/COV.sh"
 alias FIX_PERMS="$yts/PERMS.sh"
 
-demb="-4 -r 250M --downloader aria2c --embed-metadata --embed-thumbnail --embed-subs --embed-chapters --sub-lang en --convert-subs=srt"
+demb="-4 -r 200M --downloader aria2c --embed-metadata --embed-thumbnail --embed-subs --embed-chapters --sub-lang en --convert-subs=srt"
 playqual="--ignore-errors --no-overwrites --continue --no-playlist --playlist-end 5 -S +res:1080,+codec:vp9:aac"
 spon="--sponsorblock-remove sponsor"
 
