@@ -26,15 +26,15 @@ echo -e "dlp_yt command: $dlp_yt" >> $yt/LOG.txt
 echo -e "SOURCE.rc settings imported." >> $yt/LOG.txt
 
 ## Change into the YouTube directory, then the channel directory, and begins downloading with our defined flags.
-cd $yt/Asianometry/ && $dlp_yt https://www.youtube.com/@Asianometry/videos &
 cd $yt/Aging\ Wheels/ && $dlp_yt https://www.youtube.com/user/agingwheels/videos &
+cd $yt/Asianometry/ && $dlp_yt https://www.youtube.com/@Asianometry/videos &
 cd $yt/Big\ Clive/ && $dlp_yt https://www.youtube.com/c/Bigclive/videos &
 cd $yt/Blitz/ && $dlp_yt https://www.youtube.com/@Blitz/videos &
-cd $yt/CRD/ && $dlp_yt https://www.youtube.com/c/@CathodeRayDude/videos &
-cd $yt/CI/ && $dlp_yt https://www.youtube.com/c/CertifiablyIngame/videos & wait
-cd $yt/EI/ && $dlp_yt https://www.youtube.com/@ExtractionsAndIre/videos &
-cd $yt/EF/ && $dlp_yt https://www.youtube.com/@ExplosionsAndFire/videos &
+cd $yt/CI/ && $dlp_yt https://www.youtube.com/c/CertifiablyIngame/videos &
+cd $yt/CRD/ && $dlp_yt https://www.youtube.com/c/@CathodeRayDude/videos & wait
 cd $yt/EE/ && $dlp_yt https://www.youtube.com/@EngineeringExplained/videos &
+cd $yt/EF/ && $dlp_yt https://www.youtube.com/@ExplosionsAndFire/videos &
+cd $yt/EI/ && $dlp_yt https://www.youtube.com/@ExtractionsAndIre/videos &
 cd $yt/LR/ && $dlp_yt https://www.youtube.com/@rossmanngroup/videos &
 cd $yt/Nexpo/ && $dlp_yt https://www.youtube.com/@Nexpo/videos &
 cd $yt/PBSST/ && $dlp_yt https://www.youtube.com/@pbsspacetime/videos & wait
