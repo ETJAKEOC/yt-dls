@@ -49,7 +49,8 @@ cd $yt/TC/ && $dlp_yt https://www.youtube.com/c/@TechnologyConnections/videos &
 cd $yt/TE/ && $dlp_yt https://www.youtube.com/@TechnologyConnextras/videos &
 cd $yt/Tech\ Ingredients/ && $dlp_yt https://www.youtube.com/c/TechIngredients/videos &
 cd $yt/TLC/ && $dlp_yt https://www.youtube.com/c/TheLinuxCast/videos &
-cd $yt/TLE/ && $dlp_yt https://www.youtube.com/c/TheLinuxExperiment/videos & wait
+cd $yt/TLE/ && $dlp_yt https://www.youtube.com/c/TheLinuxExperiment/videos &
+cd $yt/TWF/ && $dlp_yt https://www.youtube.com/@TheWhyFiles/videos & wait
 
 ## Change back into the main YouTube directory, cleanup junk files, and echos a timestamp into a log file, telling us how long the script ran for.
 cd $yt && rm -rf */{*.temp.*,*.json,*.meta,*.webp}
