@@ -8,6 +8,7 @@ export PATH=/usr/local/bin:/usr/local/sbin:/bin:/sbin:/usr/bin:/usr/sbin:$PATH #
 
 yt="/STORAGE/YOUTUBE" # Where the YouTube main directory is.
 yts="/STORAGE/GIT/YT-DLS" # Where the YouTube script directory is.
+yturl="https://www.youtube.com" # A variable designed to make the script below a little neater.
 cleanup='rm -rf ./{*.temp.*,*.json,*.meta,*.webp,*.webm,*.part}' # Delete some junk files that we no longer need.
 play="--no-playlist --playlist-end 1" # Sets playlist limits.
 spon="--sponsorblock-remove sponsor" # Set the sponsorblock options.
@@ -27,31 +28,31 @@ echo -e "dlp_yt command: $dlp_yt" >> $yt/LOG.txt
 echo -e "SOURCE.rc settings imported." >> $yt/LOG.txt
 
 ## Change into the YouTube directory, then the channel directory, and begins downloading with our defined flags.
-cd $yt/Aging\ Wheels/ && $dlp_yt https://www.youtube.com/user/agingwheels/videos && $cleanup &
-cd $yt/Asianometry/ && $dlp_yt https://www.youtube.com/@Asianometry/videos && $cleanup &
-cd $yt/Big\ Clive/ && $dlp_yt https://www.youtube.com/c/Bigclive/videos && $cleanup &
-cd $yt/Blitz/ && $dlp_yt https://www.youtube.com/@Blitz/videos && $cleanup &
-cd $yt/CI/ && $dlp_yt https://www.youtube.com/c/CertifiablyIngame/videos && $cleanup &
-cd $yt/CRD/ && $dlp_yt https://www.youtube.com/c/@CathodeRayDude/videos && $cleanup & wait
-cd $yt/EE/ && $dlp_yt https://www.youtube.com/@EngineeringExplained/videos && $cleanup &
-cd $yt/EF/ && $dlp_yt https://www.youtube.com/@ExplosionsAndFire/videos && $cleanup &
-cd $yt/EI/ && $dlp_yt https://www.youtube.com/@ExtractionsAndIre/videos && $cleanup &
-cd $yt/LR/ && $dlp_yt https://www.youtube.com/@rossmanngroup/videos && $cleanup &
-cd $yt/Nexpo/ && $dlp_yt https://www.youtube.com/@Nexpo/videos && $cleanup &
-cd $yt/PBSST/ && $dlp_yt https://www.youtube.com/@pbsspacetime/videos && $cleanup & wait
-cd $yt/PE/ && $dlp_yt https://www.youtube.com/c/@PracticalEngineeringChannel/videos && $cleanup &
-cd $yt/Qxir/ && $dlp_yt https://www.youtube.com/c/QxirYT/videos && $cleanup &
-cd $yt/RB/ && $dlp_yt https://www.youtube.com/@RetroBytesUK/videos && $cleanup &
-cd $yt/RCE/ && $dlp_yt https://www.youtube.com/c/RealCivilEngineerGaming/videos && $cleanup &
-cd $yt/RMS/ && $dlp_yt https://www.youtube.com/c/RobertMurraySmith/videos && $cleanup &
-cd $yt/SW/ && $dlp_yt https://www.youtube.com/c/@silentwisperer/videos && $cleanup & wait
-cd $yt/SZS/ && $dlp_yt https://www.youtube.com/c/@SubjectZeroScience/videos && $cleanup &
-cd $yt/TC/ && $dlp_yt https://www.youtube.com/c/@TechnologyConnections/videos && $cleanup &
-cd $yt/TE/ && $dlp_yt https://www.youtube.com/@TechnologyConnextras/videos && $cleanup &
-cd $yt/Tech\ Ingredients/ && $dlp_yt https://www.youtube.com/c/TechIngredients/videos && $cleanup &
-cd $yt/TLC/ && $dlp_yt https://www.youtube.com/c/TheLinuxCast/videos && $cleanup &
-cd $yt/TLE/ && $dlp_yt https://www.youtube.com/c/TheLinuxExperiment/videos && $cleanup &
-cd $yt/TWF/ && $dlp_yt https://www.youtube.com/@TheWhyFiles/videos && $cleanup & wait
+cd $yt/Aging\ Wheels/ && $dlp_yt $yturl/user/agingwheels/videos && $cleanup &
+cd $yt/Asianometry/ && $dlp_yt $yturl/@Asianometry/videos && $cleanup &
+cd $yt/Big\ Clive/ && $dlp_yt $yturl/c/Bigclive/videos && $cleanup &
+cd $yt/Blitz/ && $dlp_yt $yturl/@Blitz/videos && $cleanup &
+cd $yt/CI/ && $dlp_yt $yturl/c/CertifiablyIngame/videos && $cleanup &
+cd $yt/CRD/ && $dlp_yt $yturl/c/@CathodeRayDude/videos && $cleanup & wait
+cd $yt/EE/ && $dlp_yt $yturl/@EngineeringExplained/videos && $cleanup &
+cd $yt/EF/ && $dlp_yt $yturl/@ExplosionsAndFire/videos && $cleanup &
+cd $yt/EI/ && $dlp_yt $yturl/@ExtractionsAndIre/videos && $cleanup &
+cd $yt/LR/ && $dlp_yt $yturl/@rossmanngroup/videos && $cleanup &
+cd $yt/Nexpo/ && $dlp_yt $yturl/@Nexpo/videos && $cleanup &
+cd $yt/PBSST/ && $dlp_yt $yturl/@pbsspacetime/videos && $cleanup & wait
+cd $yt/PE/ && $dlp_yt $yturl/c/@PracticalEngineeringChannel/videos && $cleanup &
+cd $yt/Qxir/ && $dlp_yt $yturl/c/QxirYT/videos && $cleanup &
+cd $yt/RB/ && $dlp_yt $yturl/@RetroBytesUK/videos && $cleanup &
+cd $yt/RCE/ && $dlp_yt $yturl/c/RealCivilEngineerGaming/videos && $cleanup &
+cd $yt/RMS/ && $dlp_yt $yturl/c/RobertMurraySmith/videos && $cleanup &
+cd $yt/SW/ && $dlp_yt $yturl/c/@silentwisperer/videos && $cleanup & wait
+cd $yt/SZS/ && $dlp_yt $yturl/c/@SubjectZeroScience/videos && $cleanup &
+cd $yt/TC/ && $dlp_yt $yturl/c/@TechnologyConnections/videos && $cleanup &
+cd $yt/TE/ && $dlp_yt $yturl/@TechnologyConnextras/videos && $cleanup &
+cd $yt/Tech\ Ingredients/ && $dlp_yt $yturl/c/TechIngredients/videos && $cleanup &
+cd $yt/TLC/ && $dlp_yt $yturl/c/TheLinuxCast/videos && $cleanup &
+cd $yt/TLE/ && $dlp_yt $yturl/c/TheLinuxExperiment/videos && $cleanup &
+cd $yt/TWF/ && $dlp_yt $yturl/@TheWhyFiles/videos && $cleanup & wait
 
 ## Change back into the main YouTube directory, and echos a timestamp into a log file, telling us how long the script ran for.
 echo "YouTube download script completed at:" $(date) >> $yt/LOG.txt
