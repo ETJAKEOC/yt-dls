@@ -1,5 +1,5 @@
-sudo chown -R jake:plex /STORAGE/YOUTUBE
-sudo chmod -R u+rwx /STORAGE/YOUTUBE
-sudo chmod -R g+rwx /STORAGE/YOUTUBE
-sudo chmod -R o-rw /STORAGE/YOUTUBE
-sudo chmod -R o+x /STORAGE/YOUTUBE
+sudo chown -R jake:plex /MEDIA/YOUTUBE
+sudo chmod -R u+rwx /MEDIA/YOUTUBE
+sudo chmod -R g+rwx /MEDIA/YOUTUBE
+sudo chmod -R o-rw /MEDIA/YOUTUBE
+sudo chmod -R o+x /MEDIA/YOUTUBE

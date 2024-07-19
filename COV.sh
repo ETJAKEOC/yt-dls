@@ -3,7 +3,7 @@
 # Generated with the assistance of an AI language model (ChatGPT by OpenAI).
 
 # Youtube directory.
-yt_dir="/STORAGE/YOUTUBE"
+yt_dir="/MEDIA/YOUTUBE"
 
 # Loop through each channel directory
 for channel in "$yt_dir"/*; do
