@@ -31,13 +31,11 @@ echo -e "SOURCE.rc settings imported." >> $yt/LOG.txt
 cd $yt/Aging\ Wheels/ && $dlp_yt $yturl/user/agingwheels/videos && $cleanup &
 cd $yt/Asianometry/ && $dlp_yt $yturl/@Asianometry/videos && $cleanup &
 cd $yt/Big\ Clive/ && $dlp_yt $yturl/c/Bigclive/videos && $cleanup &
-cd $yt/Blitz/ && $dlp_yt $yturl/@Blitz/videos && $cleanup &
 cd $yt/CI/ && $dlp_yt $yturl/c/CertifiablyIngame/videos && $cleanup &
 cd $yt/CRD/ && $dlp_yt $yturl/c/@CathodeRayDude/videos && $cleanup & wait
 cd $yt/EE/ && $dlp_yt $yturl/@EngineeringExplained/videos && $cleanup &
 cd $yt/EF/ && $dlp_yt $yturl/@ExplosionsAndFire/videos && $cleanup &
 cd $yt/EI/ && $dlp_yt $yturl/@ExtractionsAndIre/videos && $cleanup &
-cd $yt/LR/ && $dlp_yt $yturl/@rossmanngroup/videos && $cleanup &
 cd $yt/Nexpo/ && $dlp_yt $yturl/@Nexpo/videos && $cleanup &
 cd $yt/PBSST/ && $dlp_yt $yturl/@pbsspacetime/videos && $cleanup & wait
 cd $yt/PE/ && $dlp_yt $yturl/c/@PracticalEngineeringChannel/videos && $cleanup &
