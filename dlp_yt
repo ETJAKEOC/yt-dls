@@ -28,7 +28,6 @@ echo -e "dlp_yt command: $dlp_yt" >> $yt/LOG.txt
 echo -e "SOURCE.rc settings imported." >> $yt/LOG.txt
 
 ## Change into the YouTube directory, then the channel directory, and begins downloading with our defined flags.
-cd $yt/Aging\ Wheels/ && $dlp_yt $yturl/user/agingwheels/videos && $cleanup &
 cd $yt/Asianometry/ && $dlp_yt $yturl/@Asianometry/videos && $cleanup &
 cd $yt/Big\ Clive/ && $dlp_yt $yturl/c/Bigclive/videos && $cleanup &
 cd $yt/CI/ && $dlp_yt $yturl/c/CertifiablyIngame/videos && $cleanup &
