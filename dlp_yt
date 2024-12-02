@@ -11,7 +11,6 @@ yts="/STORAGE/GIT/YT-DLS" # Where the YouTube script directory is.
 yturl="https://www.youtube.com" # A variable designed to make the script below a little neater.
 cleanup='rm -rf ./{*.temp.*,*.json,*.meta,*.webp,*.webm,*.part}' # Delete some junk files that we no longer need.
 play="--no-playlist --playlist-end 1" # Sets playlist limits.
-spon="--sponsorblock-remove sponsor" # Set the sponsorblock options.
 ids="$yt/IDs.db" # Where YT video IDs live.
 dlp_yt="nice -n 5 yt-dlp $play $spon --download-archive $ids" # 'dlp_yt' variable that imports all of our settings for ease of use below.
 
@@ -22,7 +21,6 @@ echo -e "Echoing SOURCE.rc variables into LOG.txt:" >> $yt/LOG.txt
 echo -e "yt: $yt" >> $yt/LOG.txt
 echo -e "yts: $yts" >> $yt/LOG.txt
 echo -e "play: $play" >> $yt/LOG.txt
-echo -e "spon: $spon" >> $yt/LOG.txt
 echo -e "ID's file: $ids" >> $yt/LOG.txt
 echo -e "dlp_yt command: $dlp_yt" >> $yt/LOG.txt
 echo -e "SOURCE.rc settings imported." >> $yt/LOG.txt
