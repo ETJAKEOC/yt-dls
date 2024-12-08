@@ -44,7 +44,6 @@ cd $yt/SZS/ && $dlp_yt $yturl/c/@SubjectZeroScience/videos && $cleanup &
 cd $yt/TC/ && $dlp_yt $yturl/c/@TechnologyConnections/videos && $cleanup &
 cd $yt/TE/ && $dlp_yt $yturl/@TechnologyConnextras/videos && $cleanup &
 cd $yt/Tech\ Ingredients/ && $dlp_yt $yturl/c/TechIngredients/videos && $cleanup &
-cd $yt/TLC/ && $dlp_yt $yturl/c/TheLinuxCast/videos && $cleanup &
 cd $yt/TLE/ && $dlp_yt $yturl/c/TheLinuxExperiment/videos && $cleanup &
 cd $yt/TWF/ && $dlp_yt $yturl/@TheWhyFiles/videos && $cleanup & wait
 
