@@ -26,27 +26,27 @@ echo -e "dlp_yt command: $dlp_yt" >> $yt/LOG.txt
 echo -e "SOURCE.rc settings imported." >> $yt/LOG.txt
 
 ## Change into the YouTube directory, then the channel directory, and begins downloading with our defined flags.
-cd $yt/Asianometry/ && $dlp_yt $yturl/@Asianometry/videos && $cleanup &
-cd $yt/Big\ Clive/ && $dlp_yt $yturl/c/Bigclive/videos && $cleanup & wait
-cd $yt/CI/ && $dlp_yt $yturl/c/CertifiablyIngame/videos && $cleanup &
-cd $yt/CRD/ && $dlp_yt $yturl/c/@CathodeRayDude/videos && $cleanup & wait
-cd $yt/EE/ && $dlp_yt $yturl/@EngineeringExplained/videos && $cleanup &
-cd $yt/EF/ && $dlp_yt $yturl/@ExplosionsAndFire/videos && $cleanup & wait
-cd $yt/EI/ && $dlp_yt $yturl/@ExtractionsAndIre/videos && $cleanup &
-cd $yt/G54/ && $dlp_yt $yturl/@Garage54ENG/videos && $cleanup & wait
-cd $yt/Nexpo/ && $dlp_yt $yturl/@Nexpo/videos && $cleanup &
-cd $yt/PBSST/ && $dlp_yt $yturl/@pbsspacetime/videos && $cleanup & wait
-cd $yt/PE/ && $dlp_yt $yturl/c/@PracticalEngineeringChannel/videos && $cleanup &
-cd $yt/Qxir/ && $dlp_yt $yturl/c/QxirYT/videos && $cleanup & wait
-cd $yt/RB/ && $dlp_yt $yturl/@RetroBytesUK/videos && $cleanup &
-cd $yt/SH/ && $dlp_yt $yturl/c/@SabineHossenfelder/videos && $cleanup & wait
-cd $yt/SW/ && $dlp_yt $yturl/c/@silentwisperer/videos && $cleanup &
-cd $yt/SZS/ && $dlp_yt $yturl/c/@SubjectZeroScience/videos && $cleanup & wait
-cd $yt/TC/ && $dlp_yt $yturl/c/@TechnologyConnections/videos && $cleanup &
-cd $yt/TE/ && $dlp_yt $yturl/@TechnologyConnextras/videos && $cleanup & wait
-cd $yt/Tech\ Ingredients/ && $dlp_yt $yturl/c/TechIngredients/videos && $cleanup &
-cd $yt/TLE/ && $dlp_yt $yturl/c/TheLinuxExperiment/videos && $cleanup & wait
-cd $yt/TWF/ && $dlp_yt $yturl/@TheWhyFiles/videos && $cleanup & wait
+cd $yt/Asianometry/ && $dlp_yt $yturl/@Asianometry/videos && $cleanup
+cd $yt/Big\ Clive/ && $dlp_yt $yturl/c/Bigclive/videos && $cleanup
+cd $yt/CI/ && $dlp_yt $yturl/c/CertifiablyIngame/videos && $cleanup
+cd $yt/CRD/ && $dlp_yt $yturl/c/@CathodeRayDude/videos && $cleanup
+cd $yt/EE/ && $dlp_yt $yturl/@EngineeringExplained/videos && $cleanup
+cd $yt/EF/ && $dlp_yt $yturl/@ExplosionsAndFire/videos && $cleanup
+cd $yt/EI/ && $dlp_yt $yturl/@ExtractionsAndIre/videos && $cleanup
+cd $yt/G54/ && $dlp_yt $yturl/@Garage54ENG/videos && $cleanup
+cd $yt/Nexpo/ && $dlp_yt $yturl/@Nexpo/videos && $cleanup
+cd $yt/PBSST/ && $dlp_yt $yturl/@pbsspacetime/videos && $cleanup
+cd $yt/PE/ && $dlp_yt $yturl/c/@PracticalEngineeringChannel/videos && $cleanup
+cd $yt/Qxir/ && $dlp_yt $yturl/c/QxirYT/videos && $cleanup
+cd $yt/RB/ && $dlp_yt $yturl/@RetroBytesUK/videos && $cleanup
+cd $yt/SH/ && $dlp_yt $yturl/c/@SabineHossenfelder/videos && $cleanup
+cd $yt/SW/ && $dlp_yt $yturl/c/@silentwisperer/videos && $cleanup
+cd $yt/SZS/ && $dlp_yt $yturl/c/@SubjectZeroScience/videos && $cleanup
+cd $yt/TC/ && $dlp_yt $yturl/c/@TechnologyConnections/videos && $cleanup
+cd $yt/TE/ && $dlp_yt $yturl/@TechnologyConnextras/videos && $cleanup
+cd $yt/Tech\ Ingredients/ && $dlp_yt $yturl/c/TechIngredients/videos && $cleanup
+cd $yt/TLE/ && $dlp_yt $yturl/c/TheLinuxExperiment/videos && $cleanup
+cd $yt/TWF/ && $dlp_yt $yturl/@TheWhyFiles/videos && $cleanup
 
 ## Change back into the main YouTube directory, and echos a timestamp into a log file, telling us how long the script ran for.
 echo "YouTube download script completed at:" $(date) >> $yt/LOG.txt
