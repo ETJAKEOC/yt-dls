@@ -42,7 +42,6 @@ cd $yt/PF/ && $dlp_yt $yturl/c/@ProjectFarm/videos && $cleanup &
 cd $yt/Qxir/ && $dlp_yt $yturl/c/QxirYT/videos && $cleanup &
 cd $yt/RB/ && $dlp_yt $yturl/@RetroBytesUK/videos && $cleanup &
 cd $yt/RCE/ && $dlp_yt $yturl/@RealCivilEngineerGaming/videos && $cleanup
-cd $yt/SEA/ && $dlp_yt $yturl/@SEA/videos && $cleanup &
 cd $yt/SH/ && $dlp_yt $yturl/c/@SabineHossenfelder/videos && $cleanup &
 cd $yt/SW/ && $dlp_yt $yturl/c/@silentwisperer/videos && $cleanup &
 cd $yt/SZS/ && $dlp_yt $yturl/c/@SubjectZeroScience/videos && $cleanup
