@@ -46,8 +46,7 @@ cd $yt/SH/ && $dlp_yt $yturl/c/@SabineHossenfelder/videos && $cleanup &
 cd $yt/SW/ && $dlp_yt $yturl/c/@silentwisperer/videos && $cleanup &
 cd $yt/SZS/ && $dlp_yt $yturl/c/@SubjectZeroScience/videos && $cleanup
 cd $yt/TC/ && $dlp_yt $yturl/c/@TechnologyConnections/videos && $cleanup &
-cd $yt/TE/ && $dlp_yt $yturl/@TechnologyConnextras/videos && $cleanup &
-cd $yt/TLE/ && $dlp_yt $yturl/c/TheLinuxExperiment/videos && $cleanup
+cd $yt/TE/ && $dlp_yt $yturl/@TechnologyConnextras/videos && $cleanup
 
 ## Longer videos broken out to the end
 cd $yt/Tech\ Ingredients/ && $dlp_yt $yturl/c/TechIngredients/videos && $cleanup
