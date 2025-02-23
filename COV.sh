@@ -18,7 +18,7 @@ for channel in "$yt_dir"/*; do
         mapfile -t videos_sorted < <(find "$channel" -maxdepth 1 -type f -name "*.mkv" -exec stat -c "%Y %n" {} + | sort -nr | cut -d ' ' -f2-)
 
         # Determine the number of videos to keep
-        keep_count=5
+        keep_count=3
 
         # Remove excess videos beyond the keep count
         for (( i=keep_count; i<${#videos_sorted[@]}; i++ )); do
