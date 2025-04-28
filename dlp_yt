@@ -35,6 +35,7 @@ cd $yt/G54/ && $dlp_yt $yturl/@Garage54ENG/videos && $cleanup &
 cd $yt/GS/ && $dlp_yt $yturl/@greatscottlab/videos && $cleanup &
 cd $yt/MB/ && $dlp_yt $yturl/@MrBallen/videos && $cleanup
 cd $yt/MegaBuilds/ && $dlp_yt $yturl/@MegaBuildsYT/videos && $cleanup &
+cd $yt/MF/ && $dlp_yt $yturl/@UndecidedMF/videos && $cleanup &
 cd $yt/Nexpo/ && $dlp_yt $yturl/@Nexpo/videos && $cleanup &
 cd $yt/PBSST/ && $dlp_yt $yturl/@pbsspacetime/videos && $cleanup &
 cd $yt/PE/ && $dlp_yt $yturl/c/@PracticalEngineeringChannel/videos && $cleanup
