@@ -4,12 +4,6 @@ sudo chmod g+rwx /MEDIA
 sudo chmod o-rw /MEDIA
 sudo chmod o+x /MEDIA
 
-sudo chown -R root:plex /MEDIA/PMS
-sudo chmod -R u+rwx /MEDIA/PMS
-sudo chmod -R g+rwx /MEDIA/PMS
-sudo chmod -R o-rw /MEDIA/PMS
-sudo chmod -R o+x /MEDIA/PMS
-
 sudo chown -R jake:plex /MEDIA/MOVIES
 sudo chmod -R u+rwx /MEDIA/MOVIES
 sudo chmod -R g+rwx /MEDIA/MOVIES

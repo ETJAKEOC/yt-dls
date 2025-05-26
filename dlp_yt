@@ -30,6 +30,7 @@ cd $yt/Asianometry/ && $dlp_yt $yturl/@Asianometry/videos && $cleanup &
 cd $yt/AW/ && $dlp_yt $yturl/@agingwheels/videos && $cleanup &
 cd $yt/Big\ Clive/ && $dlp_yt $yturl/c/Bigclive/videos && $cleanup &
 cd $yt/CI/ && $dlp_yt $yturl/c/CertifiablyIngame/videos && $cleanup
+cd $yt/DDT/ && $dlp_yt $yturl/@DawidDoesTechStuff/videos && $cleanup &
 cd $yt/EA/ && $dlp_yt $yturl/@electrarc240/videos && $cleanup &
 cd $yt/EE/ && $dlp_yt $yturl/@EngineeringExplained/videos && $cleanup &
 cd $yt/G54/ && $dlp_yt $yturl/@Garage54ENG/videos && $cleanup &
