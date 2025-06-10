@@ -17,13 +17,12 @@ dlp_yt="nice -n 5 yt-dlp $play $spon --download-archive $ids" # 'dlp_yt' variabl
 ## Echo out the flags to the log, to ensure they are being sourced.
 ## We nuke the old log, and rewrite it from scratch from this point.
 echo "YouTube download script started at:" $(date) > $yt/LOG.txt
-echo -e "Echoing SOURCE.rc variables into LOG.txt:" >> $yt/LOG.txt
+echo -e "Echoing applied variables into LOG.txt:" >> $yt/LOG.txt
 echo -e "yt: $yt" >> $yt/LOG.txt
 echo -e "yts: $yts" >> $yt/LOG.txt
 echo -e "play: $play" >> $yt/LOG.txt
 echo -e "ID's file: $ids" >> $yt/LOG.txt
 echo -e "dlp_yt command: $dlp_yt" >> $yt/LOG.txt
-echo -e "SOURCE.rc settings imported." >> $yt/LOG.txt
 
 ## Change into the YouTube directory, then the channel directory, and begins downloading with our defined flags.
 cd $yt/Asianometry/ && $dlp_yt $yturl/@Asianometry/videos && $cleanup &
