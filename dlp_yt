@@ -70,7 +70,6 @@ cd $yt/PE/ && "${dlp_yt[@]}" $yturl/c/@PracticalEngineeringChannel/videos &
 cd $yt/PF/ && "${dlp_yt[@]}" $yturl/c/@ProjectFarm/videos &
 cd $yt/Qxir/ && "${dlp_yt[@]}" $yturl/c/QxirYT/videos &
 cd $yt/RB/ && "${dlp_yt[@]}" $yturl/@RetroBytesUK/videos &
-cd $yt/RCE/ && "${dlp_yt[@]}" $yturl/@RealCivilEngineerGaming/videos &
 cd $yt/RMS/ && "${dlp_yt[@]}" $yturl/@ThinkingandTinkering/videos &
 cd $yt/SH/ && "${dlp_yt[@]}" $yturl/c/@SabineHossenfelder/videos &
 cd $yt/Scar/ && "${dlp_yt[@]}" $yturl/c/@GoodTimesWithScar/videos &&
@@ -78,7 +77,8 @@ cd $yt/SW/ && "${dlp_yt[@]}" $yturl/c/@silentwisperer/videos &&
 cd $yt/SZS/ && "${dlp_yt[@]}" $yturl/c/@SubjectZeroScience/videos &
 cd $yt/TC/ && "${dlp_yt[@]}" $yturl/c/@TechnologyConnections/videos &
 cd $yt/TE/ && "${dlp_yt[@]}" $yturl/@TechnologyConnextras/videos &
-cd $yt/TSP/ && "${dlp_yt[@]}" $yturl/@theserialport/videos &&
+cd $yt/TSP/ && "${dlp_yt[@]}" $yturl/@theserialport/videos &
+cd $yt/VZ/ && "${dlp_yt[@]}" $yturl/@coffeezillaextras/videos &&
 
 ## Longer videos broken out to the end
 cd $yt/Tech\ Ingredients/ && "${dlp_yt[@]}" $yturl/c/TechIngredients/videos &
