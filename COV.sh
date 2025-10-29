@@ -1,30 +1,41 @@
 #!/bin/bash
-# ETJAKEOC YouTube cleanup script.
-# Generated with the assistance of an AI language model (ChatGPT by OpenAI).
+# ETJAKEOC YouTube cleanup script
 
-# Youtube directory.
 yt_dir="/MEDIA/YOUTUBE"
+keep_count=3
 
-# Loop through each channel directory
 for channel in "$yt_dir"/*; do
     if [[ -d "$channel" ]]; then
-        # Check if the directory name is "MINECRAFT", "SPACE", or "UNCAT"
-        if [[ "$(basename "$channel")" == "MINECRAFT" || "$(basename "$channel")" == "UNCAT" || "$(basename "$channel")" == "SPACE" ]]; then
-            echo "Skipping directory: $channel"
+        # Skip certain directories
+        case "$(basename "$channel")" in
+            MINECRAFT|UNCAT|SPACE)
+                echo "Skipping directory: $channel"
+                continue
+                ;;
+        esac
+
+        # Get video files sorted by modification time (newest first)
+        mapfile -t videos_sorted < <(
+            find "$channel" -maxdepth 1 -type f -name "*.mkv" -printf "%T@ %p\n" | sort -nr | cut -d' ' -f2-
+        )
+
+        # If fewer than keep_count, nothing to delete
+        if (( ${#videos_sorted[@]} <= keep_count )); then
             continue
         fi
 
-        # Get the list of video files in the channel directory and sort them by modification time
-        mapfile -t videos_sorted < <(find "$channel" -maxdepth 1 -type f -name "*.mkv" -exec stat -c "%Y %n" {} + | sort -nr | cut -d ' ' -f2-)
-
-        # Determine the number of videos to keep
-        keep_count=3
-
-        # Remove excess videos beyond the keep count
+        # Delete everything older than the last keep_count videos
         for (( i=keep_count; i<${#videos_sorted[@]}; i++ )); do
-            # Use double quotes around file paths to handle spaces correctly
-            rm "${videos_sorted[$i]}"
-            echo "Deleted: ${videos_sorted[$i]}"
+            video="${videos_sorted[$i]}"
+            base="${video%.*}"  # strip extension
+
+            # Delete video + all sidecar files
+            for f in "$base".*; do
+                if [[ -f "$f" ]]; then
+                    rm "$f"
+                    echo "Deleted: $f"
+                fi
+            done
         done
     fi
 done

@@ -55,11 +55,15 @@ cd $yt/CI/ && "${dlp_yt[@]}" $yturl/c/CertifiablyIngame/videos &
 cd $yt/DDT/ && "${dlp_yt[@]}" $yturl/@DawidDoesTechStuff/videos &
 cd $yt/EA/ && "${dlp_yt[@]}" $yturl/@electrarc240/videos &
 cd $yt/EE/ && "${dlp_yt[@]}" $yturl/@EngineeringExplained/videos &&
+cd $yt/Garbage\ Time/ && "${dlp_yt[@]}" $yturl/@GarbageTime420/videos &
 cd $yt/G54/ && "${dlp_yt[@]}" $yturl/@Garage54ENG/videos &
 cd $yt/GS/ && "${dlp_yt[@]}" $yturl/@greatscottlab/videos &
 cd $yt/Knowledgia/ && "${dlp_yt[@]}" $yturl/@Knowledgia/videos &
 cd $yt/Kurzgesagt/ && "${dlp_yt[@]}" $yturl/@kurzgesagt/videos &&
-cd $yt/LR/ && "${dlp_yt[@]}" $yturl/@rossmanngroup/videos &
+# cd $yt/LR/ && "${dlp_yt[@]}" $yturl/@rossmanngroup/videos &
+# Louis Rossmann removed from ETJAKEOC's yt-dlp list on 10/29/25 due to him posting a sponsered ad on his YouTube channel.
+# Louis requested all of his followers to unsubsribe from his channel if he ever did a sponsored video.
+# I am just complying with his wishes.
 cd $yt/MB/ && "${dlp_yt[@]}" $yturl/@MrBallen/videos &
 cd $yt/MegaBuilds/ && "${dlp_yt[@]}" $yturl/@MegaBuildsYT/videos &
 cd $yt/MF/ && "${dlp_yt[@]}" $yturl/@UndecidedMF/videos &&
