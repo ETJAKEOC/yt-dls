@@ -76,7 +76,9 @@ cd $yt/Qxir/ && "${dlp_yt[@]}" $yturl/c/QxirYT/videos &
 cd $yt/RB/ && "${dlp_yt[@]}" $yturl/@RetroBytesUK/videos &
 cd $yt/RMS/ && "${dlp_yt[@]}" $yturl/@ThinkingandTinkering/videos &&
 cd $yt/SH/ && "${dlp_yt[@]}" $yturl/c/@SabineHossenfelder/videos &
+cd $yt/Steve\ Hofstetter/ && "${dlp_yt[@]}" $yturl/c/@stevehofstetter/videos &
 cd $yt/Scar/ && "${dlp_yt[@]}" $yturl/c/@GoodTimesWithScar/videos &
+cd $yt/SP/ && "${dlp_yt[@]}" $yturl/c/@styropyro/videos &
 cd $yt/SW/ && "${dlp_yt[@]}" $yturl/c/@silentwisperer/videos &
 cd $yt/SZS/ && "${dlp_yt[@]}" $yturl/c/@SubjectZeroScience/videos &&
 cd $yt/TC/ && "${dlp_yt[@]}" $yturl/c/@TechnologyConnections/videos &
