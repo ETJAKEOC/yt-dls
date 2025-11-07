@@ -56,6 +56,7 @@ cd $yt/EA/ && "${dlp_yt[@]}" $yturl/@electrarc240/videos &
 cd $yt/EE/ && "${dlp_yt[@]}" $yturl/@EngineeringExplained/videos
 cd $yt/Garbage\ Time/ && "${dlp_yt[@]}" $yturl/@GarbageTime420/videos &
 cd $yt/G54/ && "${dlp_yt[@]}" $yturl/@Garage54ENG/videos &
+cd $yt/GN/ && "${dlp_yt[@]}" $yturl/@GamersNexus/videos &
 cd $yt/GS/ && "${dlp_yt[@]}" $yturl/@greatscottlab/videos &
 cd $yt/Knowledgia/ && "${dlp_yt[@]}" $yturl/@Knowledgia/videos &
 cd $yt/Kurzgesagt/ && "${dlp_yt[@]}" $yturl/@kurzgesagt/videos &
