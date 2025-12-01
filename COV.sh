@@ -4,8 +4,8 @@
 set -euo pipefail
 
 yt_dir="/YOUTUBE"
-keep_count=3
-dry_run=true   # set to false to actually delete
+keep_count=4
+dry_run=false   # set to false to actually delete
 
 for channel in "$yt_dir"/*; do
     [[ -d "$channel" ]] || continue
