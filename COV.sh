@@ -3,7 +3,7 @@
 # Keeps only the N newest videos per channel and removes all related files.
 set -euo pipefail
 
-yt_dir="/MEDIA/YOUTUBE"
+yt_dir="/YOUTUBE"
 keep_count=3
 dry_run=true   # set to false to actually delete
 

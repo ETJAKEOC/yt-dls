@@ -10,11 +10,11 @@ sudo chmod -R g+rwx /MEDIA/MOVIES
 sudo chmod -R o-w /MEDIA/MOVIES
 sudo chmod -R o+rx /MEDIA/MOVIES
 
-sudo chown -R jake:jellyfin /MEDIA/MUSIC
-sudo chmod -R u+rwx /MEDIA/MUSIC
-sudo chmod -R g+rwx /MEDIA/MUSIC
-sudo chmod -R o-w /MEDIA/MUSIC
-sudo chmod -R o+rx /MEDIA/MUSIC
+sudo chown -R jake:jellyfin /STORAGE/MUSIC
+sudo chmod -R u+rwx /STORAGE/MUSIC
+sudo chmod -R g+rwx /STORAGE/MUSIC
+sudo chmod -R o-w /STORAGE/MUSIC
+sudo chmod -R o+rx /STORAGE/MUSIC
 
 sudo chown -R jake:jellyfin /MEDIA/TV
 sudo chmod -R u+rwx /MEDIA/TV
@@ -22,8 +22,8 @@ sudo chmod -R g+rwx /MEDIA/TV
 sudo chmod -R o-w /MEDIA/TV
 sudo chmod -R o+rx /MEDIA/TV
 
-sudo chown -R jake:jellyfin /MEDIA/YOUTUBE
-sudo chmod -R u+rwx /MEDIA/YOUTUBE
-sudo chmod -R g+rwx /MEDIA/YOUTUBE
-sudo chmod -R o-w /MEDIA/YOUTUBE
-sudo chmod -R o+rx /MEDIA/YOUTUBE
+sudo chown -R jake:jellyfin /YOUTUBE
+sudo chmod -R u+rwx /YOUTUBE
+sudo chmod -R g+rwx /YOUTUBE
+sudo chmod -R o-w /YOUTUBE
+sudo chmod -R o+rx /YOUTUBE
