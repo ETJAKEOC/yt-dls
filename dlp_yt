@@ -89,10 +89,11 @@ cd $yt/Tech\ Ingredients/ && "${dlp_yt[@]}" $yturl/c/TechIngredients/videos
 cd $yt/TWF/ && "${dlp_yt[@]}" $yturl/@TheWhyFiles/videos
 cd $yt/EF/ && "${dlp_yt[@]}" $yturl/@ExplosionsAndFire/videos
 cd $yt/EI/ && "${dlp_yt[@]}" $yturl/@ExtractionsAndIre/videos
-cd $yt/CRD/ && "${dlp_yt[@]}" $yturl/c/@CathodeRayDude/videos
+cd $yt/CRD/ && "${dlp_yt[@]}" $yturl/c/@CathodeRayDude/videos &
 
 ## Do some basic cleanup of the dirs
-wait 300
+wait
+sleep 180
 $yts/CLEANUP.sh
 $yts/PERMS.sh
 $yts/COV.sh
