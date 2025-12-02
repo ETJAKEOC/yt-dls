@@ -1,0 +1,170 @@
+#! /bin/bash
+## ETJAKEOC YouTube Downloader Script
+
+export PATH=/usr/local/bin:/usr/local/sbin:/bin:/sbin:/usr/bin:/usr/sbin:$PATH # Make sure that 'PATH' is proper.
+yt="/YOUTUBE" # Where the YouTube main directory is.
+yts="/home/YT-DLS" # Where the YouTube script directory is.
+yturl="https://www.youtube.com" # A variable designed to make the script below a little neater.
+keep_count=4 # How many videos should be kept during cleanup
+
+## Set our flags for pulling videos how we like.
+defflags=(
+ -N 2
+ --extractor-args youtubepot-bgutilhttp:base_url=http://127.0.0.1:4416
+ -f "bv*[height<=1080][fps<=60]+ba/best"
+ -S vcodec:vp9,res:1080,fps:60,acodec:opus
+ --cookies /home/jake/yt-dlp-cookies.txt
+ --hls-prefer-native
+ --mtime
+ --embed-thumbnail
+ --embed-chapters
+ --embed-subs
+ --sub-lang en,de,pl
+ --sub-format=best
+ --sponsorblock-remove sponsor
+ --remux-video mkv
+ --merge-output-format mkv
+ --download-archive "$yt/IDs.db"
+ --no-overwrites
+ --no-post-overwrites
+ --write-info-json
+ --write-thumbnail
+ --playlist-end 1
+ --output "%(title)s.%(id)s.%(ext)s"
+)
+
+## Job control.
+run_job() {
+    while (( $(jobs -rp | wc -l) >= 4 )); do
+        sleep 1
+    done
+    "$@" &
+}
+
+## 'dlp_yt' variable that imports all of our settings for ease of use below.
+dlp_yt=(nice -n 5 yt-dlp "${defflags[@]}")
+
+## Echo out the flags to the log, to ensure they are being sourced.
+## We nuke the old log, and rewrite it from scratch from this point.
+echo "YouTube download script started at:" $(date) > $yt/LOG.txt
+echo "Echoing applied variables into LOG.txt:" >> $yt/LOG.txt
+echo "yt: $yt" >> $yt/LOG.txt
+echo "yts: $yts" >> $yt/LOG.txt
+echo "keep_count: $keep_count" >> $yt/LOG.txt
+printf 'FLAG: %q\n' "${defflags[@]}" >> $yt/LOG.txt
+echo "dlp_yt command: ${dlp_yt[@]}" >> $yt/LOG.txt
+
+## Change into the YouTube directory, then the channel directory, and begins downloading with our defined flags.
+run_job bash -c "cd \"$yt/Applied Science\" && exec ${dlp_yt[@]} \"$yturl/@AppliedScience/videos\""
+run_job bash -c "cd \"$yt/Atomic Frontier\" && exec ${dlp_yt[@]} \"$yturl/@AtomicFrontier/videos\""
+run_job bash -c "cd \"$yt/Asianometry\" && exec ${dlp_yt[@]} \"$yturl/@Asianometry/videos\""
+run_job bash -c "cd \"$yt/AW\" && exec ${dlp_yt[@]} \"$yturl/@agingwheels/videos\""
+run_job bash -c "cd \"$yt/Big Clive\" && exec ${dlp_yt[@]} \"$yturl/c/Bigclive/videos\""
+run_job bash -c "cd \"$yt/BR\" && exec ${dlp_yt[@]} \"$yturl/@BrodieRobertson/videos\""
+run_job bash -c "cd \"$yt/CI\" && exec ${dlp_yt[@]} \"$yturl/c/CertifiablyIngame/videos\""
+run_job bash -c "cd \"$yt/Code Bullet\" && exec ${dlp_yt[@]} \"$yturl/@CodeBullet/videos\""
+run_job bash -c "cd \"$yt/Codyslab\" && exec ${dlp_yt[@]} \"$yturl/@theCodyReeder/videos\""
+run_job bash -c "cd \"$yt/DDT\" && exec ${dlp_yt[@]} \"$yturl/@DawidDoesTechStuff/videos\""
+run_job bash -c "cd \"$yt/EA\" && exec ${dlp_yt[@]} \"$yturl/@electrarc240/videos\""
+run_job bash -c "cd \"$yt/EE\" && exec ${dlp_yt[@]} \"$yturl/@EngineeringExplained/videos\""
+run_job bash -c "cd \"$yt/EMPLemon\" && exec ${dlp_yt[@]} \"$yturl/@EmperorLemon/videos\""
+run_job bash -c "cd \"$yt/Garbage Time\" && exec ${dlp_yt[@]} \"$yturl/@GarbageTime420/videos\""
+run_job bash -c "cd \"$yt/G54\" && exec ${dlp_yt[@]} \"$yturl/@Garage54ENG/videos\""
+run_job bash -c "cd \"$yt/IGP\" && exec ${dlp_yt[@]} \"$yturl/@IGP/videos\""
+run_job bash -c "cd \"$yt/Knowledgia\" && exec ${dlp_yt[@]} \"$yturl/@Knowledgia/videos\""
+run_job bash -c "cd \"$yt/Kurzgesagt\" && exec ${dlp_yt[@]} \"$yturl/@kurzgesagt/videos\""
+run_job bash -c "cd \"$yt/MB\" && exec ${dlp_yt[@]} \"$yturl/@MrBallen/videos\""
+run_job bash -c "cd \"$yt/MegaBuilds\" && exec ${dlp_yt[@]} \"$yturl/@MegaBuildsYT/videos\""
+run_job bash -c "cd \"$yt/MF\" && exec ${dlp_yt[@]} \"$yturl/@UndecidedMF/videos\""
+run_job bash -c "cd \"$yt/MH\" && exec ${dlp_yt[@]} \"$yturl/@MajorHardware/videos\""
+run_job bash -c "cd \"$yt/Nexpo\" && exec ${dlp_yt[@]} \"$yturl/@Nexpo/videos\""
+run_job bash -c "cd \"$yt/Night Mind\" && exec ${dlp_yt[@]} \"$yturl/@NightMind/videos\""
+run_job bash -c "cd \"$yt/NileBlue\" && exec ${dlp_yt[@]} \"$yturl/@NileBlue/videos\""
+run_job bash -c "cd \"$yt/NileRed\" && exec ${dlp_yt[@]} \"$yturl/@NileRed/videos\""
+run_job bash -c "cd \"$yt/PBSST\" && exec ${dlp_yt[@]} \"$yturl/@pbsspacetime/videos\""
+run_job bash -c "cd \"$yt/PE\" && exec ${dlp_yt[@]} \"$yturl/c/@PracticalEngineeringChannel/videos\""
+run_job bash -c "cd \"$yt/PF\" && exec ${dlp_yt[@]} \"$yturl/c/@ProjectFarm/videos\""
+run_job bash -c "cd \"$yt/Qxir\" && exec ${dlp_yt[@]} \"$yturl/c/QxirYT/videos\""
+run_job bash -c "cd \"$yt/RB\" && exec ${dlp_yt[@]} \"$yturl/@RetroBytesUK/videos\""
+run_job bash -c "cd \"$yt/SH\" && exec ${dlp_yt[@]} \"$yturl/c/@SabineHossenfelder/videos\""
+run_job bash -c "cd \"$yt/Steve Hofstetter\" && exec ${dlp_yt[@]} \"$yturl/c/@stevehofstetter/videos\""
+run_job bash -c "cd \"$yt/Scar\" && exec ${dlp_yt[@]} \"$yturl/c/@GoodTimesWithScar/videos\""
+run_job bash -c "cd \"$yt/SEA\" && exec ${dlp_yt[@]} \"$yturl/@SEA/videos\""
+run_job bash -c "cd \"$yt/SP\" && exec ${dlp_yt[@]} \"$yturl/c/@styropyro/videos\""
+run_job bash -c "cd \"$yt/SW\" && exec ${dlp_yt[@]} \"$yturl/c/@silentwisperer/videos\""
+run_job bash -c "cd \"$yt/SZS\" && exec ${dlp_yt[@]} \"$yturl/c/@SubjectZeroScience/videos\""
+run_job bash -c "cd \"$yt/The Backyard Scientist\" && exec ${dlp_yt[@]} \"$yturl/@TheBackyardScientist/videos\""
+run_job bash -c "cd \"$yt/The Thought Emporium\" && exec ${dlp_yt[@]} \"$yturl/@thethoughtemporium/videos\""
+run_job bash -c "cd \"$yt/TC\" && exec ${dlp_yt[@]} \"$yturl/c/@TechnologyConnections/videos\""
+run_job bash -c "cd \"$yt/TE\" && exec ${dlp_yt[@]} \"$yturl/@TechnologyConnextras/videos\""
+run_job bash -c "cd \"$yt/TSP\" && exec ${dlp_yt[@]} \"$yturl/@theserialport/videos\""
+run_job bash -c "cd \"$yt/VZ\" && exec ${dlp_yt[@]} \"$yturl/@coffeezillaextras/videos\""
+run_job bash -c "cd \"$yt/WarpedPerception\" && exec ${dlp_yt[@]} \"$yturl/@WarpedYT/videos\""
+run_job bash -c "cd \"$yt/Wendigoon\" && exec ${dlp_yt[@]} \"$yturl/@Wendigoon/videos\""
+
+## Longer videos broken out to the end
+run_job bash -c "cd \"$yt/Tech Ingredients\" && exec ${dlp_yt[@]} \"$yturl/c/TechIngredients/videos\""
+run_job bash -c "cd \"$yt/TWF\" && exec ${dlp_yt[@]} \"$yturl/@TheWhyFiles/videos\""
+run_job bash -c "cd \"$yt/EF\" && exec ${dlp_yt[@]} \"$yturl/@ExplosionsAndFire/videos\""
+run_job bash -c "cd \"$yt/EI\" && exec ${dlp_yt[@]} \"$yturl/@ExtractionsAndIre/videos\""
+run_job bash -c "cd \"$yt/CRD\" && exec ${dlp_yt[@]} \"$yturl/c/@CathodeRayDude/videos\""
+run_job bash -c "cd \"$yt/Veritasium\" && exec ${dlp_yt[@]} \"$yturl/@veritasium/videos\""
+
+## Wait for jobs to finish
+wait
+sleep 60
+
+## Delete some junk files that we no longer need.
+find "$yt" -type f \( -name "*.temp.*" -o -name "*.webm" -o -name "*.part" \) -delete
+
+## Cleanup old videos
+for channel in "$yt"/*; do
+    [[ -d "$channel" ]] || continue
+
+    case "$(basename "$channel")" in
+        MINECRAFT|UNCAT|SPACE)
+            echo "Skipping directory: $channel"
+            continue
+            ;;
+    esac
+
+    # Find .mkv files (newest first). Use null delimiters to be safe with funky names.
+    mapfile -d $'\0' -t videos_sorted < <(
+        find "$channel" -maxdepth 1 -type f -name "*.mkv" -printf "%T@ %p\0" \
+        | sort -z -rn \
+        | awk -v RS='\0' '{ $1=""; sub(/^ /,""); print }' ORS='\0'
+    )
+
+    # If not enough videos, continue
+    if (( ${#videos_sorted[@]} <= keep_count )); then
+        # Echo "Not enough videos in $(basename "$channel")"
+        continue
+    fi
+
+    # Delete everything older than the newest keep_count .mkv files
+    for (( i=keep_count; i<${#videos_sorted[@]}; i++ )); do
+        video="${videos_sorted[$i]}"
+        # Basename of the file
+        filename="$(basename -- "$video")"
+
+        # Remove final extension (only one), then take the last '.'-separated token as ID
+        name_noext="${filename%.*}"
+        id="${name_noext##*.}"
+
+        if [[ -z "$id" || "$id" == "$name_noext" ]]; then
+            echo "⚠️  Couldn't parse ID from filename: $filename — skipping"
+            continue
+        fi
+
+        echo "Processing old video: $filename  (ID=$id)"
+        # List matched files
+        find "$channel" -maxdepth 1 -type f -name "*$id*" -print -exec rm -v -- {} +
+    done
+done
+
+## Set permissions on files
+sudo chown -R jake:jellyfin "$yt"
+sudo chmod -R 775 "$yt"
+
+## Echo a timestamp into a log file, telling us how long the script ran for.
+echo "YouTube download script completed at:" $(date) >> "$yt/LOG.txt"

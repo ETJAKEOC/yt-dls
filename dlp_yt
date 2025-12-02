@@ -22,7 +22,7 @@ defflags=(
  --embed-thumbnail
  --embed-chapters
  --embed-subs
- --sub-lang en
+ --sub-lang en,de,pl
  --sub-format=best
  --sponsorblock-remove sponsor
  --remux-video mkv
