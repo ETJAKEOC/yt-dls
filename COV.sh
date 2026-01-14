@@ -4,7 +4,7 @@
 set -euo pipefail
 
 yt_dir="/YOUTUBE"
-keep_count=4
+keep_count=10
 dry_run=false   # set to false to actually delete
 
 for channel in "$yt_dir"/*; do
@@ -19,7 +19,7 @@ for channel in "$yt_dir"/*; do
 
     # Find .mkv files (newest first). Use null delimiters to be safe with funky names.
     mapfile -d $'\0' -t videos_sorted < <(
-        find "$channel" -maxdepth 1 -type f -name "*.mkv" -printf "%T@ %p\0" \
+        find "$channel" -maxdepth 1 -type f -name "*.m*" -printf "%T@ %p\0" \
         | sort -z -rn \
         | awk -v RS='\0' '{ $1=""; sub(/^ /,""); print }' ORS='\0'
     )

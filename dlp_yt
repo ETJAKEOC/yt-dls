@@ -11,29 +11,27 @@ yts="/home/YT-DLS" # Where the YouTube script directory is.
 yturl="https://www.youtube.com" # A variable designed to make the script below a little neater.
 # Set our flags for pulling videos how we like.
 defflags=(
- -N 4
- --extractor-args youtubepot-bgutilhttp:base_url=http://127.0.0.1:4416
- -f "bv*[height<=1080][fps<=60]+ba/best"
- -S vcodec:vp9,res:1080,fps:60,acodec:opus
+ -N 2
+ --extractor-args "youtubepot-bgutilhttp:base_url=http://127.0.0.1:4416"
+ -f "bv*[height<=1080][fps<=60]+ba/bestvideo+bestaudio/best"
+ -S vcodec:h264,res:1080,fps:60,acodec:aac
  --cookies /home/jake/yt-dlp-cookies.txt
+ --download-archive "$yt/IDs.db"
+ --embed-chapters
+ --embed-subs
+ --embed-thumbnail
  --hls-prefer-native
  --mtime
  --no-overwrites
- --embed-thumbnail
- --embed-chapters
- --embed-subs
+ --no-post-overwrites
+ --output "%(title)s.%(id)s.%(ext)s"
+ --playlist-end 1
+ --sponsorblock-mark all
+ --sponsorblock-remove sponsor,selfpromo
  --sub-lang en,de,pl
  --sub-format=best
- --sponsorblock-remove sponsor
- --remux-video mkv
- --merge-output-format mkv
- --download-archive "$yt/IDs.db"
- --no-overwrites
- --no-post-overwrites
  --write-info-json
  --write-thumbnail
- --playlist-end 1
- --output "%(title)s.%(id)s.%(ext)s"
 )
 dlp_yt=(nice -n 5 yt-dlp "${defflags[@]}") # 'dlp_yt' variable that imports all of our settings for ease of use below.
 
@@ -44,14 +42,14 @@ echo -e "Echoing applied variables into LOG.txt:" >> $yt/LOG.txt
 echo -e "yt: $yt" >> $yt/LOG.txt
 echo -e "yts: $yts" >> $yt/LOG.txt
 echo -e "defflags: ${defflags[@]}" >> $yt/LOG.txt
-echo -e "dlp_yt command: "${dlp_yt[@]}"" >> $yt/LOG.txt
+echo -e "dlp_yt command: ${dlp_yt[@]}" >> $yt/LOG.txt
 
 ## Change into the YouTube directory, then the channel directory, and begins downloading with our defined flags.
 cd $yt/Applied\ Science/ && "${dlp_yt[@]}" $yturl/@AppliedScience/videos &
 cd $yt/Atomic\ Frontier/ && "${dlp_yt[@]}" $yturl/@AtomicFrontier/videos &
 cd $yt/Asianometry/ && "${dlp_yt[@]}" $yturl/@Asianometry/videos &
 cd $yt/AW/ && "${dlp_yt[@]}" $yturl/@agingwheels/videos &
-cd $yt/Big\ Clive/ && "${dlp_yt[@]}" $yturl/c/Bigclive/videos &
+cd $yt/Big\ Clive/ && "${dlp_yt[@]}" $yturl/@bigclivedotcom/videos &
 cd $yt/BR/ && "${dlp_yt[@]}" $yturl/@BrodieRobertson/videos &
 cd $yt/CI/ && "${dlp_yt[@]}" $yturl/c/CertifiablyIngame/videos &
 cd $yt/Code\ Bullet/ && "${dlp_yt[@]}" $yturl/@CodeBullet/videos
@@ -82,6 +80,7 @@ cd $yt/SH/ && "${dlp_yt[@]}" $yturl/c/@SabineHossenfelder/videos
 cd $yt/Steve\ Hofstetter/ && "${dlp_yt[@]}" $yturl/c/@stevehofstetter/videos &
 cd $yt/Scar/ && "${dlp_yt[@]}" $yturl/c/@GoodTimesWithScar/videos &
 cd $yt/SEA/ && "${dlp_yt[@]}" $yturl/@SEA/videos &
+cd $yt/SOG/ && "${dlp_yt[@]}" $yturl/@SomeOrdinaryGamers/videos &
 cd $yt/SP/ && "${dlp_yt[@]}" $yturl/c/@styropyro/videos &
 cd $yt/SW/ && "${dlp_yt[@]}" $yturl/c/@silentwisperer/videos &
 cd $yt/SZS/ && "${dlp_yt[@]}" $yturl/c/@SubjectZeroScience/videos &
@@ -107,7 +106,7 @@ wait
 sleep 60
 $yts/CLEANUP.sh
 $yts/PERMS.sh
-$yts/COV.sh
+#$yts/COV.sh
 
 ## Change back into the main YouTube directory, and echos a timestamp into a log file, telling us how long the script ran for.
 echo "YouTube download script completed at:" $(date) >> $yt/LOG.txt
