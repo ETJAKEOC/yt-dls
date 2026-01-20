@@ -8,7 +8,7 @@ export PATH=/usr/local/bin:/usr/local/sbin:/bin:/sbin:/usr/bin:/usr/sbin:$PATH #
 
 LOG="/MEDIA/dlp_yt_log.txt" # Log location
 yt="/YOUTUBE" # Where the YouTube main directory is.
-yts="/MEDIA/YT-DLS" # Where the YouTube script directory is.
+yts="/home/YT-DLS" # Where the YouTube script directory is.
 yturl="https://www.youtube.com" # A variable designed to make the script below a little neater.
 # Set our flags for pulling videos how we like.
 defflags=(
