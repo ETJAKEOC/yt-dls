@@ -4,8 +4,8 @@
 set -euo pipefail
 
 yt_dir="/YOUTUBE"
-keep_count=10
-dry_run=false   # set to false to actually delete
+keep_count=5
+dry_run=true   # set to false to actually delete
 
 for channel in "$yt_dir"/*; do
     [[ -d "$channel" ]] || continue
@@ -17,9 +17,9 @@ for channel in "$yt_dir"/*; do
             ;;
     esac
 
-    # Find .mkv files (newest first). Use null delimiters to be safe with funky names.
+    # Find .mp4/.mkv files (newest first). Use null delimiters to be safe with funky names.
     mapfile -d $'\0' -t videos_sorted < <(
-        find "$channel" -maxdepth 1 -type f -name "*.m*" -printf "%T@ %p\0" \
+        find "$channel" -maxdepth 1 -type f -name "*.mp4" -o -name "*.mkv" -printf "%T@ %p\0" \
         | sort -z -rn \
         | awk -v RS='\0' '{ $1=""; sub(/^ /,""); print }' ORS='\0'
     )
@@ -33,17 +33,15 @@ for channel in "$yt_dir"/*; do
     # Delete everything older than the newest keep_count .mkv files
     for (( i=keep_count; i<${#videos_sorted[@]}; i++ )); do
         video="${videos_sorted[$i]}"
-        # basename of the file
-        filename="$(basename -- "$video")"
-
-        # remove final extension (only one), then take the last '.'-separated token as ID
-        name_noext="${filename%.*}"
-        id="${name_noext##*.}"
-
-        if [[ -z "$id" || "$id" == "$name_noext" ]]; then
-            echo "⚠️  Couldn't parse ID from filename: $filename — skipping"
-            continue
-        fi
+	filename="$(basename -- "$video")"
+	if [[ "$filename" =~ \[([A-Za-z0-9_-]{11})\] ]]; then
+	    id="${BASH_REMATCH[1]}"
+	elif [[ "$filename" =~ \.([A-Za-z0-9_-]{11})\. ]]; then
+	    id="${BASH_REMATCH[1]}"
+	else
+	    echo "Couldn't extract YouTube ID from: $filename — skipping"
+	    continue
+	fi
 
         echo "Processing old video: $filename  (ID=$id)"
         # List matched files
@@ -52,7 +50,7 @@ for channel in "$yt_dir"/*; do
             find "$channel" -maxdepth 1 -type f -name "*$id*" -print
             echo "----"
         else
-            find "$channel" -maxdepth 1 -type f -name "*$id*" -print -exec rm -v -- {} +
+            find "$channel" -maxdepth 1 -type f \( -name "*.$id.*" -o -name "*[$id]*" \) -print -exec rm -v -- {} +
         fi
     done
 done

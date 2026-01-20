@@ -6,8 +6,9 @@ export PATH=/usr/local/bin:/usr/local/sbin:/bin:/sbin:/usr/bin:/usr/sbin:$PATH #
 ## We set all the variables for 'yt-dlp'
 ## We then create our new variable for the script to append a couple more options.
 
+LOG="/MEDIA/dlp_yt_log.txt" # Log location
 yt="/YOUTUBE" # Where the YouTube main directory is.
-yts="/home/YT-DLS" # Where the YouTube script directory is.
+yts="/MEDIA/YT-DLS" # Where the YouTube script directory is.
 yturl="https://www.youtube.com" # A variable designed to make the script below a little neater.
 # Set our flags for pulling videos how we like.
 defflags=(
@@ -15,34 +16,38 @@ defflags=(
  --extractor-args "youtubepot-bgutilhttp:base_url=http://127.0.0.1:4416"
  -f "bv*[height<=1080][fps<=60]+ba/bestvideo+bestaudio/best"
  -S vcodec:h264,res:1080,fps:60,acodec:aac
- --cookies /home/jake/yt-dlp-cookies.txt
- --download-archive "$yt/IDs.db"
+ --cookies /MEDIA/yt-dlp-cookies.txt
+ --convert-subs srt
+ --download-archive /MEDIA/IDs.db
  --embed-chapters
+ --embed-metadata
  --embed-subs
  --embed-thumbnail
  --hls-prefer-native
+ --merge-output-format mkv
  --mtime
  --no-overwrites
  --no-post-overwrites
- --output "%(title)s.%(id)s.%(ext)s"
  --playlist-end 1
  --sponsorblock-mark all
  --sponsorblock-remove sponsor,selfpromo
- --sub-lang en,de,pl
- --sub-format=best
+ --sub-lang "en.*,en,de,pl"
+ --sub-format "vtt/srt"
  --write-info-json
  --write-thumbnail
+ --write-subs
+ --write-auto-subs
 )
 dlp_yt=(nice -n 5 yt-dlp "${defflags[@]}") # 'dlp_yt' variable that imports all of our settings for ease of use below.
 
 ## Echo out the flags to the log, to ensure they are being sourced.
 ## We nuke the old log, and rewrite it from scratch from this point.
-echo "YouTube download script started at:" $(date) > $yt/LOG.txt
-echo -e "Echoing applied variables into LOG.txt:" >> $yt/LOG.txt
-echo -e "yt: $yt" >> $yt/LOG.txt
-echo -e "yts: $yts" >> $yt/LOG.txt
-echo -e "defflags: ${defflags[@]}" >> $yt/LOG.txt
-echo -e "dlp_yt command: ${dlp_yt[@]}" >> $yt/LOG.txt
+echo "YouTube download script started at:" $(date) > $LOG
+echo -e "Echoing applied variables into dlp_yt_log.txt:" >> $LOG
+echo -e "yt: $yt" >> $LOG
+echo -e "yts: $yts" >> $LOG
+echo -e "defflags: ${defflags[@]}" >> $LOG
+echo -e "dlp_yt command: ${dlp_yt[@]}" >> $LOG
 
 ## Change into the YouTube directory, then the channel directory, and begins downloading with our defined flags.
 cd $yt/Applied\ Science/ && "${dlp_yt[@]}" $yturl/@AppliedScience/videos &
@@ -109,4 +114,4 @@ $yts/PERMS.sh
 #$yts/COV.sh
 
 ## Change back into the main YouTube directory, and echos a timestamp into a log file, telling us how long the script ran for.
-echo "YouTube download script completed at:" $(date) >> $yt/LOG.txt
+echo "YouTube download script completed at:" $(date) >> $LOG
