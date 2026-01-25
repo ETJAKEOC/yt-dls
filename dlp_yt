@@ -16,17 +16,20 @@ defflags=(
  --extractor-args "youtubepot-bgutilhttp:base_url=http://127.0.0.1:4416"
  -f "bv*[height<=1080][fps<=60]+ba/bestvideo+bestaudio/best"
  -S vcodec:h264,res:1080,fps:60,acodec:aac
+ --convert-subs srt
+ --convert-thumbnails jpg
  --cookies /MEDIA/yt-dlp-cookies.txt
  --download-archive /MEDIA/IDs.db
  --hls-prefer-native
  --mtime
  --no-overwrites
+ --no-part
  --no-post-overwrites
  --playlist-end 1
  --sponsorblock-mark all
  --sponsorblock-remove sponsor,selfpromo
  --sub-lang "en.*,en,de,pl"
- --sub-format "vtt/srt"
+ --sub-format "srt"
  --write-info-json
  --write-thumbnail
  --write-subs
