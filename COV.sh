@@ -1,11 +1,12 @@
 #!/bin/bash
 # ETJAKEOC YouTube cleanup script
 # Keeps only the N newest videos per channel and removes all related files.
+
 set -euo pipefail
 
 yt_dir="/YOUTUBE"
 keep_count=5
-dry_run=false   # set to false to actually delete
+dry_run=false
 
 for channel in "$yt_dir"/*; do
     [[ -d "$channel" ]] || continue
@@ -17,40 +18,82 @@ for channel in "$yt_dir"/*; do
             ;;
     esac
 
-    # Find .mp4/.mkv files (newest first). Use null delimiters to be safe with funky names.
-    mapfile -d $'\0' -t videos_sorted < <(
-        find "$channel" -maxdepth 1 -type f \( -name "*.mp4" -o -name "*.mkv" \) -printf "%T@ %p\0" \
-        | sort -z -rn \
-        | awk -v RS='\0' '{ $1=""; sub(/^ /,""); print }' ORS='\0'
-    )
+    echo "Processing channel: $(basename "$channel")"
 
-    # If not enough videos, continue
-    if (( ${#videos_sorted[@]} <= keep_count )); then
-        # echo "Not enough videos in $(basename "$channel")"
+    declare -A video_dates=()
+
+    # 🔍 STEP 1: Collect ALL video IDs from any file
+    while IFS= read -r -d '' file; do
+        fname="$(basename -- "$file")"
+
+        if [[ "$fname" =~ \[([A-Za-z0-9_-]{11})\] ]]; then
+            id="${BASH_REMATCH[1]}"
+
+            # Skip if already indexed
+            [[ -n "${video_dates[$id]+x}" ]] && continue
+
+            # Try to find matching info.json
+            json=$(find "$channel" -maxdepth 1 -type f -name "*\[$id\].info.json" | head -n1)
+
+            if [[ -n "$json" && -f "$json" ]]; then
+                upload_date=$(jq -r '.upload_date // empty' "$json")
+            else
+                upload_date=""
+            fi
+
+            # Fallback: use file modification time
+            if [[ -z "$upload_date" ]]; then
+                upload_date="00000000"
+            fi
+
+            video_dates["$id"]="$upload_date"
+        fi
+    done < <(find "$channel" -maxdepth 1 -type f -print0)
+
+    # 🧪 Debug (optional, but useful)
+    echo "Indexed videos: ${#video_dates[@]}"
+    echo "MP4 count: $(find "$channel" -maxdepth 1 -name '*.mp4' | wc -l)"
+
+    # Skip if not enough videos
+    if (( ${#video_dates[@]} <= keep_count )); then
+        echo "Nothing to clean (<= $keep_count videos)"
+        unset video_dates
         continue
     fi
 
-    # Delete everything older than the newest keep_count .mkv files
-    for (( i=keep_count; i<${#videos_sorted[@]}; i++ )); do
-        video="${videos_sorted[$i]}"
-	filename="$(basename -- "$video")"
-	if [[ "$filename" =~ \[([A-Za-z0-9_-]{11})\] ]]; then
-	    id="${BASH_REMATCH[1]}"
-	elif [[ "$filename" =~ \.([A-Za-z0-9_-]{11})\. ]]; then
-	    id="${BASH_REMATCH[1]}"
-	else
-	    echo "Couldn't extract YouTube ID from: $filename — skipping"
-	    continue
-	fi
+    # 🔢 STEP 2: Sort IDs by date (newest first)
+    mapfile -t sorted_ids < <(
+        for id in "${!video_dates[@]}"; do
+            echo "${video_dates[$id]} $id"
+        done | sort -r | awk '{print $2}'
+    )
 
-        echo "Processing old video: $filename  (ID=$id)"
-        # List matched files
-        if $dry_run; then
-            echo "DRY RUN: Would delete the following in $channel:"
-            find "$channel" -maxdepth 1 -type f -name "*$id*" -print
-            echo "----"
-        else
-            find "$channel" -maxdepth 1 -type f \( -name "*.$id.*" -o -name "*[$id]*" \) -print -exec rm -v -- {} +
-        fi
+    # 🧹 STEP 3: Delete everything after newest N
+    for (( i=keep_count; i<${#sorted_ids[@]}; i++ )); do
+        id="${sorted_ids[$i]}"
+        echo "Old video ID: $id"
+
+        mapfile -t files_to_delete < <(
+            find "$channel" -maxdepth 1 -type f -name "*\[$id\].*"
+        )
+
+        for video in "${files_to_delete[@]}"; do
+            if [[ $dry_run == true ]]; then
+                echo "DRY RUN: Would delete $video"
+                continue
+            fi
+
+            # Skip immutable files
+            if [[ $(lsattr "$video" 2>/dev/null | cut -c5) == "i" ]]; then
+                echo "Skipping immutable: $(basename "$video")"
+                continue
+            fi
+
+            rm -v -- "$video"
+        done
+
+        echo "----"
     done
+
+    unset video_dates
 done
